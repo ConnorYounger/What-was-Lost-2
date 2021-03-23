@@ -67,9 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2043d8dde7641164492f03001ff277b5, type: 2}
-  m_sharedMaterial: {fileID: 171923920614152173, guid: 2043d8dde7641164492f03001ff277b5,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ebfaf562a678a6a4ea2acc650016a5e8, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -93,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -132,7 +131,7 @@ MonoBehaviour:
   m_margin: {x: 25, y: 0, z: 25, w: 25}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &3938398657394705739
@@ -716,14 +715,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5549495108486386886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79b38c5a60440ad409e114f0ec6b7df4, type: 3}
+  m_Script: {fileID: 11500000, guid: b176ad6324a363a46a73aad437c4228c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   photos:
-  - {fileID: 21300000, guid: 86f7e29f0ee84cd47afaeb4cd1841528, type: 3}
-  - {fileID: 21300000, guid: 41ecd6a4ed1899b418fd7c5eb5f5a7f7, type: 3}
-  - {fileID: 21300000, guid: 5f1d72082ecd6594f8f713d6867315a4, type: 3}
-  - {fileID: 21300000, guid: 9827801599868f340ba972ac3fc87c82, type: 3}
+  - {fileID: 21300000, guid: 5e8e60c0cf5c9d447b98a2dd86da4e07, type: 3}
+  - {fileID: 21300000, guid: cd1812ca41e16bf4a9bbd95e7ce14ae6, type: 3}
+  - {fileID: 21300000, guid: 2301839b711e22542ad6a8c6397b369b, type: 3}
+  - {fileID: 21300000, guid: 6777f556eb87c6549a0b00ae96c50f8b, type: 3}
   imageNum: 0
   prevPhoto: {fileID: 5549495108252885897}
   nextPhoto: {fileID: 5549495109188433414}
@@ -737,7 +736,7 @@ MonoBehaviour:
   - "\u201CIt\u2019s nice looking back to when I was younger, but then it reminds
     me of how time has taken it all\u201D"
   memoryText: {fileID: 0}
-  photoFound: 
+  photoFound: 00000000
 --- !u!1 &5549495108594196207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,7 +1182,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5549495108760816920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5db6f819d5335fa4a9bab3c0825d51bb, type: 3}
+  m_Script: {fileID: 11500000, guid: acc3ad206cdcad34eb14bccd69434a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tabButtons: []
@@ -1346,7 +1345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5549495109184209554
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1663,39 +1662,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5549495109226707045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01e532bf92a9dac47a1342353d803bc2, type: 3}
+  m_Script: {fileID: 11500000, guid: 016b1eaa325f8814083661596a813722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tabGroup: {fileID: 5549495108760816927}
+  tabGroup: {fileID: 0}
   background: {fileID: 0}
   onTabSelected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5549495108435519528}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   onTabDeselected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5549495108435519528}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &5549495109371243278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1782,39 +1759,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5549495109371243278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01e532bf92a9dac47a1342353d803bc2, type: 3}
+  m_Script: {fileID: 11500000, guid: 016b1eaa325f8814083661596a813722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tabGroup: {fileID: 5549495108760816927}
+  tabGroup: {fileID: 0}
   background: {fileID: 0}
   onTabSelected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5549495110028317950}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   onTabDeselected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5549495110028317950}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &5549495109525022015
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,7 +2018,7 @@ GameObject:
   - component: {fileID: 5549495109797575307}
   - component: {fileID: 5549495109797575304}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: InventoryCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2310,39 +2265,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5549495109927688403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01e532bf92a9dac47a1342353d803bc2, type: 3}
+  m_Script: {fileID: 11500000, guid: 016b1eaa325f8814083661596a813722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tabGroup: {fileID: 5549495108760816927}
+  tabGroup: {fileID: 0}
   background: {fileID: 0}
   onTabSelected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5549495108719597736}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   onTabDeselected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5549495108719597736}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &5549495110028317950
 GameObject:
   m_ObjectHideFlags: 0
