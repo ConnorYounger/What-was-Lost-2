@@ -1098,11 +1098,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5549495109525021985, guid: a69d5364b546d0941b59b009735ead81,
-        type: 3}
-      propertyPath: m_text
-      value: Item Upgrades
-      objectReference: {fileID: 0}
     - target: {fileID: 5549495109797575305, guid: a69d5364b546d0941b59b009735ead81,
         type: 3}
       propertyPath: m_Name
