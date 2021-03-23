@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TabGroup : MonoBehaviour
 {
     public List<TabButton> tabButtons;
-    public Color tabIdle, tabHover, tabActive;
+    public Sprite tabIdle, tabHover, tabActive;
     public TabButton selectedTab;
     public List<GameObject> objectsToSwap;
 
@@ -28,7 +28,7 @@ public class TabGroup : MonoBehaviour
         ResetTabs();
         if (selectedTab == null || button != selectedTab)
         {
-            button.background.color = tabHover;
+            button.background.sprite = tabHover;
         }
     }
 
@@ -51,7 +51,7 @@ public class TabGroup : MonoBehaviour
         selectedTab.Select();
 
         ResetTabs();
-        button.background.color = tabActive;
+        button.background.sprite = tabActive;
 
         // Changes which page is displayed based on the button clicked
         int index = button.transform.GetSiblingIndex();
@@ -73,7 +73,7 @@ public class TabGroup : MonoBehaviour
         foreach (TabButton button in tabButtons)
         {
             if (selectedTab != null && button == selectedTab) { continue; }
-            button.background.color = tabIdle;
+            button.background.sprite = tabIdle;
         }
     }
 }
