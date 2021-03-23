@@ -13,8 +13,6 @@ public class DisplayInventory : MonoBehaviour
 
     private void Start()
     {
-        //inventoryPage = GameObject.Find("Page Inventory");
-
         CreateDisplay();
     }
 
