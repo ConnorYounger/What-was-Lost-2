@@ -7,7 +7,9 @@ public class ChildrenAI : MonoBehaviour
     public EnemyStats stats;
 
     private GameObject target;
-    private GameObject heldItem;
+    private GameObject heldItemPrefab;
+
+    private InventorySlot heldItem;
 
     public string targetName;
     private string[] states;
@@ -20,8 +22,12 @@ public class ChildrenAI : MonoBehaviour
     private float timer;
 
     private bool hasItem;
-    public InventoryObject inventory;
+
     public Transform itemHoldPoint;
+
+    public InventoryObject inventory;
+    public InventoryObject targetInventory;
+
 
     void Start()
     {
@@ -160,22 +166,22 @@ public class ChildrenAI : MonoBehaviour
     void TakePlayerItem()
     {
         // Check to see if the target has the inventory script
-        if (target.GetComponent<PlayerMetalDetectorItem>())
+        if (target.GetComponent<InventoryObject>() && target.GetComponent<InventoryObject>().Container.Count > 0)
         {
-            //int itemCount = inventory.Container.Count;
-            //int ranItem = Random.Range(0, itemCount);
-            //inventory.RemoveItem(ranItem);
-            //ItemObject _item = gameobject(ranItem)
-            //child inventory Add(_item)
+            targetInventory = target.GetComponent<InventoryObject>();
 
-            GameObject item = target.GetComponent<PlayerMetalDetectorItem>().TakeRandomItem();
+            int ranItem = Random.Range(0, targetInventory.Container.Count);
 
-            if (item != null)
+            heldItem = targetInventory.Container[ranItem];
+
+            inventory.RemoveItem(ranItem);
+
+            if (heldItem != null && heldItemPrefab != null)
             {
                 hasItem = true;
 
-                heldItem = Instantiate(item, itemHoldPoint.position, itemHoldPoint.rotation);
-                heldItem.transform.parent = itemHoldPoint.transform;
+                heldItemPrefab = Instantiate(heldItem.item.modelPrefab, itemHoldPoint.position, itemHoldPoint.rotation);
+                heldItemPrefab.transform.parent = itemHoldPoint.transform;
             }
             else
             {
@@ -190,13 +196,13 @@ public class ChildrenAI : MonoBehaviour
         if (target.GetComponent<PlayerMetalDetectorItem>())
         {
             // Asks the script if the enemy can take the metal detector
-            heldItem = target.GetComponent<PlayerMetalDetectorItem>().TakeMetalDetector();
+            heldItemPrefab = target.GetComponent<PlayerMetalDetectorItem>().TakeMetalDetector();
 
             if (heldItem != null)
             {
                 hasItem = true;
 
-                heldItem.transform.parent = itemHoldPoint.transform;
+                heldItemPrefab.transform.parent = itemHoldPoint.transform;
             }
             else
             {
@@ -234,11 +240,11 @@ public class ChildrenAI : MonoBehaviour
 
     void GivePlayerItem()
     {
-        if (target.GetComponent<PlayerMetalDetectorItem>())
+        if (target.GetComponent<InventoryObject>() == targetInventory)
         {
-            target.GetComponent<PlayerMetalDetectorItem>().AddItem(heldItem);
+            targetInventory.AddItem(heldItem.item);
 
-            Destroy(heldItem);
+            Destroy(heldItemPrefab);
 
             heldItem = null;
         }
@@ -248,9 +254,9 @@ public class ChildrenAI : MonoBehaviour
     {
         if (target.GetComponent<PlayerMetalDetectorItem>())
         {
-            target.GetComponent<PlayerMetalDetectorItem>().GiveMetalDetector(heldItem);
+            target.GetComponent<PlayerMetalDetectorItem>().GiveMetalDetector(heldItemPrefab);
 
-            heldItem = null;
+            heldItemPrefab = null;
         }
     }
 
