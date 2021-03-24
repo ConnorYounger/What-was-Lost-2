@@ -25,7 +25,7 @@ public class DisplayInventory : MonoBehaviour
     {
         for (int i = 0; i < inventory.Container.Count; i++)
         {
-            var newSlot = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, inventoryPage.transform);
+            var newSlot = Instantiate(inventory.Container[i].item.invPrefab, Vector3.zero, Quaternion.identity, inventoryPage.transform);
             newSlot.transform.SetParent(inventoryPage.transform);
 
             newSlot.GetComponentsInChildren<Image>()[1].sprite = inventory.Container[i].item.itemImage;
@@ -46,7 +46,7 @@ public class DisplayInventory : MonoBehaviour
                 itemsDisplayed[inventory.Container[i]].GetComponentInChildren<TMP_Text>().text = inventory.Container[i].item.itemName;
             } else
             {
-                var newSlot = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, inventoryPage.transform);
+                var newSlot = Instantiate(inventory.Container[i].item.invPrefab, Vector3.zero, Quaternion.identity, inventoryPage.transform);
                 newSlot.transform.SetParent(inventoryPage.transform);
 
                 newSlot.GetComponentsInChildren<Image>()[1].sprite = inventory.Container[i].item.itemImage;
