@@ -20,7 +20,7 @@ public class ChildrenAI : MonoBehaviour
     private float timer;
 
     private bool hasItem;
-
+    public InventoryObject inventory;
     public Transform itemHoldPoint;
 
     void Start()
@@ -162,6 +162,12 @@ public class ChildrenAI : MonoBehaviour
         // Check to see if the target has the inventory script
         if (target.GetComponent<PlayerMetalDetectorItem>())
         {
+            //int itemCount = inventory.Container.Count;
+            //int ranItem = Random.Range(0, itemCount);
+            //inventory.RemoveItem(ranItem);
+            //ItemObject _item = gameobject(ranItem)
+            //child inventory Add(_item)
+
             GameObject item = target.GetComponent<PlayerMetalDetectorItem>().TakeRandomItem();
 
             if (item != null)

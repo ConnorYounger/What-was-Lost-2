@@ -12,6 +12,12 @@ public class InventoryObject : ScriptableObject
     {
         Container.Add(new InventorySlot(_item));
     }
+
+    // Remove an item to the player inventory Scriptable Object
+    public void RemoveItem(int i)
+    {
+        Container.Remove(Container[i]);
+    }
 }
 
 [System.Serializable]
