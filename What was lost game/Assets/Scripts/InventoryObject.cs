@@ -7,6 +7,7 @@ public class InventoryObject : ScriptableObject
 {
     public List<InventorySlot> Container = new List<InventorySlot>();
 
+    // Add an item to the player inventory Scriptable Object
     public void AddItem(ItemObject _item)
     {
         Container.Add(new InventorySlot(_item));
