@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BeachObjectPopulator : MonoBehaviour
 {
-    public List<GameObject> beachObjects = new List<GameObject>();
-    public List<Transform> spawnPoints = new List<Transform>();
+    private List<GameObject> beachObjects = new List<GameObject>();
+    private List<Transform> spawnPoints = new List<Transform>();
 
     private void Start()
     {
