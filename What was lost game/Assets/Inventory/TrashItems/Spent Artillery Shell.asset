@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fda139eb7e43f0a4d9017daad1d733a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 94edd7970f0d3b34fad62e5fb616196a, type: 3}
   m_Name: Spent Artillery Shell
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 2084715786054022910, guid: 25818242139c4c845a2a5912fc004209, type: 3}
   type: 2
   itemName: 
   itemImage: {fileID: 0}
