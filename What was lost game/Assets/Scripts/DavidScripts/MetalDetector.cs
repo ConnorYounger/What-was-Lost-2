@@ -20,7 +20,6 @@ public class MetalDetector : MonoBehaviour
     public AudioSource mDTone;
     private float maxFreq = 0.05f;
     float timer;
-    float toneTimer;
     private bool inRange = false;
     void Start()
     {
@@ -50,8 +49,6 @@ public class MetalDetector : MonoBehaviour
 
         //Metal Detector Sound system
         timer += Time.deltaTime / distance;
-        toneTimer += Time.deltaTime;
-        print(toneTimer);
         if (timer > maxFreq && distance > 2)
         {
             mDClick.PlayOneShot(mDClick.clip, 1);
