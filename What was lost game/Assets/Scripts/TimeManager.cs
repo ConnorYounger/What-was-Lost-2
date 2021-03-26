@@ -61,9 +61,13 @@ public class TimeManager : MonoBehaviour
         }
 
         if (RenderSettings.skybox.HasProperty("_Tint"))
+        {
             RenderSettings.skybox.SetColor("_Tint", preset.skyBoxColor.Evaluate(timePercent));
+        }
         else if (RenderSettings.skybox.HasProperty("_SkyTint"))
+        {
             RenderSettings.skybox.SetColor("_SkyTint", preset.skyBoxColor.Evaluate(timePercent));
+        }
     }
 
     //Try to find a directional light to use if we haven't set one
