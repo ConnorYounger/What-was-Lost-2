@@ -59,11 +59,13 @@ public class RGenerator : MonoBehaviour
         // print("Uncommon Item Found!");
         // foundAlert.text = "Uncommon Item Found!";
         // Invoke("reset", 2);
+        
+        /*  DAVID, had to comment this block, giving error
         var item = other.GetComponent<Item>();
         if (item)
-       {
+        {
             inventory.AddItem(item.item);
-        }
+        }*/
     }  
 
     private void OnApplicationQuit()
