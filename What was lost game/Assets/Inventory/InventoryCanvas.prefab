@@ -371,8 +371,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: merchant
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ebfaf562a678a6a4ea2acc650016a5e8, type: 2}
-  m_sharedMaterial: {fileID: 171923920614152173, guid: ebfaf562a678a6a4ea2acc650016a5e8,
+  m_fontAsset: {fileID: 11400000, guid: 5fe41975a3a5629409c19a2a8a566f37, type: 2}
+  m_sharedMaterial: {fileID: -4713095756697467904, guid: 5fe41975a3a5629409c19a2a8a566f37,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1080,8 +1080,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: photo album
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ebfaf562a678a6a4ea2acc650016a5e8, type: 2}
-  m_sharedMaterial: {fileID: 171923920614152173, guid: ebfaf562a678a6a4ea2acc650016a5e8,
+  m_fontAsset: {fileID: 11400000, guid: 5fe41975a3a5629409c19a2a8a566f37, type: 2}
+  m_sharedMaterial: {fileID: -4713095756697467904, guid: 5fe41975a3a5629409c19a2a8a566f37,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1360,8 +1360,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: inventory
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ebfaf562a678a6a4ea2acc650016a5e8, type: 2}
-  m_sharedMaterial: {fileID: 171923920614152173, guid: ebfaf562a678a6a4ea2acc650016a5e8,
+  m_fontAsset: {fileID: 11400000, guid: 5fe41975a3a5629409c19a2a8a566f37, type: 2}
+  m_sharedMaterial: {fileID: -4713095756697467904, guid: 5fe41975a3a5629409c19a2a8a566f37,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1392,7 +1392,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2213,7 +2213,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5549495109797575305}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
