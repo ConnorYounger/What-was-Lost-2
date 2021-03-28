@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94edd7970f0d3b34fad62e5fb616196a, type: 3}
   m_Name: Shopping Trolley
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2084715786054022910, guid: 25818242139c4c845a2a5912fc004209, type: 3}
+  invPrefab: {fileID: 2084715786054022910, guid: 25818242139c4c845a2a5912fc004209,
+    type: 3}
   type: 2
-  itemName: 
-  itemImage: {fileID: 0}
+  itemName: Shopping Trolley
+  itemImage: {fileID: 21300000, guid: d73a3884d94ff9e4394dacb8676607d1, type: 3}
+  modelPrefab: {fileID: 0}

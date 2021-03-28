@@ -16,7 +16,7 @@ MonoBehaviour:
     type: 3}
   type: 0
   itemName: Broken Compass
-  itemImage: {fileID: 21300000, guid: a6ee225ba5d8cf44380ef02c41ff243c, type: 3}
+  itemImage: {fileID: 21300000, guid: 04637d1858dc26e4ab0f6a4dfdfa110d, type: 3}
   modelPrefab: {fileID: 2848577066408730243, guid: 7a55bd1f56794ca4d971a2446cdff0bc,
     type: 3}
   memoryNumber: 3
