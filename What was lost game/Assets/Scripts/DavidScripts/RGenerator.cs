@@ -6,22 +6,34 @@ public class RGenerator : MonoBehaviour
 {
     private int randomRare;
     public InventoryObject inventory;
+    public ItemObject item;
+    public List<ItemObject> storyItems = new List<ItemObject>();
+    void Start()
+    {
+        ItemObject[] objs = Resources.LoadAll<ItemObject>("Inventory/KeyItems/");
+
+        foreach (ItemObject i in objs)
+        {
+            storyItems.Add(i);
+        }
+    }
     public void Collect() // Runs when an object is walked over
     {
         //Randomly decide rarity of found item: Rare: 0-10 10% Uncommon 11-40 30% Common 41-100 60%
-        randomRare = (Random.Range(0, 100));
-        if (randomRare < 10)
-        {
-            valuableItem();
-        }
-        else if (randomRare > 41)
-        {
-            commonItem();
-        }
-        else
-        {
-            uncommonItem();
-        }
+        /* randomRare = (Random.Range(0, 100));
+         if (randomRare < 10)
+         {
+             valuableItem();
+         }
+         else if (randomRare > 41)
+         {
+             commonItem();
+         }
+         else
+         {
+             uncommonItem();
+         } //Commented for testing - */
+        valuableItem();
 
 
 
@@ -41,31 +53,35 @@ public class RGenerator : MonoBehaviour
     //Add different score amounts depending on rarity of found object and Alert player to rarity of found object
     void valuableItem()
     {
-       // score = score + 10;
-       // print("Rare Item Found!");
-       // foundAlert.text = "Rare Item Found!";
-       // Invoke("reset", 2);
+        /*score = score + 10;
+        print("Rare Item Found!");
+        foundAlert.text = "Rare Item Found!";
+        Invoke("reset", 2);*/
+        //  DAVID, had to comment this block, giving error
+        randomRare = (Random.Range(1, 4));
+        print(randomRare);
+        var item = storyItems[randomRare];
+        if (item)
+        {
+            inventory.AddItem(item);
+        }
     }
     void commonItem()
     {
-       // score = score + 1;
-       // print("Common Item Found!");
-       // foundAlert.text = "Common Item Found!";
-       // Invoke("reset", 2);
+       /*score = score + 1;
+       print("Common Item Found!");
+       foundAlert.text = "Common Item Found!";
+       Invoke("reset", 2);*/
     }
     void uncommonItem()
     {
-        // score = score + 5;
-        // print("Uncommon Item Found!");
-        // foundAlert.text = "Uncommon Item Found!";
-        // Invoke("reset", 2);
+        /*score = score + 5;
+        print("Uncommon Item Found!");
+        foundAlert.text = "Uncommon Item Found!";
+        Invoke("reset", 2);*/
         
-        /*  DAVID, had to comment this block, giving error
-        var item = other.GetComponent<Item>();
-        if (item)
-        {
-            inventory.AddItem(item.item);
-        }*/
+
+        
     }  
 
     private void OnApplicationQuit()
