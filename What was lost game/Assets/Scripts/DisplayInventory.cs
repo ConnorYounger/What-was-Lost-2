@@ -30,7 +30,6 @@ public class DisplayInventory : MonoBehaviour
 
             newSlot.GetComponentsInChildren<Image>()[1].sprite = inventory.Container[i].item.itemImage;
             newSlot.GetComponentsInChildren<Image>()[1].preserveAspect = true;
-            //newSlot.GetComponentsInChildren<Image>()[1].SetNativeSize();
             newSlot.GetComponentInChildren<TMP_Text>().text = inventory.Container[i].item.itemName;
             itemsDisplayed.Add(inventory.Container[i], newSlot);
         }
@@ -44,7 +43,6 @@ public class DisplayInventory : MonoBehaviour
             {
                 itemsDisplayed[inventory.Container[i]].GetComponentsInChildren<Image>()[1].sprite = inventory.Container[i].item.itemImage;
                 itemsDisplayed[inventory.Container[i]].GetComponentsInChildren<Image>()[1].preserveAspect = true;
-                //itemsDisplayed[inventory.Container[i]].GetComponentsInChildren<Image>()[1].SetNativeSize();
                 itemsDisplayed[inventory.Container[i]].GetComponentInChildren<TMP_Text>().text = inventory.Container[i].item.itemName;
             } else
             {
@@ -53,7 +51,6 @@ public class DisplayInventory : MonoBehaviour
 
                 newSlot.GetComponentsInChildren<Image>()[1].sprite = inventory.Container[i].item.itemImage;
                 newSlot.GetComponentsInChildren<Image>()[1].preserveAspect = true;
-                //newSlot.GetComponentsInChildren<Image>()[1].SetNativeSize();
                 newSlot.GetComponentInChildren<TMP_Text>().text = inventory.Container[i].item.itemName;
                 itemsDisplayed.Add(inventory.Container[i], newSlot);
             }

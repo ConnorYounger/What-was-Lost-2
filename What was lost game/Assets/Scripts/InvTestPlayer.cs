@@ -18,6 +18,6 @@ public class InvTestPlayer : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        //inventory.Container.Clear();
+        inventory.Container.Clear();
     }
 }
