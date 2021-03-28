@@ -1541,8 +1541,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPage: {fileID: 5549495109184209555}
-  inventorySlot: {fileID: 2084715786054022910, guid: 25818242139c4c845a2a5912fc004209,
-    type: 3}
   inventory: {fileID: 11400000, guid: 9311d544118506f42a3267b2f8a44cca, type: 2}
 --- !u!1 &5549495109188433414
 GameObject:
