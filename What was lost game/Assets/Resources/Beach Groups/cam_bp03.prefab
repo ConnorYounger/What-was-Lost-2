@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8098410230166228336}
+  - component: {fileID: 7094133216467216630}
   m_Layer: 0
   m_Name: cam_bp03
   m_TagString: Untagged
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7094133216467216630
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8098410230166228337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.0164938, y: 2.5386589, z: 2.202538}
+  m_Center: {x: -0.24382979, y: 0.61691415, z: -0.070332766}
 --- !u!1001 &8098410228390615855
 PrefabInstance:
   m_ObjectHideFlags: 0

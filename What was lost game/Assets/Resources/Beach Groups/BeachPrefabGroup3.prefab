@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2472321888303318329}
+  - component: {fileID: 916210154962642309}
   m_Layer: 0
   m_Name: BeachPrefabGroup3
   m_TagString: Untagged
@@ -40,6 +41,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &916210154962642309
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7070742449801346954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.511032, y: 3.300539, z: 6.986801}
+  m_Center: {x: 0.95638275, y: 1.1502697, z: 0.43720245}
 --- !u!1001 &460143817759026155
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4128259839797435301}
+  - component: {fileID: 4709625728317331184}
   m_Layer: 0
   m_Name: BG_04
   m_TagString: Untagged
@@ -36,6 +37,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4709625728317331184
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4128259839797435302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7419815, y: 2.9536037, z: 1.5536227}
+  m_Center: {x: 0.06958318, y: 0.9768019, z: 0.10302091}
 --- !u!1001 &4128259839321031199
 PrefabInstance:
   m_ObjectHideFlags: 0
