@@ -8,19 +8,42 @@ public class RGenerator : MonoBehaviour
     public InventoryObject inventory;
     public ItemObject item;
     public List<ItemObject> storyItems = new List<ItemObject>();
+    public List<ItemObject> junkItems = new List<ItemObject>();
+    public List<ItemObject> valueItems = new List<ItemObject>();
+    private int sCount, jCount, vCount;
     void Start()
     {
-        ItemObject[] objs = Resources.LoadAll<ItemObject>("Inventory/KeyItems/");
+        ItemObject[] objs1 = Resources.LoadAll<ItemObject>("Inventory/KeyItems/");
 
-        foreach (ItemObject i in objs)
+        foreach (ItemObject i in objs1)
         {
             storyItems.Add(i);
         }
+        ItemObject[] objs2 = Resources.LoadAll<ItemObject>("Inventory/TrashItems/");
+
+        foreach (ItemObject i in objs2)
+        {
+            junkItems.Add(i);
+        }
+        ItemObject[] objs3 = Resources.LoadAll<ItemObject>("Inventory/ValueItems/");
+
+        foreach (ItemObject i in objs3)
+        {
+            valueItems.Add(i);
+        }
+        print(storyItems.Count);
+        print(junkItems.Count);
+        print(valueItems.Count);
+        sCount = storyItems.Count;
+        jCount = junkItems.Count;
+        vCount = valueItems.Count;
+
+
     }
     public void Collect() // Runs when an object is walked over
     {
         //Randomly decide rarity of found item: Rare: 0-10 10% Uncommon 11-40 30% Common 41-100 60%
-        /* randomRare = (Random.Range(0, 100));
+        randomRare = (Random.Range(0, 100));
          if (randomRare < 10)
          {
              valuableItem();
@@ -32,8 +55,8 @@ public class RGenerator : MonoBehaviour
          else
          {
              uncommonItem();
-         } //Commented for testing - */
-        valuableItem();
+         }
+        
 
 
 
@@ -58,7 +81,7 @@ public class RGenerator : MonoBehaviour
         foundAlert.text = "Rare Item Found!";
         Invoke("reset", 2);*/
         //  DAVID, had to comment this block, giving error
-        randomRare = (Random.Range(1, 4));
+        randomRare = (Random.Range(0, sCount));
         print(randomRare);
         var item = storyItems[randomRare];
         if (item)
@@ -68,10 +91,17 @@ public class RGenerator : MonoBehaviour
     }
     void commonItem()
     {
-       /*score = score + 1;
-       print("Common Item Found!");
-       foundAlert.text = "Common Item Found!";
-       Invoke("reset", 2);*/
+        /*score = score + 1;
+        print("Common Item Found!");
+        foundAlert.text = "Common Item Found!";
+        Invoke("reset", 2);*/
+        randomRare = (Random.Range(0, jCount));
+        print(randomRare);
+        var item = junkItems[randomRare];
+        if (item)
+        {
+            inventory.AddItem(item);
+        }
     }
     void uncommonItem()
     {
@@ -79,9 +109,15 @@ public class RGenerator : MonoBehaviour
         print("Uncommon Item Found!");
         foundAlert.text = "Uncommon Item Found!";
         Invoke("reset", 2);*/
-        
+        randomRare = (Random.Range(0, vCount));
+        print(randomRare);
+        var item = valueItems[randomRare];
+        if (item)
+        {
+            inventory.AddItem(item);
+        }
 
-        
+
     }  
 
     private void OnApplicationQuit()
