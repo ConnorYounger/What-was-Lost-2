@@ -28,6 +28,8 @@ public class ChildrenAI : MonoBehaviour
     public InventoryObject inventory;
     public InventoryObject targetInventory;
 
+    public Animator animator;
+
 
     void Start()
     {
@@ -96,6 +98,10 @@ public class ChildrenAI : MonoBehaviour
         if (!hasItem)
         {
             // Play running animation
+            if (animator)
+            {
+                animator.SetBool("isWalking", true);
+            }
 
             if(Vector3.Distance(transform.position, target.transform.position) > destinationOffset)
             {
@@ -147,6 +153,10 @@ public class ChildrenAI : MonoBehaviour
                 Debug.Log("Look at player and wait");
 
                 // Play laughing animation ??? + sound ?? maybe playing animation ?
+                if (animator)
+                {
+                    animator.SetBool("isWalking", false);
+                }
             }
         }
     }

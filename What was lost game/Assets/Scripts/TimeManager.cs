@@ -7,12 +7,26 @@ public class TimeManager : MonoBehaviour
     //Scene References
     [SerializeField] private Light directionalLight;
     [SerializeField] private LightingPreset preset;
+
+    public ParticleSystem[] Clouds;
+
     //Variables
     [SerializeField, Range(0, 24)] private float timeOfDay;
     public float minutesPerDay = 10;
 
     [Range(0, 24)] public int startingHour = 8;
     [Range(0, 24)]public int endingHour = 18;
+
+    private void Start()
+    {
+        if (Clouds.Length > 0)
+        {
+            foreach(ParticleSystem cloud in Clouds)
+            {
+                cloud.playbackSpeed = 24 / minutesPerDay;
+            }
+        }
+    }
 
     private void Update()
     {
