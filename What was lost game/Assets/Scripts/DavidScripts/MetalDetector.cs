@@ -49,7 +49,7 @@ public class MetalDetector : MonoBehaviour
             else
             {
                 foundAlert.text = "There's nothing here...";
-                Invoke("reset", 2);
+                StartCoroutine(Refresh());
             }
         }
 
@@ -73,6 +73,10 @@ public class MetalDetector : MonoBehaviour
 
     }
 
-    
- 
+    IEnumerator Refresh()
+    {
+        yield return new WaitForSeconds(3);
+        foundAlert.text = "";
+    }
+
 }
