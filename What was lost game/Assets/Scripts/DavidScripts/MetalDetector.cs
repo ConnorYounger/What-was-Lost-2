@@ -12,7 +12,6 @@ public class MetalDetector : MonoBehaviour
     private float distance;
     public Image signalStrength;
     //Score counting
-    public Text scoreDist;
     public Text foundAlert;
     private int score = 0;
     //Sound
@@ -20,7 +19,6 @@ public class MetalDetector : MonoBehaviour
     public AudioSource mDTone;
     private float maxFreq = 0.05f;
     float timer;
-    private bool inRange = false;
     void Start()
     {
         mDTone = GetComponent<AudioSource>();
@@ -33,7 +31,7 @@ public class MetalDetector : MonoBehaviour
         distance = Vector3.Distance(currentPosition, target.position);
         signalStrength.fillAmount = (1.0f - (distance / 120));
         //print("distance = " + distance); //(print distance from current object to console) //- debug
-        scoreDist.text = score.ToString();
+        
         if (Input.GetKeyDown("e"))
         {
             if (distance < 2)
