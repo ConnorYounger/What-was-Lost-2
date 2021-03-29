@@ -33,8 +33,8 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 1
+  m_DefaultReflectionResolution: 256
+  m_ReflectionBounces: 2
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
@@ -71,7 +71,7 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
-    m_ReflectionCompression: 2
+    m_ReflectionCompression: 0
     m_MixedBakeMode: 2
     m_BakeBackend: 1
     m_PVRSampling: 1
@@ -136,6 +136,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 858002679073908347, guid: 99df632499eb55b4e9fe4b75cdfd5220,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1189991016175024646, guid: 99df632499eb55b4e9fe4b75cdfd5220,
         type: 3}
       propertyPath: m_RootOrder
@@ -539,7 +544,7 @@ PrefabInstance:
     - target: {fileID: 3305187056597030326, guid: acb3cf43190232143b6d912380620cb5,
         type: 3}
       propertyPath: minutesPerDay
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3305187056597030326, guid: acb3cf43190232143b6d912380620cb5,
         type: 3}
