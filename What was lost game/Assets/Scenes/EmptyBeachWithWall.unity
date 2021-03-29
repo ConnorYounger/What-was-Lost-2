@@ -1641,7 +1641,6 @@ MonoBehaviour:
   other: {fileID: 744033655}
   target: {fileID: 227588306}
   signalStrength: {fileID: 683766037}
-  scoreDist: {fileID: 0}
   foundAlert: {fileID: 1145548895}
   mDClick: {fileID: 1579962148}
   mDTone: {fileID: 1000991940}
@@ -1919,6 +1918,16 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6069691464430110415, guid: ac5af80fcebf6c84d84e7485127247ef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069691464460710612, guid: ac5af80fcebf6c84d84e7485127247ef,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6069691464460710612, guid: ac5af80fcebf6c84d84e7485127247ef,
         type: 3}
       propertyPath: m_audioClip
@@ -1928,6 +1937,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069691464460710612, guid: ac5af80fcebf6c84d84e7485127247ef,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6069691464460710617, guid: ac5af80fcebf6c84d84e7485127247ef,
         type: 3}
