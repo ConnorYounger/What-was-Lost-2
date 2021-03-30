@@ -44,7 +44,7 @@ public class RGenerator : MonoBehaviour
     public void Collect() // Runs when an object is walked over
     {
         //Randomly decide rarity of found item: Rare: 0-10 10% Uncommon 11-40 30% Common 41-100 60%
-        randomRare = (Random.Range(0, 100));
+     /*   randomRare = (Random.Range(0, 100));
          if (randomRare < 10)
          {
              valuableItem();
@@ -57,7 +57,7 @@ public class RGenerator : MonoBehaviour
          {
              uncommonItem();
          }
-        
+      Temporaarily commented for testing  */
 
 
 
@@ -83,7 +83,7 @@ public class RGenerator : MonoBehaviour
         if (item)
         {
             inventory.AddItem(item);
-            foundAlert.text = "Found a " + item.name;
+            foundAlert.text = "Found: " + item.name;
             StartCoroutine(Refresh());
         }
     }
@@ -95,7 +95,7 @@ public class RGenerator : MonoBehaviour
         if (item)
         {
             inventory.AddItem(item);
-            foundAlert.text = "Found a " + item.name;
+            foundAlert.text = "Found: " + item.name;
             StartCoroutine(Refresh());
         }
     }
@@ -107,7 +107,7 @@ public class RGenerator : MonoBehaviour
         if (item)
         {
             inventory.AddItem(item);
-            foundAlert.text = "Found a " + item.name;
+            foundAlert.text = "Found: " + item.name;
             StartCoroutine(Refresh());
         }
         /*Valuableitem, commonitem and uncommon item - Randomly generates a number between 0 (first index of a list) and the highest number of the relevant list
