@@ -44,21 +44,21 @@ public class RGenerator : MonoBehaviour
     public void Collect() // Runs when an object is walked over
     {
         //Randomly decide rarity of found item: Rare: 0-10 10% Uncommon 11-40 30% Common 41-100 60%
-     /*   randomRare = (Random.Range(0, 100));
-         if (randomRare < 10)
-         {
-             valuableItem();
-         }
-         else if (randomRare > 41)
-         {
-             commonItem();
-         }
-         else
-         {
-             uncommonItem();
-         }
-      Temporaarily commented for testing  */
-
+           randomRare = (Random.Range(0, 100));
+            if (randomRare < 10)
+            {
+                valuableItem();
+            }
+            else if (randomRare > 41)
+            {
+                commonItem();
+            }
+            else
+            {
+                uncommonItem();
+            }
+        // Temporarily commented for testing  
+        
 
 
         // RaycastHit hit;
