@@ -34,26 +34,28 @@ public class LootItemSpawner : MonoBehaviour
 
     private void SpawnItems()
     {
-        spawnPoint = GenerateRandomPosition();
-
         for (int i = 0; i < itemsToSpawn; i++)
         {
-            Ray ray = new Ray(spawnPoint, Vector3.down);
+            spawnPoint = GenerateRandomPosition();
+            
+            //Ray ray = new Ray(spawnPoint, Vector3.down);
             RaycastHit hitInfo;
 
-            if (Physics.Raycast(ray, out hitInfo))
+            if (Physics.Raycast(spawnPoint, Vector3.down, out hitInfo, Mathf.Infinity, beachMask))
             {
+                /*
                 while (!canInstantiate)
                 {
-                    if (hitInfo.collider.CompareTag("BeachGroup") || hitInfo.collider.CompareTag("SpawnZone"))
+                    if (hitInfo.collider.CompareTag("BeachGroup") || !hitInfo.collider.CompareTag("SpawnZones"))
                     {
-                        //canInstantiate = false;
+                        canInstantiate = false;
                         spawnPoint = GenerateRandomPosition();
                     }
                     else { canInstantiate = true; }
                 }
+                */
 
-                Instantiate(spawnTest, hitInfo.transform.position, Quaternion.identity);
+                Instantiate(spawnTest, hitInfo.point, Quaternion.identity);
             }
         }
     }
@@ -63,7 +65,7 @@ public class LootItemSpawner : MonoBehaviour
         int xPos = UnityEngine.Random.Range(minPosX, maxPosX);
         int zPos = UnityEngine.Random.Range(minPosZ, maxPosZ);
 
-        return new Vector3(xPos, 50, zPos);
+        return new Vector3(xPos, 150, zPos);
     }
 
     private void PopulateLists()
