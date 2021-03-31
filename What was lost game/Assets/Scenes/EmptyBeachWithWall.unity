@@ -976,7 +976,7 @@ GameObject:
   - component: {fileID: 744033656}
   - component: {fileID: 744033655}
   m_Layer: 0
-  m_Name: Item Randomiser
+  m_Name: ItemRandomiser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1956,7 +1956,7 @@ PrefabInstance:
     - target: {fileID: 6069691464360113313, guid: ac5af80fcebf6c84d84e7485127247ef,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6069691464360113341, guid: ac5af80fcebf6c84d84e7485127247ef,
         type: 3}
@@ -2016,7 +2016,7 @@ PrefabInstance:
     - target: {fileID: 6069691464460710618, guid: ac5af80fcebf6c84d84e7485127247ef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -338.1
+      value: -262.7
       objectReference: {fileID: 0}
     - target: {fileID: 6069691464460710618, guid: ac5af80fcebf6c84d84e7485127247ef,
         type: 3}
@@ -2026,7 +2026,7 @@ PrefabInstance:
     - target: {fileID: 6069691464460710618, guid: ac5af80fcebf6c84d84e7485127247ef,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -181.7
+      value: -172.6
       objectReference: {fileID: 0}
     - target: {fileID: 6069691464460710618, guid: ac5af80fcebf6c84d84e7485127247ef,
         type: 3}

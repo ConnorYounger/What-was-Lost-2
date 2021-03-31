@@ -17,5 +17,6 @@ MonoBehaviour:
   type: 0
   itemName: Wedding Ring
   itemImage: {fileID: 21300000, guid: 14d8fed818322284bb6f931d2f18d6c2, type: 3}
-  modelPrefab: {fileID: 0}
+  modelPrefab: {fileID: 919132149155446097, guid: 45b52b52796b8db46a3d414cb427e112,
+    type: 3}
   memoryNumber: 2
