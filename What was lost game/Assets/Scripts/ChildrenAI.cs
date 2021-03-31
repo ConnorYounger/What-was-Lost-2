@@ -25,7 +25,6 @@ public class ChildrenAI : MonoBehaviour
 
     public Transform itemHoldPoint;
 
-    public InventoryObject inventory;
     public InventoryObject targetInventory;
 
     public Animator animator;
@@ -109,8 +108,8 @@ public class ChildrenAI : MonoBehaviour
                 transform.LookAt(target.transform.position);
                 transform.position = Vector3.MoveTowards(transform.position, target.transform.position, stats.movementSpeed * Time.deltaTime);
 
-                Debug.Log("Move towards player");
-                Debug.Log("Distance = " + Vector3.Distance(transform.position, target.transform.position) + " / " + destinationOffset);
+                //Debug.Log("Move towards player");
+                //Debug.Log("Distance = " + Vector3.Distance(transform.position, target.transform.position) + " / " + destinationOffset);
             }
             else
             {
@@ -118,13 +117,13 @@ public class ChildrenAI : MonoBehaviour
                 {
                     timer += Time.deltaTime;
 
-                    Debug.Log("Timer = " + timer);
+                    //Debug.Log("Timer = " + timer);
                 }
                 else
                 {
                     int random = Random.Range(0, 100);
 
-                    Debug.Log("Random steal chance = " + random);
+                    //Debug.Log("Random steal chance = " + random);
 
                     if (random <= itemStealChance)
                     {
@@ -143,14 +142,14 @@ public class ChildrenAI : MonoBehaviour
                 transform.LookAt(stats.startLocation);
                 transform.position = Vector3.MoveTowards(transform.position, stats.startLocation, stats.movementSpeed * Time.deltaTime);
 
-                Debug.Log("Move towards starting pos");                
+                //Debug.Log("Move towards starting pos");                
             }
             else
             {
                 // Look at player
                 transform.LookAt(target.transform.position);
 
-                Debug.Log("Look at player and wait");
+                //Debug.Log("Look at player and wait");
 
                 // Play laughing animation ??? + sound ?? maybe playing animation ?
                 if (animator)
@@ -176,22 +175,25 @@ public class ChildrenAI : MonoBehaviour
     void TakePlayerItem()
     {
         // Check to see if the target has the inventory script
-        if (target.GetComponent<InventoryObject>() && target.GetComponent<InventoryObject>().Container.Count > 0)
+        if (targetInventory && targetInventory.Container.Count > 0)
         {
-            targetInventory = target.GetComponent<InventoryObject>();
-
             int ranItem = Random.Range(0, targetInventory.Container.Count);
 
             heldItem = targetInventory.Container[ranItem];
 
-            inventory.RemoveItem(ranItem);
+            targetInventory.RemoveItem(ranItem);
 
-            if (heldItem != null && heldItemPrefab != null)
+            if (heldItem != null)
             {
+                Debug.Log("Take Item" + heldItem);
+
                 hasItem = true;
 
-                heldItemPrefab = Instantiate(heldItem.item.modelPrefab, itemHoldPoint.position, itemHoldPoint.rotation);
-                heldItemPrefab.transform.parent = itemHoldPoint.transform;
+                if (heldItem.item.modelPrefab)
+                {
+                    heldItemPrefab = Instantiate(heldItem.item.modelPrefab, itemHoldPoint.position, itemHoldPoint.rotation);
+                    heldItemPrefab.transform.parent = itemHoldPoint.transform;
+                }
             }
             else
             {
@@ -250,7 +252,7 @@ public class ChildrenAI : MonoBehaviour
 
     void GivePlayerItem()
     {
-        if (target.GetComponent<InventoryObject>() == targetInventory)
+        if (targetInventory)
         {
             targetInventory.AddItem(heldItem.item);
 
