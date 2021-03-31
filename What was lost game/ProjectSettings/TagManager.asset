@@ -21,7 +21,7 @@ TagManager:
   - InvisibleCollision
   - Terrain
   - SpawnTrigger
-  - 
+  - ObjectTrigger
   - 
   - 
   - 

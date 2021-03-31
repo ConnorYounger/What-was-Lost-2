@@ -50,17 +50,17 @@ public class LootItemSpawner : MonoBehaviour
             var hitPoint = Physics.Raycast(spawnPoint, Vector3.down, out hitInfo, Mathf.Infinity, beachMask);
 
 
-            var newSpawn = Instantiate(objectToSpawn, hitInfo.point, Quaternion.identity);
-            Collider[] hitColliders = Physics.OverlapSphere(newSpawn.transform.position, 1f, triggerMask, QueryTriggerInteraction.UseGlobal);
+            //var newSpawn = Instantiate(objectToSpawn, hitInfo.point, Quaternion.identity);
+            Collider[] hitColliders = Physics.OverlapSphere(hitInfo.point, 1f, triggerMask, QueryTriggerInteraction.Collide);
 
             //VerifySpawnPoint();
             if (hitColliders.Length == 0)
             {
                 Debug.Log("No collisions");
-                Destroy(newSpawn);
+                //Destroy(newSpawn);
                 i--;
             } else
-            {
+            {/*
                 foreach (var collision in hitColliders)
                 {
                     Debug.Log("Check collisions");
@@ -69,7 +69,7 @@ public class LootItemSpawner : MonoBehaviour
                     {
                         Debug.Log("decrement: " + i);
                     }
-                }
+                }*/
             }
         }
     }
