@@ -19,8 +19,10 @@ public class LootItemSpawner : MonoBehaviour
     [Header("Spawn Variables")]
     [Space]
     public GameObject spawnTest;
-    public Vector3 spawnPoint = new Vector3();
+    //public Vector3 spawnPoint = new Vector3();
+    public List<GameObject> spawnPoints = new List<GameObject>();
     public int itemsToSpawn = 10;
+    public int pointsSpawned;
     public bool canInstantiate = false;
 
     [Space]
@@ -34,28 +36,37 @@ public class LootItemSpawner : MonoBehaviour
 
     private void SpawnItems()
     {
-        for (int i = 0; i < itemsToSpawn; i++)
-        {
-            spawnPoint = GenerateRandomPosition();
-            
-            //Ray ray = new Ray(spawnPoint, Vector3.down);
-            RaycastHit hitInfo;
-
-            if (Physics.Raycast(spawnPoint, Vector3.down, out hitInfo, Mathf.Infinity, beachMask))
+            for (int i = 0; i < itemsToSpawn; i++)
             {
-                /*
-                while (!canInstantiate)
-                {
-                    if (hitInfo.collider.CompareTag("BeachGroup") || !hitInfo.collider.CompareTag("SpawnZones"))
-                    {
-                        canInstantiate = false;
-                        spawnPoint = GenerateRandomPosition();
-                    }
-                    else { canInstantiate = true; }
-                }
-                */
+                CreateSpawnPoints();
+            }
+    }
 
-                Instantiate(spawnTest, hitInfo.point, Quaternion.identity);
+    private void CreateSpawnPoints()
+    {
+        var spawnPoint = GenerateRandomPosition();
+
+        RaycastHit hitInfo;
+        var hitPoint = Physics.Raycast(spawnPoint, Vector3.down, out hitInfo, Mathf.Infinity, beachMask);
+        GameObject newSpawn;
+
+        if (hitPoint)
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(hitInfo.point, 1f);
+            foreach (var hitCollider in hitColliders)
+            {
+                if (hitCollider.CompareTag("BeachGroup"))
+                {
+                    pointsSpawned++;
+
+                    Debug.Log("This text should never happen");
+                }
+                else if (hitCollider.CompareTag("SpawnZones"))
+                {
+                    newSpawn = Instantiate(spawnTest, hitInfo.point, Quaternion.identity);
+                    spawnPoints.Add(newSpawn);
+                }
+                pointsSpawned++;
             }
         }
     }
