@@ -20,6 +20,7 @@ public class LootItemSpawner : MonoBehaviour
     [Space]
     public Vector3 spawnPoint = new Vector3();
     public int itemsToSpawn = 10;
+    public bool canInstantiate;
 
     [Space]
     public LayerMask beachMask;
@@ -34,11 +35,6 @@ public class LootItemSpawner : MonoBehaviour
     {
         spawnPoint = GenerateRandomPosition();
 
-        //raycast from spawnpoint down
-        //if !trigger spawnzone tag get new spawnpoint
-        //if trigger beachgroup tag get new spawnpoint
-        //else instantiate an item
-
         Ray ray = new Ray(spawnPoint, Vector3.down);
         RaycastHit hitInfo;
 
@@ -46,7 +42,13 @@ public class LootItemSpawner : MonoBehaviour
         {
             if (hitInfo.collider.CompareTag("BeachGroup") || hitInfo.collider.CompareTag("SpawnZone"))
             {
+                canInstantiate = false;
+            }
+            else { canInstantiate = true; }
 
+            while (!canInstantiate)
+            {
+                spawnPoint = GenerateRandomPosition();
             }
         }
     }
@@ -64,7 +66,7 @@ public class LootItemSpawner : MonoBehaviour
         ItemObject[] keyObjs = Resources.LoadAll<ItemObject>("Inventory/KeyItems/");
         ItemObject[] valueObjs = Resources.LoadAll<ItemObject>("Inventory/ValueItems/");
         ItemObject[] trashObjs = Resources.LoadAll<ItemObject>("Inventory/TrashItems/");
-        
+
         foreach (ItemObject i in keyObjs) { keyItems.Add(i); }
         foreach (ItemObject i in valueObjs) { valueItems.Add(i); }
         foreach (ItemObject i in trashObjs) { trashItems.Add(i); }
