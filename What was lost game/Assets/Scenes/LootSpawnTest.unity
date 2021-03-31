@@ -816,10 +816,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c57037a686fe6942b82e7c4af8a2792, type: 3}
 --- !u!1 &526971045 stripped
@@ -1132,6 +1128,8 @@ MonoBehaviour:
   maxPosX: 280
   minPosZ: -60
   maxPosZ: -350
+  spawnTest: {fileID: 7444695430013815739, guid: 8e0e7d1bcb546174fa303543563795a3,
+    type: 3}
   spawnPoint: {x: 0, y: 0, z: 0}
   itemsToSpawn: 10
   canInstantiate: 0

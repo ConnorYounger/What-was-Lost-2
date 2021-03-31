@@ -18,9 +18,10 @@ public class LootItemSpawner : MonoBehaviour
 
     [Header("Spawn Variables")]
     [Space]
+    public GameObject spawnTest;
     public Vector3 spawnPoint = new Vector3();
     public int itemsToSpawn = 10;
-    public bool canInstantiate;
+    public bool canInstantiate = false;
 
     [Space]
     public LayerMask beachMask;
@@ -35,20 +36,24 @@ public class LootItemSpawner : MonoBehaviour
     {
         spawnPoint = GenerateRandomPosition();
 
-        Ray ray = new Ray(spawnPoint, Vector3.down);
-        RaycastHit hitInfo;
-
-        if (Physics.Raycast(ray, out hitInfo))
+        for (int i = 0; i < itemsToSpawn; i++)
         {
-            if (hitInfo.collider.CompareTag("BeachGroup") || hitInfo.collider.CompareTag("SpawnZone"))
-            {
-                canInstantiate = false;
-            }
-            else { canInstantiate = true; }
+            Ray ray = new Ray(spawnPoint, Vector3.down);
+            RaycastHit hitInfo;
 
-            while (!canInstantiate)
+            if (Physics.Raycast(ray, out hitInfo))
             {
-                spawnPoint = GenerateRandomPosition();
+                while (!canInstantiate)
+                {
+                    if (hitInfo.collider.CompareTag("BeachGroup") || hitInfo.collider.CompareTag("SpawnZone"))
+                    {
+                        //canInstantiate = false;
+                        spawnPoint = GenerateRandomPosition();
+                    }
+                    else { canInstantiate = true; }
+                }
+
+                Instantiate(spawnTest, hitInfo.transform.position, Quaternion.identity);
             }
         }
     }
