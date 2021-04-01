@@ -118,7 +118,7 @@ MonoBehaviour:
   itemStealChance: 100
   itemHoldPoint: {fileID: 5922686039552137145}
   targetInventory: {fileID: 11400000, guid: 9311d544118506f42a3267b2f8a44cca, type: 2}
-  animator: {fileID: 0}
+  animator: {fileID: 6008736003583290139}
 --- !u!54 &5922686038817236096
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -464,6 +464,12 @@ PrefabInstance:
 --- !u!4 &5918150632231226595 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4755620223891304, guid: 889859d3862ff3b46b48aa6898f9773e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5922686040350718859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6008736003583290139 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95360770948878480, guid: 889859d3862ff3b46b48aa6898f9773e,
     type: 3}
   m_PrefabInstance: {fileID: 5922686040350718859}
   m_PrefabAsset: {fileID: 0}

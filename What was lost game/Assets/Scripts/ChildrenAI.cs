@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ChildrenAI : MonoBehaviour
 {
@@ -29,12 +30,19 @@ public class ChildrenAI : MonoBehaviour
 
     public Animator animator;
 
+    private TMP_Text annoyingKidItemStolenText;
+
 
     void Start()
     {
         SetStates();
 
         target = GameObject.Find(targetName);
+
+        if (GameObject.Find("AnnoyingKidItemStolenText") && GameObject.Find("AnnoyingKidItemStolenText").GetComponent<TMP_Text>())
+        {
+            annoyingKidItemStolenText = GameObject.Find("AnnoyingKidItemStolenText").GetComponent<TMP_Text>();
+        }
     }
 
     private void SetStates()
@@ -194,6 +202,12 @@ public class ChildrenAI : MonoBehaviour
                     heldItemPrefab = Instantiate(heldItem.item.modelPrefab, itemHoldPoint.position, itemHoldPoint.rotation);
                     heldItemPrefab.transform.parent = itemHoldPoint.transform;
                 }
+
+                if (annoyingKidItemStolenText)
+                {
+                    annoyingKidItemStolenText.enabled = true;
+                    annoyingKidItemStolenText.text = "An annoying kid stole " + heldItem.item.itemName + "!";
+                }
             }
             else
             {
@@ -254,6 +268,11 @@ public class ChildrenAI : MonoBehaviour
     {
         if (targetInventory)
         {
+            if (annoyingKidItemStolenText)
+            {
+                annoyingKidItemStolenText.enabled = false;
+            }
+
             targetInventory.AddItem(heldItem.item);
 
             Destroy(heldItemPrefab);
