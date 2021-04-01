@@ -77,6 +77,7 @@ public class MetalDetector : MonoBehaviour
         if (mDetector == false)
         {
             mDTone.volume = 0f;
+            signalStrength.fillAmount
         }
 
     }
