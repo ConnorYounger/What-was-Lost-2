@@ -78,15 +78,7 @@ public class MetalDetector : MonoBehaviour
         {
             mDTone.volume = 0f;
         }
-            if (Input.GetKey("b"))
-        { 
-            mDetector = false;
-        }
 
-        else
-        {
-            mDetector = true;
-        }
     }
 
     IEnumerator Refresh()
