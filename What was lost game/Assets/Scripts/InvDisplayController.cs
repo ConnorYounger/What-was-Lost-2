@@ -37,7 +37,7 @@ public class InvDisplayController : MonoBehaviour
         }
         else if (isDisplayed)
         {
-            if (Input.GetKeyDown("i"))
+            if (Input.GetKeyDown("i") || Input.GetKeyDown("escape"))
             {
                 inventoryInterface.enabled = false;
                 isDisplayed = false;
