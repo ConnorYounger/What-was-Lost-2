@@ -32,6 +32,8 @@ public class ChildrenAI : MonoBehaviour
 
     private TMP_Text annoyingKidItemStolenText;
 
+    public string metalDetectorScriptObject = "Metal_detectin_object";
+    private GameObject metalDetectorObject;
 
     void Start()
     {
@@ -43,6 +45,8 @@ public class ChildrenAI : MonoBehaviour
         {
             annoyingKidItemStolenText = GameObject.Find("AnnoyingKidItemStolenText").GetComponent<TMP_Text>();
         }
+
+        metalDetectorObject = GameObject.Find(metalDetectorScriptObject);
     }
 
     private void SetStates()
@@ -219,16 +223,18 @@ public class ChildrenAI : MonoBehaviour
     void TakePlayerMetalDetector()
     {
         // Check to see if the target has the metal detector script
-        if (target.GetComponent<PlayerMetalDetectorItem>())
+        if (metalDetectorObject && metalDetectorObject.GetComponent<MetalDetector>() && metalDetectorObject.GetComponent<MetalDetector>().mDetector)
         {
             // Asks the script if the enemy can take the metal detector
-            heldItemPrefab = target.GetComponent<PlayerMetalDetectorItem>().TakeMetalDetector();
+            //heldItemPrefab = target.GetComponent<PlayerMetalDetectorItem>().TakeMetalDetector();
+
+            metalDetectorObject.GetComponent<MetalDetector>().mDetector = false;
 
             if (heldItem != null)
             {
                 hasItem = true;
 
-                heldItemPrefab.transform.parent = itemHoldPoint.transform;
+                //heldItemPrefab.transform.parent = itemHoldPoint.transform;
             }
             else
             {
@@ -283,9 +289,11 @@ public class ChildrenAI : MonoBehaviour
 
     void GivePlayerMetalDetector()
     {
-        if (target.GetComponent<PlayerMetalDetectorItem>())
+        if (metalDetectorObject)
         {
-            target.GetComponent<PlayerMetalDetectorItem>().GiveMetalDetector(heldItemPrefab);
+            //target.GetComponent<PlayerMetalDetectorItem>().GiveMetalDetector(heldItemPrefab);
+
+            metalDetectorObject.GetComponent<MetalDetector>().mDetector = true;
 
             heldItemPrefab = null;
         }
