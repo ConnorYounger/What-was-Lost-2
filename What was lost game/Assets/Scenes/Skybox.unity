@@ -196,6 +196,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Playful Dog
       objectReference: {fileID: 0}
+    - target: {fileID: 8382622272993507375, guid: 2e44c4a1e63e3a84b95395a011d98b24,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e44c4a1e63e3a84b95395a011d98b24, type: 3}
 --- !u!1001 &51650790
@@ -530,6 +535,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Annoying Kid
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922686038817236106, guid: ffa5dd6b72afed14ebf52639b72d176f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5922686038817236111, guid: ffa5dd6b72afed14ebf52639b72d176f,
         type: 3}
@@ -1876,6 +1886,56 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 51650790}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &934187819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 934187821}
+  - component: {fileID: 934187820}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &934187820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934187819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d72d89ef862ba429d50babea4ccfc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSettingsPrefab: {fileID: 0}
+  audioGroups:
+  - {fileID: 11400000, guid: f8c17bc5a3cfc7f4f92a4ca710a82c6f, type: 2}
+  waveSoundWeight: 75
+  birdSoundWeight: 75
+  waveSoundChance: 0
+  birdSoundChance: 0
+--- !u!4 &934187821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934187819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -210.97977, y: 5.2, z: -126.41867}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

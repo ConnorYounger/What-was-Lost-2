@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2f265e62bd12644a63898da4ca7b8c, type: 3}
+  m_Name: BeachWaves
+  m_EditorClassIdentifier: 
+  audioSounds:
+  - {fileID: 11400000, guid: 4b3ad088f3f648c40a1f14fbe736e2b8, type: 2}
+  - {fileID: 11400000, guid: e77591ede7fef624185d6d843781369a, type: 2}
+  - {fileID: 11400000, guid: 51067acca1462d549a559d27948f8bc0, type: 2}
