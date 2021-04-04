@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ChildrenAI : MonoBehaviour
 {
@@ -25,17 +26,27 @@ public class ChildrenAI : MonoBehaviour
 
     public Transform itemHoldPoint;
 
-    public InventoryObject inventory;
     public InventoryObject targetInventory;
 
     public Animator animator;
 
+    private TMP_Text annoyingKidItemStolenText;
+
+    public string metalDetectorScriptObject = "Metal_detectin_object";
+    private GameObject metalDetectorObject;
 
     void Start()
     {
         SetStates();
 
         target = GameObject.Find(targetName);
+
+        if (GameObject.Find("AnnoyingKidItemStolenText") && GameObject.Find("AnnoyingKidItemStolenText").GetComponent<TMP_Text>())
+        {
+            annoyingKidItemStolenText = GameObject.Find("AnnoyingKidItemStolenText").GetComponent<TMP_Text>();
+        }
+
+        metalDetectorObject = GameObject.Find(metalDetectorScriptObject);
     }
 
     private void SetStates()
@@ -57,7 +68,7 @@ public class ChildrenAI : MonoBehaviour
 
     private void CurrentState()
     {
-        if(currentState == 0)
+        if (currentState == 0)
         {
             Idle();
         }
@@ -78,7 +89,7 @@ public class ChildrenAI : MonoBehaviour
 
         if (target)
         {
-            if(Vector3.Distance(target.transform.position, transform.position) < stats.triggerDistance && currentState == 0)
+            if (Vector3.Distance(target.transform.position, transform.position) < stats.triggerDistance && currentState == 0)
             {
                 Trigger();
             }
@@ -87,8 +98,8 @@ public class ChildrenAI : MonoBehaviour
 
     public void Trigger()
     {
-        if(currentState == 0)
-        currentState = 1;
+        if (currentState == 0)
+            currentState = 1;
     }
 
     void Engage()
@@ -103,28 +114,28 @@ public class ChildrenAI : MonoBehaviour
                 animator.SetBool("isWalking", true);
             }
 
-            if(Vector3.Distance(transform.position, target.transform.position) > destinationOffset)
+            if (Vector3.Distance(transform.position, target.transform.position) > destinationOffset)
             {
                 // Move towards player
                 transform.LookAt(target.transform.position);
                 transform.position = Vector3.MoveTowards(transform.position, target.transform.position, stats.movementSpeed * Time.deltaTime);
 
-                Debug.Log("Move towards player");
-                Debug.Log("Distance = " + Vector3.Distance(transform.position, target.transform.position) + " / " + destinationOffset);
+                //Debug.Log("Move towards player");
+                //Debug.Log("Distance = " + Vector3.Distance(transform.position, target.transform.position) + " / " + destinationOffset);
             }
             else
             {
-                if(timer < harassTime)
+                if (timer < harassTime)
                 {
                     timer += Time.deltaTime;
 
-                    Debug.Log("Timer = " + timer);
+                    //Debug.Log("Timer = " + timer);
                 }
                 else
                 {
                     int random = Random.Range(0, 100);
 
-                    Debug.Log("Random steal chance = " + random);
+                    //Debug.Log("Random steal chance = " + random);
 
                     if (random <= itemStealChance)
                     {
@@ -143,14 +154,14 @@ public class ChildrenAI : MonoBehaviour
                 transform.LookAt(stats.startLocation);
                 transform.position = Vector3.MoveTowards(transform.position, stats.startLocation, stats.movementSpeed * Time.deltaTime);
 
-                Debug.Log("Move towards starting pos");                
+                //Debug.Log("Move towards starting pos");                
             }
             else
             {
                 // Look at player
                 transform.LookAt(target.transform.position);
 
-                Debug.Log("Look at player and wait");
+                //Debug.Log("Look at player and wait");
 
                 // Play laughing animation ??? + sound ?? maybe playing animation ?
                 if (animator)
@@ -163,7 +174,7 @@ public class ChildrenAI : MonoBehaviour
 
     public void IntteractWithPlayer()
     {
-        if(stats.enemyType == EnemyStats.EnemyType.Child)
+        if (stats.enemyType == EnemyStats.EnemyType.Child)
         {
             TakePlayerItem();
         }
@@ -176,22 +187,31 @@ public class ChildrenAI : MonoBehaviour
     void TakePlayerItem()
     {
         // Check to see if the target has the inventory script
-        if (target.GetComponent<InventoryObject>() && target.GetComponent<InventoryObject>().Container.Count > 0)
+        if (targetInventory && targetInventory.Container.Count > 0)
         {
-            targetInventory = target.GetComponent<InventoryObject>();
-
             int ranItem = Random.Range(0, targetInventory.Container.Count);
 
             heldItem = targetInventory.Container[ranItem];
 
-            inventory.RemoveItem(ranItem);
+            targetInventory.RemoveItem(ranItem);
 
-            if (heldItem != null && heldItemPrefab != null)
+            if (heldItem != null)
             {
+                Debug.Log("Take Item" + heldItem);
+
                 hasItem = true;
 
-                heldItemPrefab = Instantiate(heldItem.item.modelPrefab, itemHoldPoint.position, itemHoldPoint.rotation);
-                heldItemPrefab.transform.parent = itemHoldPoint.transform;
+                if (heldItem.item.modelPrefab)
+                {
+                    heldItemPrefab = Instantiate(heldItem.item.modelPrefab, itemHoldPoint.position, itemHoldPoint.rotation);
+                    heldItemPrefab.transform.parent = itemHoldPoint.transform;
+                }
+
+                if (annoyingKidItemStolenText)
+                {
+                    annoyingKidItemStolenText.enabled = true;
+                    annoyingKidItemStolenText.text = "An annoying kid stole " + heldItem.item.itemName + "!";
+                }
             }
             else
             {
@@ -203,16 +223,18 @@ public class ChildrenAI : MonoBehaviour
     void TakePlayerMetalDetector()
     {
         // Check to see if the target has the metal detector script
-        if (target.GetComponent<PlayerMetalDetectorItem>())
+        if (metalDetectorObject && metalDetectorObject.GetComponent<MetalDetector>() && metalDetectorObject.GetComponent<MetalDetector>().mDetector)
         {
             // Asks the script if the enemy can take the metal detector
-            heldItemPrefab = target.GetComponent<PlayerMetalDetectorItem>().TakeMetalDetector();
+            //heldItemPrefab = target.GetComponent<PlayerMetalDetectorItem>().TakeMetalDetector();
+
+            metalDetectorObject.GetComponent<MetalDetector>().mDetector = false;
 
             if (heldItem != null)
             {
                 hasItem = true;
 
-                heldItemPrefab.transform.parent = itemHoldPoint.transform;
+                //heldItemPrefab.transform.parent = itemHoldPoint.transform;
             }
             else
             {
@@ -250,8 +272,13 @@ public class ChildrenAI : MonoBehaviour
 
     void GivePlayerItem()
     {
-        if (target.GetComponent<InventoryObject>() == targetInventory)
+        if (targetInventory)
         {
+            if (annoyingKidItemStolenText)
+            {
+                annoyingKidItemStolenText.enabled = false;
+            }
+
             targetInventory.AddItem(heldItem.item);
 
             Destroy(heldItemPrefab);
@@ -262,9 +289,11 @@ public class ChildrenAI : MonoBehaviour
 
     void GivePlayerMetalDetector()
     {
-        if (target.GetComponent<PlayerMetalDetectorItem>())
+        if (metalDetectorObject)
         {
-            target.GetComponent<PlayerMetalDetectorItem>().GiveMetalDetector(heldItemPrefab);
+            //target.GetComponent<PlayerMetalDetectorItem>().GiveMetalDetector(heldItemPrefab);
+
+            metalDetectorObject.GetComponent<MetalDetector>().mDetector = true;
 
             heldItemPrefab = null;
         }
@@ -283,7 +312,7 @@ public class ChildrenAI : MonoBehaviour
         else
         {
             // Start cool down timer
-            if(timer < stats.coolDownTime)
+            if (timer < stats.coolDownTime)
             {
                 timer += Time.deltaTime;
             }
