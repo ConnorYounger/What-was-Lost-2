@@ -16,3 +16,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4b3ad088f3f648c40a1f14fbe736e2b8, type: 2}
   - {fileID: 11400000, guid: e77591ede7fef624185d6d843781369a, type: 2}
   - {fileID: 11400000, guid: 51067acca1462d549a559d27948f8bc0, type: 2}
+  groupPlayWeight: 50
+  groupPlayChance: 1.2904961

@@ -7,4 +7,6 @@ using UnityEngine;
 public class AudioGroup : ScriptableObject
 {
     public AudioSound[] audioSounds;
+    [Range(0, 100)] public float groupPlayWeight = 50;
+    public float groupPlayChance;
 }

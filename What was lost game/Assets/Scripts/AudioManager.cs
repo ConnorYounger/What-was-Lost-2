@@ -8,12 +8,6 @@ public class AudioManager : MonoBehaviour
 
     public AudioGroup[] audioGroups;
 
-    [Range(0, 100)] public float waveSoundWeight = 50;
-    [Range(0, 100)] public float birdSoundWeight = 50;
-
-    public float waveSoundChance;
-    public float birdSoundChance;
-
     private List<float> otherWeights = new List<float>();
     private List<float> chances = new List<float>();
 
@@ -31,6 +25,11 @@ public class AudioManager : MonoBehaviour
 
     private void CalculateSoundChances()
     {
+        otherWeights.Clear();
+        chances.Clear();
+
+        float groupPlayChance = 1;
+
         foreach (AudioGroup audioGroup in audioGroups)
         {
             foreach (AudioSound sound in audioGroup.audioSounds)
@@ -61,6 +60,27 @@ public class AudioManager : MonoBehaviour
 
                 sound.playChance = playChance;
             }
+
+            foreach (AudioGroup otherGroup in audioGroups)
+            {
+                if (audioGroup != otherGroup)
+                {
+                    otherWeights.Add(otherGroup.groupPlayWeight);
+                }
+            }
+
+            foreach (float otherWeight in otherWeights)
+            {
+                float chance = audioGroup.groupPlayWeight / otherWeight;
+                chances.Add(chance);
+            }
+
+            foreach (float chance in chances)
+            {
+                groupPlayChance = groupPlayChance * chance;
+            }
+
+            audioGroup.groupPlayChance = groupPlayChance;
         }
     }
 }
