@@ -108,12 +108,6 @@ public class ChildrenAI : MonoBehaviour
 
         if (!hasItem)
         {
-            // Play running animation
-            if (animator)
-            {
-                animator.SetBool("isWalking", true);
-            }
-
             if (Vector3.Distance(transform.position, target.transform.position) > destinationOffset)
             {
                 // Move towards player
@@ -122,9 +116,21 @@ public class ChildrenAI : MonoBehaviour
 
                 //Debug.Log("Move towards player");
                 //Debug.Log("Distance = " + Vector3.Distance(transform.position, target.transform.position) + " / " + destinationOffset);
+
+                // Play running animation
+                if (animator)
+                {
+                    animator.SetBool("isWalking", true);
+                }
             }
             else
             {
+                // Play running animation
+                if (animator)
+                {
+                    animator.SetBool("isWalking", false);
+                }
+
                 if (timer < harassTime)
                 {
                     timer += Time.deltaTime;
