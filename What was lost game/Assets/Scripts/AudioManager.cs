@@ -8,12 +8,106 @@ public class AudioManager : MonoBehaviour
 
     public AudioGroup[] audioGroups;
 
+    public float timeBetweenAmbiantSounds = 10;
+    public float additionalTimeRandomness = 3;
+    private float ambiantSoundTimer;
+
+    private float totalSoundWeighting;
+
+    private AudioSource audioSource;
+
     private List<float> otherWeights = new List<float>();
     private List<float> chances = new List<float>();
+
+    private void Start()
+    {
+        timeBetweenAmbiantSounds += Random.Range(-additionalTimeRandomness, additionalTimeRandomness);
+
+        if (gameObject.GetComponent<AudioSource>())
+        {
+            audioSource = gameObject.GetComponent<AudioSource>();
+        }
+        else
+        {
+            Debug.LogError("Audio Controller is missing an Audio Source Component");
+        }
+    }
 
     void Update()
     {
         CalculateSoundChances();
+        PlayRandomAmbiantSoundTimer();
+    }
+
+    private void PlayRandomAmbiantSoundTimer()
+    {
+        ambiantSoundTimer += Time.deltaTime;
+
+        if(ambiantSoundTimer >= timeBetweenAmbiantSounds)
+        {
+            PlayRandomAmbiantSoundGroup();
+            timeBetweenAmbiantSounds += Random.Range(-additionalTimeRandomness, additionalTimeRandomness);
+            ambiantSoundTimer = 0;
+        }
+    }
+
+    void PlayRandomAmbiantSoundGroup()
+    {
+        totalSoundWeighting = 0;
+
+        foreach(AudioGroup group in audioGroups)
+        {
+            totalSoundWeighting += group.groupPlayWeight;
+        }
+
+        float randomNumber = Random.Range(1, totalSoundWeighting);
+        float counter = 0;
+
+        for(int i = 0; i < audioGroups.Length; i++)
+        {
+            if(randomNumber > counter && randomNumber < counter + audioGroups[i].groupPlayWeight)
+            {
+                PlayRandomAmbiantSound(audioGroups[i]);
+            }
+
+            counter += audioGroups[i].groupPlayWeight;
+        }
+    }
+
+    void PlayRandomAmbiantSound(AudioGroup aGroup)
+    {
+        Debug.Log("audio group = " + aGroup);
+
+        totalSoundWeighting = 0;
+
+        foreach (AudioSound sound in aGroup.audioSounds)
+        {
+            totalSoundWeighting += sound.playWeight;
+        }
+
+        float randomNumber = Random.Range(1, totalSoundWeighting);
+        float counter = 0;
+
+        for (int i = 0; i < aGroup.audioSounds.Length; i++)
+        {
+            if (randomNumber > counter && randomNumber < counter + aGroup.audioSounds[i].playWeight)
+            {
+                PlayAmbiantSound(aGroup.audioSounds[i]);
+            }
+
+            counter += aGroup.audioSounds[i].playWeight;
+        }
+    }
+
+    void PlayAmbiantSound(AudioSound aSound)
+    {
+        Debug.Log("Play " + aSound);
+
+        if (audioSource && aSound.sound)
+        {
+            audioSource.clip = aSound.sound;
+            audioSource.Play();
+        }
     }
 
     // Calculate the sound play chances relative to the other sounds in the sound group
