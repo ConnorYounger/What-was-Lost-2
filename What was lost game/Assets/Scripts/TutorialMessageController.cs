@@ -6,7 +6,7 @@ using UnityEngine;
 public class TutorialMessageController : MonoBehaviour
 {
     [HideInInspector]
-    public string tWalk = "Use 'W,A,S,D' to walk \n Hold 'Shift' to Run";
+    public string tWalk = "use 'w,a,s,d' to walk \n hold 'shift' to run";
     [HideInInspector]
     public string tLook;
     [HideInInspector]
