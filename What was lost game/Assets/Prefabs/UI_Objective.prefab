@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 8162055838654985912}
   - component: {fileID: 8162055838654985919}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: GoalTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 9004666760306059148}
   - component: {fileID: 9004666760306059147}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: GoalText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

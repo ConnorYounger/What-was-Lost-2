@@ -18,12 +18,22 @@ public class TutorialMessageController : MonoBehaviour
     public string oFinishMessage = "the day will end at sundown \n or if you find all the items";
 
 
-    private TMP_Text messageText;
+    private TMP_Text messageText, objectiveTitle, objectiveText;
 
     private void Start()
     {
-        messageText = GameObject.Find("UI_Message").GetComponentInChildren<TMP_Text>();
+        messageText = GameObject.Find("MessageText").GetComponent<TMP_Text>();
+        objectiveTitle = GameObject.Find("GoalTitle").GetComponent<TMP_Text>();
+        objectiveText = GameObject.Find("GoalText").GetComponent<TMP_Text>();
+    }
 
-        messageText.text = tWalk;
+    public void DisplayTutorialMessage()
+    {
+
+    }
+
+    public void DisplayObjectiveMessage()
+    {
+
     }
 }
