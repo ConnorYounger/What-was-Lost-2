@@ -52,6 +52,10 @@ public class MetalDetector : MonoBehaviour
                 mDTone.volume = 1f;
 
             }
+            else
+            {
+                mDTone.volume = 0f;
+            }
 
         }
         if (Input.GetKeyDown("e"))
