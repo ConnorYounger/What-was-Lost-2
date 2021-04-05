@@ -28,15 +28,14 @@ public class BeachObjectPopulator : MonoBehaviour
 
     private void SpawnBeachObjects()
     {
+        // Instantiate beach prefabs from the list between half the amount of spawnpoints and total spawnpoints
         int numToSpawn = Random.Range(spawnPoints.Count / 2, spawnPoints.Count);
 
         for (int i =0; i < numToSpawn; i++)
         {
-            //int spawnNum = Random.Range(0, spawnPoints.Count);
             int objNum = Random.Range(0, beachObjects.Count);
 
             Instantiate(beachObjects[objNum], spawnPoints[i].position, Quaternion.identity);
-            //spawnPoints.RemoveAt(i);
         }
     }
 }

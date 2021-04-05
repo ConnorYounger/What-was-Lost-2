@@ -1521,7 +1521,7 @@ MonoBehaviour:
     m_Right: 50
     m_Top: 25
     m_Bottom: 10
-  m_ChildAlignment: 1
+  m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 1
   m_CellSize: {x: 130, y: 180}

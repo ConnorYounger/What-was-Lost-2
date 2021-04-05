@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class RGenerator : MonoBehaviour
 {
     private int randomRare;
@@ -11,6 +11,7 @@ public class RGenerator : MonoBehaviour
     public List<ItemObject> junkItems = new List<ItemObject>();
     public List<ItemObject> valueItems = new List<ItemObject>();
     private int sCount, jCount, vCount;
+    public Text foundAlert;
     void Start()
     {
         ItemObject[] objs1 = Resources.LoadAll<ItemObject>("Inventory/KeyItems/");
@@ -37,27 +38,27 @@ public class RGenerator : MonoBehaviour
         sCount = storyItems.Count;
         jCount = junkItems.Count;
         vCount = valueItems.Count;
-
+        //Populate each list with their relevant items and assigns the list size to a middle-man variable
 
     }
     public void Collect() // Runs when an object is walked over
     {
         //Randomly decide rarity of found item: Rare: 0-10 10% Uncommon 11-40 30% Common 41-100 60%
-        randomRare = (Random.Range(0, 100));
-         if (randomRare < 10)
-         {
-             valuableItem();
-         }
-         else if (randomRare > 41)
-         {
-             commonItem();
-         }
-         else
-         {
-             uncommonItem();
-         }
+           randomRare = (Random.Range(0, 100));
+            if (randomRare < 10)
+            {
+                valuableItem();
+            }
+            else if (randomRare > 41)
+            {
+                commonItem();
+            }
+            else
+            {
+                uncommonItem();
+            }
+        // Temporarily commented for testing  
         
-
 
 
         // RaycastHit hit;
@@ -76,49 +77,48 @@ public class RGenerator : MonoBehaviour
     //Add different score amounts depending on rarity of found object and Alert player to rarity of found object
     void valuableItem()
     {
-        /*score = score + 10;
-        print("Rare Item Found!");
-        foundAlert.text = "Rare Item Found!";
-        Invoke("reset", 2);*/
-        //  DAVID, had to comment this block, giving error
         randomRare = (Random.Range(0, sCount));
         print(randomRare);
         var item = storyItems[randomRare];
         if (item)
         {
             inventory.AddItem(item);
+            foundAlert.text = "Found: " + item.name;
+            StartCoroutine(Refresh());
         }
     }
     void commonItem()
     {
-        /*score = score + 1;
-        print("Common Item Found!");
-        foundAlert.text = "Common Item Found!";
-        Invoke("reset", 2);*/
         randomRare = (Random.Range(0, jCount));
         print(randomRare);
         var item = junkItems[randomRare];
         if (item)
         {
             inventory.AddItem(item);
+            foundAlert.text = "Found: " + item.name;
+            StartCoroutine(Refresh());
         }
     }
     void uncommonItem()
     {
-        /*score = score + 5;
-        print("Uncommon Item Found!");
-        foundAlert.text = "Uncommon Item Found!";
-        Invoke("reset", 2);*/
         randomRare = (Random.Range(0, vCount));
         print(randomRare);
         var item = valueItems[randomRare];
         if (item)
         {
             inventory.AddItem(item);
+            foundAlert.text = "Found: " + item.name;
+            StartCoroutine(Refresh());
         }
+        /*Valuableitem, commonitem and uncommon item - Randomly generates a number between 0 (first index of a list) and the highest number of the relevant list
+        then loads the item, gives it to the inventory, prints the item name and resets after 3 seconds*/
 
-
-    }  
+    }
+    IEnumerator Refresh()
+    {
+        yield return new WaitForSeconds(5);
+        foundAlert.text = "";
+    }
 
     private void OnApplicationQuit()
     {
