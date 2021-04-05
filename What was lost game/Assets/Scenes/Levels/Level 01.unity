@@ -938,11 +938,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bacf31f58c80be4794470bd99fd1ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tWalk: "Use 'W,A,S,D' to walk \n Hold 'Shift' to Run"
-  tLook: 
-  tDig: 
-  tInteract: 
-  tInventory: 
+  tWalk: "use 'w,a,s,d' to walk \n hold 'shift' to run"
+  tLook: "use mouse to \n look around"
+  tDig: "press 'e' to dig \n up an item"
+  tInteract: "press 'f' \n to interact"
+  tInventory: "press 'i' \n to view inventory"
   oGoalTitle: today's goal
   oGoalMessage: "use detector to search \n for lost items"
   oFinishMessage: "the day will end at sundown \n or if you find all the items"
@@ -8582,10 +8582,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8162055838654985918, guid: bc75ff21d101f7f46b49c7859754b530,
+    - target: {fileID: 8162055838654985912, guid: bc75ff21d101f7f46b49c7859754b530,
         type: 3}
-      propertyPath: m_Name
-      value: GoalTitle
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162055838654985912, guid: bc75ff21d101f7f46b49c7859754b530,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162055838654985912, guid: bc75ff21d101f7f46b49c7859754b530,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9004666760306059146, guid: bc75ff21d101f7f46b49c7859754b530,
         type: 3}
