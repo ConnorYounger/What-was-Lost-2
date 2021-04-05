@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    [Header("Sound Settings")]
     public AudioSettings audioSettingsPrefab;
+    public AudioSource musicAudioSource;
+    public AudioSource[] soundSources;
 
+    [Header("Ambiant Sounds")]
     public AudioGroup[] audioGroups;
 
     public float timeBetweenAmbiantSounds = 10;
@@ -23,13 +27,31 @@ public class AudioManager : MonoBehaviour
     {
         timeBetweenAmbiantSounds += Random.Range(-additionalTimeRandomness, additionalTimeRandomness);
 
-        if (gameObject.GetComponent<AudioSource>())
+        if (gameObject.GetComponent<AudioSource>() && musicAudioSource)
         {
             audioSource = gameObject.GetComponent<AudioSource>();
+
+            if (audioSettingsPrefab)
+            {
+                float soundVolume = audioSettingsPrefab.soundVolume;
+                float musicVolume = audioSettingsPrefab.musicVolume;
+
+                audioSource.volume = soundVolume / 100;
+                musicAudioSource.volume = musicVolume / 100;
+
+                foreach (AudioSource aSource in soundSources)
+                {
+                    aSource.volume = soundVolume / 100;
+                }
+            }
+            else
+            {
+                Debug.LogError("Audio Manager is missing an Audio Settings prefab");
+            }
         }
         else
         {
-            Debug.LogError("Audio Controller is missing an Audio Source Component");
+            Debug.LogError("Audio Manager is missing an Audio Source Component or Music Audio Source");
         }
     }
 
