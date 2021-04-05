@@ -57,13 +57,14 @@ public class TutorialMessageController : MonoBehaviour
     {
         if (!mMessage.GetComponent<Image>().enabled)
         {
+            ClearDisplayMessages();
+
             mMessage.GetComponent<Image>().enabled = true;
             messageText.text = _text;
         }
         else if (mMessage.GetComponent<Image>().enabled)
         {
-            mMessage.GetComponent<Image>().enabled = false;
-            messageText.text = "";
+            ClearDisplayMessages();
         }
     }
 
@@ -71,15 +72,25 @@ public class TutorialMessageController : MonoBehaviour
     {
         if (!mObjective.GetComponent<Image>().enabled)
         {
+            ClearDisplayMessages();
+
             mObjective.GetComponent<Image>().enabled = true;
             objectiveTitle.text = _title;
             objectiveText.text = _text;
         }
         else if (mObjective.GetComponent<Image>().enabled)
         {
-            mObjective.GetComponent<Image>().enabled = false;
-            objectiveTitle.text = "";
-            objectiveText.text = "";
+            ClearDisplayMessages();
         }
+    }
+
+    public void ClearDisplayMessages()
+    {
+        mMessage.GetComponent<Image>().enabled = false;
+        messageText.text = "";
+
+        mObjective.GetComponent<Image>().enabled = false;
+        objectiveTitle.text = "";
+        objectiveText.text = "";
     }
 }

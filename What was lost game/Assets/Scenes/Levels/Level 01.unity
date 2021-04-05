@@ -8358,11 +8358,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Message
       objectReference: {fileID: 0}
-    - target: {fileID: 986976885521788275, guid: b040172298df4894f9e5f18c1e528887,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 986976885521788284, guid: b040172298df4894f9e5f18c1e528887,
         type: 3}
       propertyPath: m_Pivot.x
@@ -8468,11 +8463,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 986976885521788285, guid: b040172298df4894f9e5f18c1e528887,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 986976886836343512, guid: b040172298df4894f9e5f18c1e528887,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -8516,11 +8506,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI_Objective
-      objectReference: {fileID: 0}
-    - target: {fileID: 8162055837272271122, guid: bc75ff21d101f7f46b49c7859754b530,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8162055837272271133, guid: bc75ff21d101f7f46b49c7859754b530,
         type: 3}
