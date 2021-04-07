@@ -17,6 +17,9 @@ public class TimeManager : MonoBehaviour
     [Range(0, 24)] public int startingHour = 8;
     [Range(0, 24)]public int endingHour = 18;
 
+    public float baseLightIntensity = 0.6f;
+    public float lightIntensityMultiplier = 0.8f;
+
     private void Start()
     {
         SetCloudSpeed();
@@ -73,7 +76,7 @@ public class TimeManager : MonoBehaviour
         {
             directionalLight.color = preset.DirectionalColor.Evaluate(timePercent);
 
-            directionalLight.intensity = 0.6f + (Mathf.Sin(timePercent * 3) * 0.8f);
+            directionalLight.intensity = baseLightIntensity + (Mathf.Sin(timePercent * 3) * lightIntensityMultiplier);
 
             directionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 45, 0));
         }
