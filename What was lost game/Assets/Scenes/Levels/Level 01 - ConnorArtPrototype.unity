@@ -706,6 +706,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 153221570}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &188321295 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400002, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 580750592}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &205834017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1959,6 +1965,16 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3952556843949593978, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 3}
+      propertyPath: volumeTrigger
+      value: 
+      objectReference: {fileID: 188321295}
+    - target: {fileID: 4514947302736358890, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 3}
+      propertyPath: isGlobal
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
