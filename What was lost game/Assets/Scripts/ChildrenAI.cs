@@ -10,7 +10,7 @@ public class ChildrenAI : MonoBehaviour
     private GameObject target;
     private GameObject heldItemPrefab;
 
-    private InventorySlot heldItem;
+    public InventorySlot heldItem;
 
     public string targetName;
     private string[] states;
@@ -21,6 +21,8 @@ public class ChildrenAI : MonoBehaviour
     public int itemStealChance = 25;
     private float destinationOffset = 2f;
     private float timer;
+    private float timeBetweenFootStepSounds = 0.5f;
+    private float soundTimer;
 
     private bool hasItem;
 
@@ -35,6 +37,8 @@ public class ChildrenAI : MonoBehaviour
     public string metalDetectorScriptObject = "Metal_detectin_object";
     private GameObject metalDetectorObject;
 
+    private AudioSource audioSource;
+
     void Start()
     {
         SetStates();
@@ -46,6 +50,11 @@ public class ChildrenAI : MonoBehaviour
             annoyingKidItemStolenText = GameObject.Find("AnnoyingKidItemStolenText").GetComponent<TMP_Text>();
         }
 
+        if(audioSource = gameObject.GetComponent<AudioSource>())
+        {
+            audioSource.clip = stats.triggerSound;
+        }
+
         metalDetectorObject = GameObject.Find(metalDetectorScriptObject);
     }
 
@@ -54,6 +63,7 @@ public class ChildrenAI : MonoBehaviour
         states = new string[3] { "Idle", "Engage", "Cooldown" };
 
         stats.startLocation = transform.position;
+        timeBetweenFootStepSounds = stats.timeBetweenFootStepSounds;
     }
 
     void Update()
@@ -100,6 +110,11 @@ public class ChildrenAI : MonoBehaviour
     {
         if (currentState == 0)
             currentState = 1;
+
+        if (audioSource)
+        {
+            audioSource.Play();
+        }
     }
 
     void Engage()
@@ -108,12 +123,6 @@ public class ChildrenAI : MonoBehaviour
 
         if (!hasItem)
         {
-            // Play running animation
-            if (animator)
-            {
-                animator.SetBool("isWalking", true);
-            }
-
             if (Vector3.Distance(transform.position, target.transform.position) > destinationOffset)
             {
                 // Move towards player
@@ -122,9 +131,26 @@ public class ChildrenAI : MonoBehaviour
 
                 //Debug.Log("Move towards player");
                 //Debug.Log("Distance = " + Vector3.Distance(transform.position, target.transform.position) + " / " + destinationOffset);
+
+                // Play running animation
+                if (animator)
+                {
+                    animator.SetBool("isWalking", true);
+                }
+
+                if (stats.footStepSound)
+                {
+                    PlayFootstepSound();
+                }
             }
             else
             {
+                // Play running animation
+                if (animator)
+                {
+                    animator.SetBool("isWalking", false);
+                }
+
                 if (timer < harassTime)
                 {
                     timer += Time.deltaTime;
@@ -169,6 +195,17 @@ public class ChildrenAI : MonoBehaviour
                     animator.SetBool("isWalking", false);
                 }
             }
+        }
+    }
+
+    private void PlayFootstepSound()
+    {
+        soundTimer += Time.deltaTime;
+
+        if(soundTimer >= timeBetweenFootStepSounds)
+        {
+            soundTimer = 0;
+            AudioSource.PlayClipAtPoint(stats.footStepSound, transform.position);
         }
     }
 

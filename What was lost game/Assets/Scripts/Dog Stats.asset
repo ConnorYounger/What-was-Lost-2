@@ -17,4 +17,7 @@ MonoBehaviour:
   triggerDistance: 3
   movementSpeed: 7
   coolDownTime: 5
-  startLocation: {x: -210.612, y: 4.899, z: -125.57744}
+  startLocation: {x: -210.97977, y: 5.2, z: -126.41867}
+  triggerSound: {fileID: 8300000, guid: 09b88756530bcd04eabedd5515c25216, type: 3}
+  footStepSound: {fileID: 8300000, guid: b5f76dabbbe73484d9d60b20c234e55d, type: 3}
+  timeBetweenFootStepSounds: 0.3
