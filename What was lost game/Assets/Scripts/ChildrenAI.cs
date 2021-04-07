@@ -10,7 +10,7 @@ public class ChildrenAI : MonoBehaviour
     private GameObject target;
     private GameObject heldItemPrefab;
 
-    private InventorySlot heldItem;
+    public InventorySlot heldItem;
 
     public string targetName;
     private string[] states;

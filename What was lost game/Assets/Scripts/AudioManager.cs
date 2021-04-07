@@ -12,8 +12,9 @@ public class AudioManager : MonoBehaviour
     [Header("Ambiant Sounds")]
     public AudioGroup[] audioGroups;
 
-    public float timeBetweenAmbiantSounds = 10;
+    public float baseTimeBetweenAmbiantSounds = 10;
     public float additionalTimeRandomness = 3;
+    private float timeBetweenAmbiantSounds;
     private float ambiantSoundTimer;
 
     private float totalSoundWeighting;
@@ -25,7 +26,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        timeBetweenAmbiantSounds += Random.Range(-additionalTimeRandomness, additionalTimeRandomness);
+        timeBetweenAmbiantSounds = baseTimeBetweenAmbiantSounds + Random.Range(-additionalTimeRandomness, additionalTimeRandomness);
 
         if (gameObject.GetComponent<AudioSource>() && musicAudioSource)
         {
@@ -68,8 +69,6 @@ public class AudioManager : MonoBehaviour
         if(ambiantSoundTimer >= timeBetweenAmbiantSounds)
         {
             PlayRandomAmbiantSoundGroup();
-            timeBetweenAmbiantSounds += Random.Range(-additionalTimeRandomness, additionalTimeRandomness);
-            ambiantSoundTimer = 0;
         }
     }
 
@@ -130,6 +129,9 @@ public class AudioManager : MonoBehaviour
             audioSource.clip = aSound.sound;
             audioSource.Play();
         }
+
+        timeBetweenAmbiantSounds = baseTimeBetweenAmbiantSounds + aSound.sound.length + Random.Range(-additionalTimeRandomness, additionalTimeRandomness);
+        ambiantSoundTimer = 0;
     }
 
     // Calculate the sound play chances relative to the other sounds in the sound group
