@@ -29,6 +29,13 @@ public class PhotoAlbum : MonoBehaviour
         UpdatePhoto();
     }
 
+    // Change the boolean value of a photo mask
+    // **Call on key item pickup
+    public void UnmaskPhoto(int i)
+    {
+        photoFound[i] = true;
+    }
+
     // Change the photo display based on position in array & either display or hide a mask if the photo has been 'unlocked'
     public void UpdatePhoto()
     {
