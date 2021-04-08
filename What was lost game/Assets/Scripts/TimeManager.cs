@@ -10,6 +10,8 @@ public class TimeManager : MonoBehaviour
 
     public ParticleSystem[] Clouds;
 
+    private Animator ocean;
+
     //Variables
     [SerializeField, Range(0, 24)] private float timeOfDay;
     public float minutesPerDay = 10;
@@ -23,6 +25,8 @@ public class TimeManager : MonoBehaviour
     private void Start()
     {
         SetCloudSpeed();
+
+        ocean = GameObject.Find("Ocean").GetComponent<Animator>();
     }
 
     private void Update()
@@ -79,6 +83,12 @@ public class TimeManager : MonoBehaviour
             directionalLight.intensity = baseLightIntensity + (Mathf.Sin(timePercent * 3) * lightIntensityMultiplier);
 
             directionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 45, 0));
+        }
+
+        if (ocean)
+        {
+            ocean.speed = 24 / minutesPerDay;
+            //ocean.anima
         }
 
         // Set the skybox color according to the skybox color preset
