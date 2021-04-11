@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 919734941a900d24090f2925025373f2
 timeCreated: 1462388110
-licenseType: Store
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -28,13 +28,13 @@ ModelImporter:
     9500000: //RootNode
     13700000: Fence Type2 Door Model
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 1
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
@@ -54,7 +54,7 @@ ModelImporter:
     globalScale: 100
     meshCompression: 0
     addColliders: 1
-    importBlendShapes: 0
+    importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
