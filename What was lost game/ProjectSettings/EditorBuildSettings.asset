@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/David/DavidPrototype.unity
+    path: Assets/Scenes/DavidPrototype.unity
     guid: c29ae5c0fa439dd4fab5dd8f392e15bb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EmptyBeachWithWall.unity
     guid: 6759c7c4d9824254791f1ebda71f8a73
+  - enabled: 0
+    path: Assets/Scripts/BrandonScripts/Level Menu/Level Selection.unity
+    guid: 6e05dfa363565cf459948861d28abee6
   m_configObjects: {}
