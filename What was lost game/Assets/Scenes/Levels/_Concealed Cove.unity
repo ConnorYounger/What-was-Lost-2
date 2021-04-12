@@ -62305,8 +62305,8 @@ MonoBehaviour:
     BobAmount: 0
   m_StepInterval: 5
   m_FootstepSounds:
-  - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
-  - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  - {fileID: 8300000, guid: b5f76dabbbe73484d9d60b20c234e55d, type: 3}
+  - {fileID: 8300000, guid: b5f76dabbbe73484d9d60b20c234e55d, type: 3}
   m_JumpSound: {fileID: 0}
   m_LandSound: {fileID: 0}
 --- !u!143 &7611880080799855958
