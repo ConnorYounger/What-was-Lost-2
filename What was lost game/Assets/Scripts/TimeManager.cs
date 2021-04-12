@@ -95,7 +95,7 @@ public class TimeManager : MonoBehaviour
         {
             ocean.speed = 24 / minutesPerDay;
 
-            //ocean.Play("OceanColourChange", 0, 20);
+            ocean.Play("OceanColourChange", 0, 20);
 
             if (oceanAnimation)
             {
