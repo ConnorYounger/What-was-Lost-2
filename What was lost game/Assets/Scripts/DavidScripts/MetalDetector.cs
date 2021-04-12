@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MetalDetector : MonoBehaviour
 {
     public RGenerator rgen;
-    public MDObject obj;
+    //public MDObject obj;
     //Distance detection
     public Transform[] objects;
     private float distance;
@@ -31,14 +31,6 @@ public class MetalDetector : MonoBehaviour
     {
         if (mDetector == true)
         {
-            /*
-            //tracks distance between player and object, triggering a Collect when the player walks over the object
-            var currentPosition = transform.position;
-            currentPosition.y = target.position.y;
-            distance = Vector3.Distance(currentPosition, target.position);
-            signalStrength.fillAmount = (1.0f - (distance / 120));
-            //print("distance = " + distance); //(print distance from current object to console) //- debug
-            */
             //13/04 rework to accomodate 5 objects:
             Transform[] targets = objects;
             Transform bestTarget = null;
@@ -54,10 +46,12 @@ public class MetalDetector : MonoBehaviour
                     bestTarget = potentialTarget;
                 }
             }
+            //Spag time
+            
             var playerPosition = transform.position;
             playerPosition.y = bestTarget.position.y;
             distance = Vector3.Distance(currentPosition, bestTarget.position);
-            signalStrength.fillAmount = (1.0f - (distance / 150));
+            signalStrength.fillAmount = (1.0f - (distance / 70));
             //print("distance = " + distance);
 
 
@@ -95,7 +89,6 @@ public class MetalDetector : MonoBehaviour
             if (distance < 2)
             {
                 rgen.Collect();
-                obj.Randomize();
             }
             else
             {
@@ -116,23 +109,6 @@ public class MetalDetector : MonoBehaviour
         yield return new WaitForSeconds(3);
         foundAlert.text = "";
     }
-  /*  Transform GetClosestObject(Transform[] targets) //calculates the closest object at any one time
-    {
-        Transform bestTarget = null;
-        float closestDistanceSqr = Mathf.Infinity;
-        Vector3 currentPosition = transform.position;
-        foreach (Transform potentialTarget in targets)
-        {
-            Vector3 directionToTarget = potentialTarget.position - currentPosition;
-            float dSqrToTarget = directionToTarget.sqrMagnitude;
-            if (dSqrToTarget < closestDistanceSqr)
-            {
-                closestDistanceSqr = dSqrToTarget;
-                bestTarget = potentialTarget;
-            }
-        }
 
-        return bestTarget;
-    }*/
 
 }
