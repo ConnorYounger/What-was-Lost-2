@@ -27,6 +27,7 @@ public class MetalDetector : MonoBehaviour
         //mDTone = GetComponent<AudioSource>();
     }
 
+    
     void Update()
     {
         if (mDetector == true)
@@ -72,17 +73,6 @@ public class MetalDetector : MonoBehaviour
                 mDTone.volume = 0f;
 
             }
-            //sound debug
-            if (Input.GetKeyDown("1"))
-            {
-                    mDTone.volume = 1f;
-                    print("Manual in range");
-                }
-            if (Input.GetKeyDown("2"))
-            {
-                    mDTone.volume = 0f;
-                    print("Manual outta range");
-                }
         }
         if (Input.GetKeyDown("e"))
         {
