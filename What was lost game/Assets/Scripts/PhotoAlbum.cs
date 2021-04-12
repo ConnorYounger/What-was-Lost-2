@@ -9,11 +9,10 @@ public class PhotoAlbum : MonoBehaviour
     //public RectTransform parentPanel;
     public Sprite[] photos;
     public int imageNum;
-    public GameObject prevPhoto, nextPhoto;
-    private GameObject photoMask;
+    public GameObject prevPhoto, nextPhoto, photoMask;
     private string emptyText = "...";
     public string[] memoryCaptions = new string[4];
-    private TMP_Text memoryText;
+    public TMP_Text memoryText;
     private AudioSource photoChangeAudio;
     public bool[] photoFound;
 

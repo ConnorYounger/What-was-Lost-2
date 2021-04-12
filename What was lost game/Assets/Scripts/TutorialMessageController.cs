@@ -23,14 +23,11 @@ public class TutorialMessageController : MonoBehaviour
     private GameObject mMessage, mObjective;
     private TMP_Text messageText, objectiveTitle, objectiveText;
     private GameObject player;
-    private GameObject invDisplayController;
 
     private void Start()
     {
         player = GameObject.Find("Player");
         player.GetComponent<FirstPersonController>().enabled = false;
-        invDisplayController = GameObject.Find("InvDisplayController");
-        invDisplayController.SetActive(false);
 
         // Assign UI elements
         mMessage = GameObject.Find("UI_Message");
@@ -93,9 +90,6 @@ public class TutorialMessageController : MonoBehaviour
         
         player.GetComponent<FirstPersonController>().enabled = true;
         yield return new WaitForSeconds(2);
-
-        invDisplayController.SetActive(true);
-        GameObject.Find("TutorialCanvas").SetActive(false);
     }
 
     IEnumerator DisplayTutorialMessage(string _text)
