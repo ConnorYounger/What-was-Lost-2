@@ -11,6 +11,7 @@ public class TimeManager : MonoBehaviour
     public ParticleSystem[] Clouds;
 
     private Animator ocean;
+    public Animation oceanAnimation;
 
     //Variables
     [SerializeField, Range(0, 24)] private float timeOfDay;
@@ -88,7 +89,7 @@ public class TimeManager : MonoBehaviour
         if (ocean)
         {
             ocean.speed = 24 / minutesPerDay;
-            //ocean.anima
+            oceanAnimation["OceanColourChange"].time = 0.5f;
         }
 
         // Set the skybox color according to the skybox color preset
