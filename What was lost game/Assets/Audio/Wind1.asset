@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c302ddab4e17c64083e25accd3259de, type: 3}
-  m_Name: BeachWave3
+  m_Name: Wind1
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: e215278bc6966c642a70174987e151a9, type: 3}
-  playWeight: 2
-  playChance: 0.016
+  sound: {fileID: 8300000, guid: c9f52c7b92328574ebc0f66d425bcd43, type: 3}
+  playWeight: 50
+  playChance: 1

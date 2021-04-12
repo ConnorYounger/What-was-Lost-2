@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c302ddab4e17c64083e25accd3259de, type: 3}
   m_Name: Wind2
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 9d77cfaa2ad74c04e957a7d51194af14, type: 3}
   playWeight: 50
-  playChance: 0
+  playChance: 1
