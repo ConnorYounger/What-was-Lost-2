@@ -28,6 +28,11 @@ public class TimeManager : MonoBehaviour
         SetCloudSpeed();
 
         ocean = GameObject.Find("Ocean").GetComponent<Animator>();
+
+        if(ocean)
+        {
+            //oceanAnimation = ocean.gameObject.GetComponent<Animation>();
+        }
     }
 
     private void Update()
@@ -89,7 +94,13 @@ public class TimeManager : MonoBehaviour
         if (ocean)
         {
             ocean.speed = 24 / minutesPerDay;
-            oceanAnimation["OceanColourChange"].time = 0.5f;
+
+            //ocean.Play("OceanColourChange", 0, 20);
+
+            if (oceanAnimation)
+            {
+                //oceanAnimation["OceanColourChange"].time = 20;
+            }
         }
 
         // Set the skybox color according to the skybox color preset

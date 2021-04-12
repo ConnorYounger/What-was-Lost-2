@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BeachWave1
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: 09b88756530bcd04eabedd5515c25216, type: 3}
-  playWeight: 50
-  playChance: 1
+  playWeight: 5
+  playChance: 0.25

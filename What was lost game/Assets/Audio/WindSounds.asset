@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: WindSounds
   m_EditorClassIdentifier: 
   audioSounds:
-  - {fileID: 11400000, guid: 4b3ad088f3f648c40a1f14fbe736e2b8, type: 2}
-  - {fileID: 11400000, guid: e77591ede7fef624185d6d843781369a, type: 2}
+  - {fileID: 11400000, guid: 2bf20301eee4e824d86afac02b30bb9d, type: 2}
+  - {fileID: 11400000, guid: ef460cf29c9b33b49a39dd28fad440ff, type: 2}
+  - {fileID: 11400000, guid: 5476a6d7043c5c140b52075ddf8884b8, type: 2}
   groupPlayWeight: 50
-  groupPlayChance: 1
+  groupPlayChance: 2
