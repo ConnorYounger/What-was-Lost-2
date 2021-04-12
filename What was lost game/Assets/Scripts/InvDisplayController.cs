@@ -8,14 +8,14 @@ public class InvDisplayController : MonoBehaviour
 {
     private Canvas inventoryInterface;
     private bool isDisplayed;
-    public GameObject player;
+    private GameObject player;
 
     void Start()
     {
         inventoryInterface = GameObject.Find("InventoryCanvas").GetComponent<Canvas>();
         isDisplayed = inventoryInterface.enabled;
 
-        player = GameObject.Find("FPSController");
+        player = GameObject.Find("Player");
     }
 
     void Update()
