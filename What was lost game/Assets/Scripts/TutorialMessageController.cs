@@ -23,11 +23,14 @@ public class TutorialMessageController : MonoBehaviour
     private GameObject mMessage, mObjective;
     private TMP_Text messageText, objectiveTitle, objectiveText;
     private GameObject player;
+    private GameObject invDisplayController;
 
     private void Start()
     {
         player = GameObject.Find("Player");
         player.GetComponent<FirstPersonController>().enabled = false;
+        invDisplayController = GameObject.Find("InvDisplayController");
+        invDisplayController.SetActive(false);
 
         // Assign UI elements
         mMessage = GameObject.Find("UI_Message");
@@ -40,30 +43,6 @@ public class TutorialMessageController : MonoBehaviour
         StartCoroutine(StartTutorial());
     }
 
-    private void Update()
-    {
-        // Test display of varied messages
-        /*
-        if (Input.GetKeyDown("1"))
-        {
-            DisplayTutorialMessage(tWalk);
-        } else if (Input.GetKeyDown("2"))
-        {
-            DisplayTutorialMessage(tLook);
-        }
-        else if (Input.GetKeyDown("3"))
-        {
-            DisplayTutorialMessage(tDig);
-        }
-        else if (Input.GetKeyDown("4"))
-        {
-            DisplayObjectiveMessage(oGoalTitle, oGoalMessage);
-        }
-        else if (Input.GetKeyDown("5"))
-        {
-            DisplayObjectiveMessage(oGoalTitle, oFinishMessage);
-        }*/
-    }
 
     IEnumerator StartTutorial()
     {
@@ -87,9 +66,12 @@ public class TutorialMessageController : MonoBehaviour
 
         yield return StartCoroutine(DisplayTutorialMessage(tInventory));
         ClearDisplayMessages();
-        
+
         player.GetComponent<FirstPersonController>().enabled = true;
         yield return new WaitForSeconds(2);
+
+        invDisplayController.SetActive(true);
+        GameObject.Find("TutorialCanvas").SetActive(false);
     }
 
     IEnumerator DisplayTutorialMessage(string _text)
