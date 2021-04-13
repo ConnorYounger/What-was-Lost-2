@@ -17936,7 +17936,7 @@ PrefabInstance:
     - target: {fileID: 5907948380016984657, guid: 5e31b8171c9701c4d90c5770ef145ae4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5907948380016984663, guid: 5e31b8171c9701c4d90c5770ef145ae4,
         type: 3}
@@ -62023,7 +62023,6 @@ GameObject:
   - component: {fileID: 7611880080791970806}
   - component: {fileID: 7611880080789559670}
   - component: {fileID: 1420953224}
-  - component: {fileID: 7611880080786702487}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -62031,30 +62030,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7611880080786702487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7611880080786702486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 552e10e50a9c9b24790788b119f6730b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rgen: {fileID: 813459329}
-  objects:
-  - {fileID: 221056540}
-  - {fileID: 494445870}
-  - {fileID: 617832133}
-  - {fileID: 2107751916}
-  - {fileID: 1458136625}
-  signalStrength: {fileID: 1752251511326690617}
-  foundAlert: {fileID: 300318620}
-  mDClick: {fileID: 1857702343}
-  mDTone: {fileID: 1403515649}
-  mDetector: 1
 --- !u!4 &7611880080787004598
 Transform:
   m_ObjectHideFlags: 0
@@ -62611,3 +62586,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 9064418136765288469}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9064418136765288471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 376028724863275042, guid: 648d6af71a2844841ba8669007a8045e,
+    type: 3}
+  m_PrefabInstance: {fileID: 9064418136765288469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9064418136765288472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9064418136765288471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552e10e50a9c9b24790788b119f6730b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rgen: {fileID: 813459329}
+  objects:
+  - {fileID: 221056540}
+  - {fileID: 494445870}
+  - {fileID: 617832133}
+  - {fileID: 2107751916}
+  - {fileID: 1458136625}
+  signalStrength: {fileID: 1752251511326690617}
+  foundAlert: {fileID: 300318620}
+  mDClick: {fileID: 1857702343}
+  mDTone: {fileID: 1403515649}
+  mDetector: 1

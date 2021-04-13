@@ -53,7 +53,7 @@ public class MetalDetector : MonoBehaviour
             playerPosition.y = bestTarget.position.y;
             distance = Vector3.Distance(currentPosition, bestTarget.position);
             signalStrength.fillAmount = (1.0f - (distance / 70));
-            //print("distance = " + distance);
+            print("distance = " + distance);
 
 
             //Metal Detector Sound system

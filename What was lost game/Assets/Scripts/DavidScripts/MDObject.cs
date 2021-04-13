@@ -7,7 +7,7 @@ public class MDObject : MonoBehaviour
 {
     public Transform Player;
     private float distance;
-    public float start;
+    private float start;
     private float offset;
     private bool ready;
     void Start()
