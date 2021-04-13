@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 305580056}
   - component: {fileID: 305580055}
   m_Layer: 5
-  m_Name: Res9/6
+  m_Name: Res1400x1050
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,12 +152,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1946721628}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.241, y: -65}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.000015259, y: -5.15}
+  m_SizeDelta: {x: 244.83716, y: 60.30094}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &305580055
 MonoBehaviour:
@@ -208,7 +208,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 960
+          m_IntArgument: 1400
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -219,7 +219,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 600
+          m_IntArgument: 1050
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 960X600
+  m_text: 1400x1050
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b1f02d2ccf581284fa95982b73aeb46a, type: 2}
   m_sharedMaterial: {fileID: -2937865044291805415, guid: b1f02d2ccf581284fa95982b73aeb46a,
@@ -282,8 +282,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 338327275}
   - component: {fileID: 338327274}
   m_Layer: 5
-  m_Name: Res16/10
+  m_Name: Res1920x1080
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -367,8 +367,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 63}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -5, y: 68.25}
+  m_SizeDelta: {x: 238.99634, y: 62.508263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &338327274
 MonoBehaviour:
@@ -419,7 +419,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1600
+          m_IntArgument: 1920
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -430,7 +430,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1000
+          m_IntArgument: 1080
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -465,7 +465,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '1600X1000 '
+  m_text: 1920x1080
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b1f02d2ccf581284fa95982b73aeb46a, type: 2}
   m_sharedMaterial: {fileID: -2937865044291805415, guid: b1f02d2ccf581284fa95982b73aeb46a,
@@ -493,8 +493,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -20.66159, w: 0}
+  m_margin: {x: 0, y: 0, z: -8.889103, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 439028379}
   - component: {fileID: 439028378}
   m_Layer: 5
-  m_Name: Res16/9
+  m_Name: Res1366x768
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -574,12 +574,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1946721628}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.241005, y: -0.000011444}
-  m_SizeDelta: {x: 213.2826, y: 50}
+  m_AnchoredPosition: {x: -0.000024796, y: -81.75}
+  m_SizeDelta: {x: 229.46979, y: 58.093628}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &439028378
 MonoBehaviour:
@@ -630,7 +630,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1600
+          m_IntArgument: 1366
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -641,7 +641,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 900
+          m_IntArgument: 768
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -676,7 +676,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1600X900
+  m_text: 1366x768
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b1f02d2ccf581284fa95982b73aeb46a, type: 2}
   m_sharedMaterial: {fileID: -2937865044291805415, guid: b1f02d2ccf581284fa95982b73aeb46a,
@@ -704,8 +704,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
