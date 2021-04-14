@@ -8,10 +8,15 @@ public class MetalDetector : MonoBehaviour
 {
     public RGenerator rgen;
     //public MDObject obj;
-    //Distance detection
+    //Distance detection + indication
     public Transform[] objects;
     private float distance;
     public Image signalStrength;
+    //Angle detection + indication
+    public GameObject Player;
+    public GameObject dirLight;
+    public Material On;
+    public Material Off;
     //Score counting
     public Text foundAlert;
     private int score = 0;
@@ -24,7 +29,7 @@ public class MetalDetector : MonoBehaviour
     public bool mDetector;
     void Start()
     {
-        //mDTone = GetComponent<AudioSource>();
+        //mDTone = GetComponent<AudioSource>(); //why is this here, as i ever?
     }
 
     
@@ -47,17 +52,29 @@ public class MetalDetector : MonoBehaviour
                     bestTarget = potentialTarget;
                 }
             }
-            //Spag time
-            
+            //Spaghetti time
+            //distance calculation
             var playerPosition = transform.position;
             playerPosition.y = bestTarget.position.y;
             distance = Vector3.Distance(currentPosition, bestTarget.position);
             signalStrength.fillAmount = (1.0f - (distance / 70));
-            print("distance = " + distance);
+            //print("distance = " + distance);
+            //Angle Calculation
+            Vector3 targetDir = bestTarget.position - Player.transform.position;
+            float angle = Vector3.Angle(targetDir, Player.transform.forward);
+            if (angle < 15.0f)
+            {
+                dirLight.GetComponent<MeshRenderer>().material = On;
+            }
+            else
+            {
+                dirLight.GetComponent<MeshRenderer>().material = Off;
+            }
 
 
-            //Metal Detector Sound system
-            timer += Time.deltaTime / distance;
+
+                //Metal Detector Sound system
+                timer += Time.deltaTime / distance;
             if (timer > maxFreq && distance > 2)
             {
                 mDClick.PlayOneShot(mDClick.clip, 1);
@@ -66,7 +83,6 @@ public class MetalDetector : MonoBehaviour
             if (distance < 2)
             {
                 mDTone.volume = 1f;
-                print("in range");
             }
             else
             {
