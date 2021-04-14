@@ -44,6 +44,7 @@ public class TriggerTutorial : MonoBehaviour
         yield return new WaitForSeconds(5);
         //mMessage.GetComponent<Image>().enabled = false;
         mMessage.SetActive(false);
+        Destroy(gameObject);
     }
 
 }
