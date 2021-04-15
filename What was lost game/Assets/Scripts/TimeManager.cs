@@ -7,6 +7,8 @@ public class TimeManager : MonoBehaviour
     //Scene References
     [SerializeField] private Light directionalLight;
     [SerializeField] private LightingPreset preset;
+    public bool customLightRotation;
+    public Vector3 testVector;
 
     public ParticleSystem[] Clouds;
 
@@ -88,14 +90,22 @@ public class TimeManager : MonoBehaviour
 
             directionalLight.intensity = baseLightIntensity + (Mathf.Sin(timePercent * 3) * lightIntensityMultiplier);
 
-            directionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 45, 0));
+            if (customLightRotation)
+            {
+                directionalLight.transform.rotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 0, 0));
+            }
+            else
+            {
+                //directionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 45, 0));
+            }
         }
 
         if (ocean)
         {
             ocean.speed = 24 / minutesPerDay;
 
-            ocean.Play("OceanColourChange", 0, 20);
+            //ocean.Play("OceanColourChange", 0, 20);
+            ocean.Play("OceanColourChange");
 
             if (oceanAnimation)
             {
