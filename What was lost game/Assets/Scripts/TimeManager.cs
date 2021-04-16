@@ -42,7 +42,7 @@ public class TimeManager : MonoBehaviour
         if (preset == null)
             return;
 
-        if (Application.isPlaying)
+        if (Application.isPlaying && timeOfDay < endingHour)
         {
             //(Replace with a reference to the game time)
             float timeMultiplier = 1440 /  minutesPerDay;
@@ -53,7 +53,7 @@ public class TimeManager : MonoBehaviour
             
             if(timeOfDay >= endingHour)
             {
-                timeOfDay = startingHour;
+                //timeOfDay = startingHour;
             }
 
             UpdateLighting(timeOfDay / 24);
