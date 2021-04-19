@@ -5,6 +5,7 @@ using UnityEngine;
 public class InvTestPlayer : MonoBehaviour
 {
     public InventoryObject inventory;
+    private int speed = 3;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +15,12 @@ public class InvTestPlayer : MonoBehaviour
             inventory.AddItem(item.item);
             Destroy(other.gameObject);
         }
+    }
+
+    private void Update()
+    {
+        var direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 
     private void OnApplicationQuit()

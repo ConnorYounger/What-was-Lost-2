@@ -8,14 +8,14 @@ public class InvDisplayController : MonoBehaviour
 {
     private Canvas inventoryInterface;
     private bool isDisplayed;
-    public GameObject player;
+    private GameObject player;
 
     void Start()
     {
         inventoryInterface = GameObject.Find("InventoryCanvas").GetComponent<Canvas>();
         isDisplayed = inventoryInterface.enabled;
 
-        player = GameObject.Find("FPSController");
+        player = GameObject.Find("Player");
     }
 
     void Update()
@@ -37,7 +37,7 @@ public class InvDisplayController : MonoBehaviour
         }
         else if (isDisplayed)
         {
-            if (Input.GetKeyDown("i"))
+            if (Input.GetKeyDown("i") || Input.GetKeyDown("escape"))
             {
                 inventoryInterface.enabled = false;
                 isDisplayed = false;

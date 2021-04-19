@@ -18,4 +18,4 @@ MonoBehaviour:
   itemName: Fishing Lure
   itemImage: {fileID: 21300000, guid: 7f11f0d3b0aaef849b24b68ae3fae243, type: 3}
   modelPrefab: {fileID: 0}
-  itemValue: 0
+  itemValue: 25

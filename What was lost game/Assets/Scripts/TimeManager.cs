@@ -10,6 +10,9 @@ public class TimeManager : MonoBehaviour
 
     public ParticleSystem[] Clouds;
 
+    private Animator ocean;
+    public Animation oceanAnimation;
+
     //Variables
     [SerializeField, Range(0, 24)] private float timeOfDay;
     public float minutesPerDay = 10;
@@ -17,14 +20,18 @@ public class TimeManager : MonoBehaviour
     [Range(0, 24)] public int startingHour = 8;
     [Range(0, 24)]public int endingHour = 18;
 
+    public float baseLightIntensity = 0.6f;
+    public float lightIntensityMultiplier = 0.8f;
+
     private void Start()
     {
-        if (Clouds.Length > 0)
+        SetCloudSpeed();
+
+        ocean = GameObject.Find("Ocean").GetComponent<Animator>();
+
+        if(ocean)
         {
-            foreach(ParticleSystem cloud in Clouds)
-            {
-                cloud.playbackSpeed = 24 / minutesPerDay;
-            }
+            //oceanAnimation = ocean.gameObject.GetComponent<Animation>();
         }
     }
 
@@ -55,25 +62,48 @@ public class TimeManager : MonoBehaviour
         }
     }
 
+    void SetCloudSpeed()
+    {
+        // If there are clouds, then set the speed relative to minutes per day
+        if (Clouds.Length > 0)
+        {
+            foreach (ParticleSystem cloud in Clouds)
+            {
+                cloud.playbackSpeed = 24 / minutesPerDay;
+            }
+        }
+    }
 
+    // Handles lighting (Includes sun rotation, intensity and skybox color)
     private void UpdateLighting(float timePercent)
     {
-        //Debug.Log(timePercent);
-
-        //Set ambient and fog
+        // Set ambient and fog
         RenderSettings.ambientLight = preset.AmbientColor.Evaluate(timePercent);
         RenderSettings.fogColor = preset.FogColor.Evaluate(timePercent);
 
-        //If the directional light is set then rotate and set it's color, I actually rarely use the rotation because it casts tall shadows unless you clamp the value
+        // If the directional light is set then rotate and set it's color, I actually rarely use the rotation because it casts tall shadows unless you clamp the value
         if (directionalLight != null)
         {
             directionalLight.color = preset.DirectionalColor.Evaluate(timePercent);
 
-            directionalLight.intensity = 0.6f + (Mathf.Sin(timePercent * 3) * 0.8f);
+            directionalLight.intensity = baseLightIntensity + (Mathf.Sin(timePercent * 3) * lightIntensityMultiplier);
 
             directionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 45, 0));
         }
 
+        if (ocean)
+        {
+            ocean.speed = 24 / minutesPerDay;
+
+            ocean.Play("OceanColourChange", 0, 20);
+
+            if (oceanAnimation)
+            {
+                //oceanAnimation["OceanColourChange"].time = 20;
+            }
+        }
+
+        // Set the skybox color according to the skybox color preset
         if (RenderSettings.skybox.HasProperty("_Tint"))
         {
             RenderSettings.skybox.SetColor("_Tint", preset.skyBoxColor.Evaluate(timePercent));
@@ -84,18 +114,18 @@ public class TimeManager : MonoBehaviour
         }
     }
 
-    //Try to find a directional light to use if we haven't set one
+    // Try to find a directional light to use if we haven't set one
     private void OnValidate()
     {
         if (directionalLight != null)
             return;
 
-        //Search for lighting tab sun
+        // Search for lighting tab sun
         if (RenderSettings.sun != null)
         {
             directionalLight = RenderSettings.sun;
         }
-        //Search scene for light that fits criteria (directional)
+        // Search scene for light that fits criteria (directional)
         else
         {
             Light[] lights = GameObject.FindObjectsOfType<Light>();

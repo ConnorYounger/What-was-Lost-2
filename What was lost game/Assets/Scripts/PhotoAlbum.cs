@@ -9,10 +9,11 @@ public class PhotoAlbum : MonoBehaviour
     //public RectTransform parentPanel;
     public Sprite[] photos;
     public int imageNum;
-    public GameObject prevPhoto, nextPhoto, photoMask;
+    public GameObject prevPhoto, nextPhoto;
+    private GameObject photoMask;
     private string emptyText = "...";
     public string[] memoryCaptions = new string[4];
-    public TMP_Text memoryText;
+    private TMP_Text memoryText;
     private AudioSource photoChangeAudio;
     public bool[] photoFound;
 
@@ -27,6 +28,13 @@ public class PhotoAlbum : MonoBehaviour
         //memoryText.text = emptyText;
 
         UpdatePhoto();
+    }
+
+    // Change the boolean value of a photo mask
+    // **Call on key item pickup
+    public void UnmaskPhoto(int i)
+    {
+        photoFound[i] = true;
     }
 
     // Change the photo display based on position in array & either display or hide a mask if the photo has been 'unlocked'
