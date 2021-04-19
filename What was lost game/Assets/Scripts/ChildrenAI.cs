@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using TMPro;
 
 public class ChildrenAI : MonoBehaviour
@@ -39,6 +40,8 @@ public class ChildrenAI : MonoBehaviour
 
     private AudioSource audioSource;
 
+    private NavMeshAgent navAgent;
+
     void Start()
     {
         SetStates();
@@ -50,12 +53,18 @@ public class ChildrenAI : MonoBehaviour
             annoyingKidItemStolenText = GameObject.Find("AnnoyingKidItemStolenText").GetComponent<TMP_Text>();
         }
 
-        if(audioSource = gameObject.GetComponent<AudioSource>())
+        if (audioSource = gameObject.GetComponent<AudioSource>())
         {
             audioSource.clip = stats.triggerSound;
         }
 
         metalDetectorObject = GameObject.Find(metalDetectorScriptObject);
+
+        if (gameObject.GetComponent<NavMeshAgent>())
+        {
+            navAgent = gameObject.GetComponent<NavMeshAgent>();
+            navAgent.speed = stats.movementSpeed;
+        }
     }
 
     private void SetStates()
@@ -126,8 +135,9 @@ public class ChildrenAI : MonoBehaviour
             if (Vector3.Distance(transform.position, target.transform.position) > destinationOffset)
             {
                 // Move towards player
-                transform.LookAt(target.transform.position);
-                transform.position = Vector3.MoveTowards(transform.position, target.transform.position, stats.movementSpeed * Time.deltaTime);
+                //transform.LookAt(target.transform.position);
+                //transform.position = Vector3.MoveTowards(transform.position, target.transform.position, stats.movementSpeed * Time.deltaTime);
+                navAgent.SetDestination(target.transform.position);
 
                 //Debug.Log("Move towards player");
                 //Debug.Log("Distance = " + Vector3.Distance(transform.position, target.transform.position) + " / " + destinationOffset);
@@ -177,8 +187,9 @@ public class ChildrenAI : MonoBehaviour
             if (Vector3.Distance(transform.position, stats.startLocation) > destinationOffset)
             {
                 // Move to starting position
-                transform.LookAt(stats.startLocation);
-                transform.position = Vector3.MoveTowards(transform.position, stats.startLocation, stats.movementSpeed * Time.deltaTime);
+                //transform.LookAt(stats.startLocation);
+                //transform.position = Vector3.MoveTowards(transform.position, stats.startLocation, stats.movementSpeed * Time.deltaTime);
+                navAgent.SetDestination(stats.startLocation);
 
                 //Debug.Log("Move towards starting pos");                
             }
