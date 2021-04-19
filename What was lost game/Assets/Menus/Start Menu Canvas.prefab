@@ -222,7 +222,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3370047806897017843}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3370047807194540304
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,6 +945,7 @@ GameObject:
   - component: {fileID: 3370047808697283273}
   - component: {fileID: 3370047808697283272}
   - component: {fileID: 3370047808697283279}
+  - component: {fileID: 259357650}
   m_Layer: 5
   m_Name: Start Menu Canvas
   m_TagString: Untagged
@@ -1021,6 +1033,23 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &259357650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370047808697283278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127f23b51f1de2f41847f01ff55ebd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playBtn: {fileID: 3370047806897017853}
+  optionsBtn: {fileID: 3370047808886569543}
+  exitBtn: {fileID: 3370047807723835394}
+  playScene: _Concealed Cove
+  optionsScene: Options Menu
 --- !u!1 &3370047808886569595
 GameObject:
   m_ObjectHideFlags: 0
