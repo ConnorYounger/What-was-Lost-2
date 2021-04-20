@@ -116,13 +116,14 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 967b2dab46e20fa43aff54b4c3948de7, type: 2}
   heldItem:
     item: {fileID: 0}
-  targetName: FPSController
+  targetName: Player
   harassTime: 5
   itemStealChance: 100
   itemHoldPoint: {fileID: 5922686039552137145}
   targetInventory: {fileID: 11400000, guid: 9311d544118506f42a3267b2f8a44cca, type: 2}
   animator: {fileID: 6008736003583290139}
   metalDetectorScriptObject: Metal_detectin_object
+  dogMetalDetector: {fileID: 0}
 --- !u!54 &5922686038817236096
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -37,6 +37,9 @@ public class ChildrenAI : MonoBehaviour
 
     public string metalDetectorScriptObject = "Metal_detectin_object";
     private GameObject metalDetectorObject;
+    private GameObject playerMetalDetector;
+    public GameObject dogMetalDetector;
+
 
     private AudioSource audioSource;
 
@@ -65,6 +68,19 @@ public class ChildrenAI : MonoBehaviour
             navAgent = gameObject.GetComponent<NavMeshAgent>();
             navAgent.speed = stats.movementSpeed;
         }
+
+        if (GameObject.Find("Metal Detector"))
+        {
+            playerMetalDetector = GameObject.Find("Metal Detector");
+        }
+
+        /*
+        if (GameObject.Find("Dog Metal Detector"))
+        {
+            dogMetalDetector = GameObject.Find("Dog Metal Detector");
+            dogMetalDetector.SetActive(false);
+        }
+        */
     }
 
     private void SetStates()
@@ -271,18 +287,16 @@ public class ChildrenAI : MonoBehaviour
     void TakePlayerMetalDetector()
     {
         // Check to see if the target has the metal detector script
-        if (metalDetectorObject && metalDetectorObject.GetComponent<MetalDetector>() && metalDetectorObject.GetComponent<MetalDetector>().mDetector)
+        if (target && metalDetectorObject.GetComponent<MetalDetector>())
         {
-            // Asks the script if the enemy can take the metal detector
-            //heldItemPrefab = target.GetComponent<PlayerMetalDetectorItem>().TakeMetalDetector();
-
-            metalDetectorObject.GetComponent<MetalDetector>().mDetector = false;
-
-            if (heldItem != null)
+            if (metalDetectorObject.GetComponent<MetalDetector>().mDetector == true)
             {
                 hasItem = true;
 
-                //heldItemPrefab.transform.parent = itemHoldPoint.transform;
+                metalDetectorObject.GetComponent<MetalDetector>().mDetector = false;
+
+                playerMetalDetector.SetActive(false);
+                dogMetalDetector.SetActive(true);
             }
             else
             {
@@ -339,9 +353,10 @@ public class ChildrenAI : MonoBehaviour
     {
         if (metalDetectorObject)
         {
-            //target.GetComponent<PlayerMetalDetectorItem>().GiveMetalDetector(heldItemPrefab);
-
             metalDetectorObject.GetComponent<MetalDetector>().mDetector = true;
+
+            playerMetalDetector.SetActive(true);
+            dogMetalDetector.SetActive(false);
 
             heldItemPrefab = null;
         }
