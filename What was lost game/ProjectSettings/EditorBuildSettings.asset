@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/EmptyBeachWithWall.unity
     guid: 6759c7c4d9824254791f1ebda71f8a73
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/_Concealed Cove.unity
     guid: f09abbef7ee519e449d0310c58da7a78
   m_configObjects: {}
