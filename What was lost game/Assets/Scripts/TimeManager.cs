@@ -16,11 +16,11 @@ public class TimeManager : MonoBehaviour
     public Animation oceanAnimation;
 
     //Variables
-    [SerializeField, Range(0, 24)] private float timeOfDay;
+    [Range(0, 24)] public float timeOfDay;
     public float minutesPerDay = 10;
 
     [Range(0, 24)] public int startingHour = 8;
-    [Range(0, 24)]public int endingHour = 18;
+    [Range(0, 24)] public int endingHour = 18;
 
     public float baseLightIntensity = 0.6f;
     public float lightIntensityMultiplier = 0.8f;

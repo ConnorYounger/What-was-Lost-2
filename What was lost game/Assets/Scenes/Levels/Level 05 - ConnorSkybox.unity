@@ -1529,6 +1529,11 @@ PrefabInstance:
       propertyPath: prewarm
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2397106848043989026, guid: c78ef3e41baca754392d9bb23e364f6f,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2397106848043989053, guid: c78ef3e41baca754392d9bb23e364f6f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1568,6 +1573,11 @@ PrefabInstance:
         type: 3}
       propertyPath: prewarm
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397106848303438418, guid: c78ef3e41baca754392d9bb23e364f6f,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.minMaxState
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5829079897976287916, guid: c78ef3e41baca754392d9bb23e364f6f,
         type: 3}
@@ -9686,6 +9696,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8773446110120591104, guid: ff35e1467cfaca64a9e8e8576e95dde5,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: dc4017a7681ae92478e611350af17c65, type: 2}
     - target: {fileID: 8773446110120591105, guid: ff35e1467cfaca64a9e8e8576e95dde5,
         type: 3}
       propertyPath: m_RootOrder
