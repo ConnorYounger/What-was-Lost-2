@@ -7644,6 +7644,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!4 &517771576 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8773446110120591105, guid: ff35e1467cfaca64a9e8e8576e95dde5,
+    type: 3}
+  m_PrefabInstance: {fileID: 874726855}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &519387755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18025,12 +18031,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189853305}
-  m_LocalRotation: {x: -0.95221746, y: -0.21947557, z: -0.06137144, w: -0.20333695}
-  m_LocalPosition: {x: 17.4805, y: 3, z: 356.33255}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.6299233, y: -0.0114117265, z: -0.71671563, w: -0.29897362}
+  m_LocalPosition: {x: 0, y: 3, z: -18.800005}
+  m_LocalScale: {x: 0.12144356, y: 0.2541885, z: 0.11322928}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 517771576}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 21.119001, y: 77.234, z: -208.34799}
 --- !u!1001 &1191422998
 PrefabInstance:
@@ -18817,7 +18823,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1259010745
 PrefabInstance:
@@ -21378,7 +21384,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1411485748
 PrefabInstance:
@@ -28305,7 +28311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalScale.x
