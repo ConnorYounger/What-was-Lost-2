@@ -108,7 +108,7 @@ public class ChildrenAI : MonoBehaviour
         {
             if (getBackText)
             {
-                getBackText.text = "Press E to retrieve meatl detector.";
+                getBackText.text = stats.itemReturnMessage;
             }
 
             if (Input.GetKeyDown(KeyCode.E))
@@ -227,6 +227,10 @@ public class ChildrenAI : MonoBehaviour
                     {
                         IntteractWithPlayer();
                     }
+                    else
+                    {
+                        StopEngageing();
+                    }
 
                     timer = 0;
                 }
@@ -250,7 +254,12 @@ public class ChildrenAI : MonoBehaviour
             else
             {
                 // Look at player
-                transform.LookAt(target.transform.position);
+                //transform.LookAt(target.transform.position);
+
+                var lookPos = target.transform.position - transform.position;
+                lookPos.y = 0;
+                var rotation = Quaternion.LookRotation(lookPos);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * stats.movementSpeed);
 
                 //Debug.Log("Look at player and wait");
 
@@ -321,6 +330,10 @@ public class ChildrenAI : MonoBehaviour
             {
                 StopEngageing();
             }
+        }
+        else
+        {
+            StopEngageing();
         }
     }
 
@@ -409,11 +422,14 @@ public class ChildrenAI : MonoBehaviour
         if (Vector3.Distance(transform.position, stats.startLocation) > destinationOffset)
         {
             // Move to starting position
-            transform.LookAt(stats.startLocation);
-            transform.position = Vector3.MoveTowards(transform.position, stats.startLocation, stats.movementSpeed * Time.deltaTime);
+            navAgent.SetDestination(stats.startLocation);
+
+            animator.SetBool("isWalking", true);
         }
         else
         {
+            animator.SetBool("isWalking", false);
+
             // Start cool down timer
             if (timer < stats.coolDownTime)
             {

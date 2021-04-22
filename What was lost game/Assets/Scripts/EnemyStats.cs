@@ -15,6 +15,8 @@ public class EnemyStats : ScriptableObject
     public float movementSpeed;
     public float coolDownTime;
 
+    public string itemReturnMessage;
+
     [HideInInspector]
     public Vector3 startLocation;
 
