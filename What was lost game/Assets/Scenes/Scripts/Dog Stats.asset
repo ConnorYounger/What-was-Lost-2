@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2aac46549db03140963b24ad5c7c64d, type: 3}
+  m_Name: Dog Stats
+  m_EditorClassIdentifier: 
+  enemyType: 1
+  characterName: Playful Dog
+  triggerDistance: 3
+  movementSpeed: 7
+  coolDownTime: 5
+  itemReturnMessage: 
+  startLocation: {x: -6.33, y: 4.924136, z: -99.62}
+  triggerSound: {fileID: 8300000, guid: 09b88756530bcd04eabedd5515c25216, type: 3}
+  footStepSound: {fileID: 8300000, guid: b5f76dabbbe73484d9d60b20c234e55d, type: 3}
+  timeBetweenFootStepSounds: 0.3
