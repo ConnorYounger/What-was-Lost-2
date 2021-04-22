@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class OptionsMenuController : MonoBehaviour
 {
-    public Button audioBtn, displayBtn, controlsBtn, backBtn;
+    public Button audioBtn, displayBtn, controlsBtn, backBtn, exitBtn;
     public string mainScene;
 
     private void Start()
@@ -16,9 +16,13 @@ public class OptionsMenuController : MonoBehaviour
         backBtn.onClick.AddListener(GoBack);
     }
 
-    private void GoBack()
+    private void CloseOptions()
     {
         SceneManager.LoadScene(mainScene);
+    }
+
+    private void GoBack()
+    {
     }
 
     private void OpenControls()
