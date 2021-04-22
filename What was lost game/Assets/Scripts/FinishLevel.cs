@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.SceneManagement;
 
 public class FinishLevel : MonoBehaviour
 {
     public InventoryObject playerInventory;
 
+    public int maxInventoryItems = 15;
+
     public TimeManager timeManager;
 
-    public int maxInventoryItems = 15;
+    public string levelSelectScene;
 
     private void Start()
     {
@@ -28,6 +31,6 @@ public class FinishLevel : MonoBehaviour
 
     public void EndLevel()
     {
-
+        EditorSceneManager.LoadScene("", 1);
     }
 }
