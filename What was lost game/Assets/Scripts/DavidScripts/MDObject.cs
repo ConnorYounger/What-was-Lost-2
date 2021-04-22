@@ -62,7 +62,7 @@ public class MDObject : MonoBehaviour
         transform.position = pos;
 
         NavMeshHit hitloc;
-        if (NavMesh.SamplePosition(transform.position, out hitloc, 5f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(transform.position, out hitloc, 10f, NavMesh.AllAreas))
         {
             pos = hitloc.position;
             transform.position = pos;

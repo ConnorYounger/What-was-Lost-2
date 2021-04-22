@@ -12,6 +12,7 @@ public class RGenerator : MonoBehaviour
     public List<ItemObject> valueItems = new List<ItemObject>();
     private int sCount, jCount, vCount;
     public Text foundAlert;
+    public Image itemPreview;
     void Start()
     {
         ItemObject[] objs1 = Resources.LoadAll<ItemObject>("Inventory/KeyItems/");
@@ -80,10 +81,15 @@ public class RGenerator : MonoBehaviour
         randomRare = (Random.Range(0, sCount));
         print(randomRare);
         var item = storyItems[randomRare];
+        
         if (item)
         {
             inventory.AddItem(item);
             foundAlert.text = "Found: " + item.name;
+            itemPreview.sprite = item.itemImage;
+            var tempColor = itemPreview.color;
+            tempColor.a = 1f;
+            itemPreview.color = tempColor;
             StartCoroutine(Refresh());
         }
     }
@@ -96,6 +102,10 @@ public class RGenerator : MonoBehaviour
         {
             inventory.AddItem(item);
             foundAlert.text = "Found: " + item.name;
+            itemPreview.sprite = item.itemImage;
+            var tempColor = itemPreview.color;
+            tempColor.a = 1f;
+            itemPreview.color = tempColor;
             StartCoroutine(Refresh());
         }
     }
@@ -108,6 +118,10 @@ public class RGenerator : MonoBehaviour
         {
             inventory.AddItem(item);
             foundAlert.text = "Found: " + item.name;
+            itemPreview.sprite = item.itemImage;
+            var tempColor = itemPreview.color;
+            tempColor.a = 1f;
+            itemPreview.color = tempColor;
             StartCoroutine(Refresh());
         }
         /*Valuableitem, commonitem and uncommon item - Randomly generates a number between 0 (first index of a list) and the highest number of the relevant list
@@ -118,6 +132,9 @@ public class RGenerator : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         foundAlert.text = "";
+        var tempColor = itemPreview.color;
+        tempColor.a = 0f;
+        itemPreview.color = tempColor;
     }
 
     private void OnApplicationQuit()
