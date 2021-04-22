@@ -8,7 +8,6 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private Light directionalLight;
     [SerializeField] private LightingPreset preset;
     public bool customLightRotation;
-    public Vector3 testVector;
 
     public ParticleSystem[] Clouds;
 
@@ -96,7 +95,7 @@ public class TimeManager : MonoBehaviour
             }
             else
             {
-                //directionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 45, 0));
+                directionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 45, 0));
             }
         }
 

@@ -13787,8 +13787,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3305187056597030326, guid: acb3cf43190232143b6d912380620cb5,
         type: 3}
+      propertyPath: preset
+      value: 
+      objectReference: {fileID: 11400000, guid: c022f0ddd71d9604e80cedf781368424,
+        type: 2}
+    - target: {fileID: 3305187056597030326, guid: acb3cf43190232143b6d912380620cb5,
+        type: 3}
       propertyPath: minutesPerDay
-      value: 2
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3305187056597030326, guid: acb3cf43190232143b6d912380620cb5,
         type: 3}
