@@ -96,11 +96,11 @@ CapsuleCollider:
   m_GameObject: {fileID: 5922686038817236106}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.3
-  m_Height: 1.5
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: -0.3, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5922686038817236107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,15 +116,13 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 967b2dab46e20fa43aff54b4c3948de7, type: 2}
   heldItem:
     item: {fileID: 0}
-  targetName: Player
+  targetName: FPSController
   harassTime: 5
   itemStealChance: 100
-  destinationOffset: 2
   itemHoldPoint: {fileID: 5922686039552137145}
   targetInventory: {fileID: 11400000, guid: 9311d544118506f42a3267b2f8a44cca, type: 2}
   animator: {fileID: 6008736003583290139}
-  metalDetectorScriptString: Metal_detectin_object
-  dogMetalDetector: {fileID: 0}
+  metalDetectorScriptObject: Metal_detectin_object
 --- !u!54 &5922686038817236096
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -139,7 +137,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!195 &708842677696420926
 NavMeshAgent:
@@ -150,17 +148,17 @@ NavMeshAgent:
   m_GameObject: {fileID: 5922686038817236106}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.2
+  m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 200
-  m_StoppingDistance: 2
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.5
-  m_BaseOffset: 1.1
+  m_Height: 2
+  m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &5922686039552137144
@@ -432,15 +430,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4755620223891304, guid: 889859d3862ff3b46b48aa6898f9773e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4755620223891304, guid: 889859d3862ff3b46b48aa6898f9773e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4755620223891304, guid: 889859d3862ff3b46b48aa6898f9773e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4755620223891304, guid: 889859d3862ff3b46b48aa6898f9773e, type: 3}
       propertyPath: m_LocalPosition.x
