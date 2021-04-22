@@ -8,11 +8,11 @@ public class OptionsMenuController : MonoBehaviour
     public Button audioBtn, displayBtn, controlsBtn, exitBtn;
     public Button backBtn1, backBtn2, backBtn3;
     public GameObject navigationPage, displayPage, audioPage, controlPage;
-    public GameObject mainMenuCanvas;
+    public GameObject topCanvas;
 
     private void Start()
     {
-        mainMenuCanvas.SetActive(false);
+        topCanvas.SetActive(false);
 
         navigationPage.SetActive(true);
         displayPage.SetActive(false);
@@ -30,7 +30,7 @@ public class OptionsMenuController : MonoBehaviour
 
     private void CloseOptions()
     {
-        mainMenuCanvas.SetActive(true);
+        topCanvas.SetActive(true);
         gameObject.SetActive(false);
     }
 
