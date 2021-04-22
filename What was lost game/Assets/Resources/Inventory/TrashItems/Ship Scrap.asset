@@ -16,5 +16,5 @@ MonoBehaviour:
     type: 3}
   type: 2
   itemName: Ship Scrap
-  itemImage: {fileID: 21300000, guid: d73a3884d94ff9e4394dacb8676607d1, type: 3}
+  itemImage: {fileID: 21300000, guid: a564d27069dfc2d4b93e1b64df830363, type: 3}
   modelPrefab: {fileID: 0}

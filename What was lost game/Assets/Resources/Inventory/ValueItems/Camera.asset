@@ -16,6 +16,6 @@ MonoBehaviour:
     type: 3}
   type: 1
   itemName: Camera
-  itemImage: {fileID: 21300000, guid: d73a3884d94ff9e4394dacb8676607d1, type: 3}
+  itemImage: {fileID: 21300000, guid: 051a63b1c21eadd44a02dbd8528d60b7, type: 3}
   modelPrefab: {fileID: 0}
   itemValue: 50
