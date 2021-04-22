@@ -9694,7 +9694,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 4300002, guid: 681e41ee1260343b395ca58745c94870, type: 3}
+      objectReference: {fileID: 4300000, guid: dc4017a7681ae92478e611350af17c65, type: 2}
     - target: {fileID: 8773446110120591105, guid: ff35e1467cfaca64a9e8e8576e95dde5,
         type: 3}
       propertyPath: m_RootOrder
@@ -9703,12 +9703,12 @@ PrefabInstance:
     - target: {fileID: 8773446110120591105, guid: ff35e1467cfaca64a9e8e8576e95dde5,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8773446110120591105, guid: ff35e1467cfaca64a9e8e8576e95dde5,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8773446110120591105, guid: ff35e1467cfaca64a9e8e8576e95dde5,
         type: 3}
@@ -12282,6 +12282,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7706910117560871969, guid: 3da341659c96da841aaaf1f4d329e9c0,
         type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706910117560871969, guid: 3da341659c96da841aaaf1f4d329e9c0,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706910117560871969, guid: 3da341659c96da841aaaf1f4d329e9c0,
+        type: 3}
       propertyPath: EmissionModule.rateOverTime.maxCurve.m_Curve.Array.data[0].time
       value: 0
       objectReference: {fileID: 0}
@@ -12299,6 +12309,16 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.maxCurve.m_Curve.Array.data[1].value
       value: 0.9230767
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706910118390877777, guid: 3da341659c96da841aaaf1f4d329e9c0,
+        type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706910118390877777, guid: 3da341659c96da841aaaf1f4d329e9c0,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.minMaxState
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7706910118390877777, guid: 3da341659c96da841aaaf1f4d329e9c0,
         type: 3}
