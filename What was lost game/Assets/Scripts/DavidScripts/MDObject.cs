@@ -75,14 +75,14 @@ public class MDObject : MonoBehaviour
     }
         public void Update()
     {
-       /* distance = Vector3.Distance(transform.position, Player.position);
-        offset = (distance / 20f);
-        if(ready = true)
-        {
-            transform.position = new Vector3(transform.position.x, (start - offset), transform.position.z);
-        }
-         
-        //Changed to separate script*/
+        distance = Vector3.Distance(transform.position, Player.position);
+        /* offset = (distance / 20f);
+         if(ready = true)
+         {
+             transform.position = new Vector3(transform.position.x, (start - offset), transform.position.z);
+         }
+
+         //Changed to separate script*/
         //Randomize location of next item
         if (Input.GetKeyDown("e"))
         {
