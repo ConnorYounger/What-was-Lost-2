@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
 
 public class FinishLevel : MonoBehaviour
 {
@@ -13,11 +12,18 @@ public class FinishLevel : MonoBehaviour
 
     public string levelSelectScene;
 
+    public GameObject endUI;
+
     private void Start()
     {
         if (GameObject.Find("TimeManager"))
         {
             timeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
+        }
+
+        if (GameObject.Find("DayOver"))
+        {
+            endUI = GameObject.Find("DayOver");
         }
     }
 
@@ -31,6 +37,10 @@ public class FinishLevel : MonoBehaviour
 
     public void EndLevel()
     {
-        EditorSceneManager.LoadScene("", 1);
+        endUI.SetActive(true);
+
+        Time.timeScale = 0;
     }
+
+    // Button level select thing
 }

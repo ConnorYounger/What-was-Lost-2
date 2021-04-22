@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using TMPro;
 
 public class ChildrenAI : MonoBehaviour
@@ -20,12 +21,13 @@ public class ChildrenAI : MonoBehaviour
 
     public float harassTime = 5;
     public int itemStealChance = 25;
-    private float destinationOffset = 2f;
+    public float destinationOffset = 2f;
     private float timer;
     private float timeBetweenFootStepSounds = 0.5f;
     private float soundTimer;
 
     private bool hasItem;
+    private bool isAtSpawn;
 
     public Transform itemHoldPoint;
 
@@ -34,10 +36,11 @@ public class ChildrenAI : MonoBehaviour
     public Animator animator;
 
     private TMP_Text annoyingKidItemStolenText;
+    private Text getBackText;
 
-    public string metalDetectorScriptObject = "Metal_detectin_object";
-    private GameObject metalDetectorObject;
-    private GameObject playerMetalDetector;
+    public string metalDetectorScriptString = "Metal_detectin_object";
+    private GameObject metalDetectorScript;
+    private GameObject playerMetalDetectorObject;
     public GameObject dogMetalDetector;
 
 
@@ -61,7 +64,7 @@ public class ChildrenAI : MonoBehaviour
             audioSource.clip = stats.triggerSound;
         }
 
-        metalDetectorObject = GameObject.Find(metalDetectorScriptObject);
+        metalDetectorScript = GameObject.Find(metalDetectorScriptString);
 
         if (gameObject.GetComponent<NavMeshAgent>())
         {
@@ -71,7 +74,12 @@ public class ChildrenAI : MonoBehaviour
 
         if (GameObject.Find("Metal Detector"))
         {
-            playerMetalDetector = GameObject.Find("Metal Detector");
+            playerMetalDetectorObject = GameObject.Find("Metal Detector");
+        }
+
+        if (GameObject.Find("Foundalert"))
+        {
+            getBackText = GameObject.Find("Foundalert").GetComponent<Text>();
         }
 
         /*
@@ -95,9 +103,21 @@ public class ChildrenAI : MonoBehaviour
     {
         CurrentState();
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (target && Vector3.Distance(gameObject.transform.position, target.transform.position) < destinationOffset && hasItem && isAtSpawn)
         {
-            StopEngageing();
+            if (getBackText)
+            {
+                getBackText.text = "Press E to retrieve meatl detector.";
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                StopEngageing();
+            }
+        }
+        else if (getBackText && getBackText.text != null)
+        {
+            getBackText.text = null;
         }
     }
 
@@ -119,7 +139,7 @@ public class ChildrenAI : MonoBehaviour
 
     void Idle()
     {
-        Debug.Log("current state = Idle");
+        //Debug.Log("current state = Idle");
         // Play Idle Animation
 
         if (target)
@@ -134,17 +154,26 @@ public class ChildrenAI : MonoBehaviour
     public void Trigger()
     {
         if (currentState == 0)
+        {
             currentState = 1;
 
-        if (audioSource)
+            PlayTriggerSound();
+        }
+    }
+
+    void PlayTriggerSound()
+    {
+        if (currentState == 1 && audioSource)
         {
             audioSource.Play();
+
+            Invoke("PlayTriggerSound", 3);
         }
     }
 
     void Engage()
     {
-        Debug.Log("current state = Engauge");
+        //Debug.Log("current state = Engauge");
 
         if (!hasItem)
         {
@@ -207,6 +236,10 @@ public class ChildrenAI : MonoBehaviour
                 //transform.position = Vector3.MoveTowards(transform.position, stats.startLocation, stats.movementSpeed * Time.deltaTime);
                 navAgent.SetDestination(stats.startLocation);
 
+                animator.SetBool("isWalking", true);
+
+                isAtSpawn = false;
+
                 //Debug.Log("Move towards starting pos");                
             }
             else
@@ -221,6 +254,8 @@ public class ChildrenAI : MonoBehaviour
                 {
                     animator.SetBool("isWalking", false);
                 }
+
+                isAtSpawn = true;
             }
         }
     }
@@ -287,15 +322,15 @@ public class ChildrenAI : MonoBehaviour
     void TakePlayerMetalDetector()
     {
         // Check to see if the target has the metal detector script
-        if (target && metalDetectorObject.GetComponent<MetalDetector>())
+        if (target && metalDetectorScript.GetComponent<MetalDetector>())
         {
-            if (metalDetectorObject.GetComponent<MetalDetector>().mDetector == true)
+            if (metalDetectorScript.GetComponent<MetalDetector>().mDetector == true)
             {
                 hasItem = true;
 
-                metalDetectorObject.GetComponent<MetalDetector>().mDetector = false;
+                metalDetectorScript.GetComponent<MetalDetector>().mDetector = false;
 
-                playerMetalDetector.SetActive(false);
+                playerMetalDetectorObject.SetActive(false);
                 dogMetalDetector.SetActive(true);
             }
             else
@@ -351,11 +386,11 @@ public class ChildrenAI : MonoBehaviour
 
     void GivePlayerMetalDetector()
     {
-        if (metalDetectorObject)
+        if (metalDetectorScript)
         {
-            metalDetectorObject.GetComponent<MetalDetector>().mDetector = true;
+            metalDetectorScript.GetComponent<MetalDetector>().mDetector = true;
 
-            playerMetalDetector.SetActive(true);
+            playerMetalDetectorObject.SetActive(true);
             dogMetalDetector.SetActive(false);
 
             heldItemPrefab = null;

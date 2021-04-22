@@ -215,7 +215,7 @@ MonoBehaviour:
   itemHoldPoint: {fileID: 8382622272936489148}
   targetInventory: {fileID: 0}
   animator: {fileID: 919632993}
-  metalDetectorScriptObject: Metal_detectin_object
+  metalDetectorScriptString: coil_2
   dogMetalDetector: {fileID: 5766551839678225771}
 --- !u!54 &8382622272993507369
 Rigidbody:
@@ -484,6 +484,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819819057082505337, guid: 648d6af71a2844841ba8669007a8045e,
+        type: 3}
+      propertyPath: m_Name
+      value: endPiece
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 648d6af71a2844841ba8669007a8045e, type: 3}
