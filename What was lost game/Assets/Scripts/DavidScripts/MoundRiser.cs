@@ -15,12 +15,12 @@ public class MoundRiser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = transform.localPosition;
+        Vector3 pos = transform.position;
         distance = Vector3.Distance(transform.position, player.position);
         //basically y = -distance/20
         //work it out tomorrow mornin
 
-        pos.y = -(distance / 20);
-        transform.localPosition = pos;
+        pos.y = -(distance / 20)+1.5f;
+        transform.position = pos;
     }
 }
