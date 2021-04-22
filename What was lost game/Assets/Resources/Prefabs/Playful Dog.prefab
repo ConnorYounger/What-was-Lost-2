@@ -210,8 +210,9 @@ MonoBehaviour:
   heldItem:
     item: {fileID: 0}
   targetName: Player
-  harassTime: 5
+  harassTime: 1
   itemStealChance: 100
+  destinationOffset: 2
   itemHoldPoint: {fileID: 8382622272936489148}
   targetInventory: {fileID: 0}
   animator: {fileID: 919632993}
@@ -231,7 +232,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!82 &2963171934575850374
 AudioSource:
@@ -342,8 +343,8 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_AngularSpeed: 200
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -614,17 +615,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 983e8123a15c2d64b8996efcd84df4dc,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 983e8123a15c2d64b8996efcd84df4dc,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 983e8123a15c2d64b8996efcd84df4dc,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 983e8123a15c2d64b8996efcd84df4dc,
         type: 3}
@@ -634,12 +635,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 983e8123a15c2d64b8996efcd84df4dc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: -0.103
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 983e8123a15c2d64b8996efcd84df4dc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.503
+      value: 0.161
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 983e8123a15c2d64b8996efcd84df4dc,
         type: 3}

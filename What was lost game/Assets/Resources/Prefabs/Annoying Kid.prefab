@@ -119,10 +119,11 @@ MonoBehaviour:
   targetName: Player
   harassTime: 5
   itemStealChance: 100
+  destinationOffset: 2
   itemHoldPoint: {fileID: 5922686039552137145}
   targetInventory: {fileID: 11400000, guid: 9311d544118506f42a3267b2f8a44cca, type: 2}
   animator: {fileID: 6008736003583290139}
-  metalDetectorScriptObject: Metal_detectin_object
+  metalDetectorScriptString: Metal_detectin_object
   dogMetalDetector: {fileID: 0}
 --- !u!54 &5922686038817236096
 Rigidbody:
@@ -138,7 +139,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!195 &708842677696420926
 NavMeshAgent:

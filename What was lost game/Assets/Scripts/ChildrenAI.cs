@@ -28,6 +28,7 @@ public class ChildrenAI : MonoBehaviour
 
     private bool hasItem;
     private bool isAtSpawn;
+    private bool canRetrieveItem;
 
     public Transform itemHoldPoint;
 
@@ -114,10 +115,14 @@ public class ChildrenAI : MonoBehaviour
             {
                 StopEngageing();
             }
+
+            canRetrieveItem = true;
         }
-        else if (getBackText && getBackText.text != null)
+        else if (getBackText && canRetrieveItem)
         {
-            getBackText.text = null;
+            getBackText.text = "";
+
+            canRetrieveItem = false;
         }
     }
 
