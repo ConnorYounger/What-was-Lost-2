@@ -5,38 +5,58 @@ using UnityEngine.UI;
 
 public class OptionsMenuController : MonoBehaviour
 {
-    public Button audioBtn, displayBtn, controlsBtn, backBtn, exitBtn;
-    public string mainScene;
+    public Button audioBtn, displayBtn, controlsBtn, exitBtn;
+    public Button backBtn1, backBtn2, backBtn3;
+    public GameObject navigationPage, displayPage, audioPage, controlPage;
+    public GameObject mainMenuCanvas;
 
     private void Start()
     {
+        mainMenuCanvas.SetActive(false);
+
+        navigationPage.SetActive(true);
+        displayPage.SetActive(false);
+        audioPage.SetActive(false);
+        controlPage.SetActive(false);
+
         audioBtn.onClick.AddListener(OpenAudio);
         displayBtn.onClick.AddListener(OpenDisplay);
         controlsBtn.onClick.AddListener(OpenControls);
-        backBtn.onClick.AddListener(GoBack);
+        backBtn1.onClick.AddListener(GoBack);
+        backBtn2.onClick.AddListener(GoBack);
+        backBtn3.onClick.AddListener(GoBack);
+        exitBtn.onClick.AddListener(CloseOptions);
     }
 
     private void CloseOptions()
     {
-        SceneManager.LoadScene(mainScene);
+        mainMenuCanvas.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     private void GoBack()
     {
+        navigationPage.SetActive(true);
+        displayPage.SetActive(false);
+        audioPage.SetActive(false);
+        controlPage.SetActive(false);
     }
 
     private void OpenControls()
     {
-        throw new NotImplementedException();
+        navigationPage.SetActive(false);
+        controlPage.SetActive(true);
     }
 
     private void OpenDisplay()
     {
-        throw new NotImplementedException();
+        displayPage.SetActive(false);
+        controlPage.SetActive(true);
     }
 
     private void OpenAudio()
     {
-        throw new NotImplementedException();
+        audioPage.SetActive(false);
+        controlPage.SetActive(true);
     }
 }

@@ -6,9 +6,12 @@ public class HomeMenuControl : MonoBehaviour
 {
     public Button playBtn, optionsBtn, exitBtn;
     public string playScene, optionsScene;
+    public GameObject optionsCanvas;
 
     private void Start()
     {
+        optionsCanvas.SetActive(false);
+
         playBtn.onClick.AddListener(PlayGame);
         optionsBtn.onClick.AddListener(OptionsMenu);
         exitBtn.onClick.AddListener(ExitGame);
@@ -21,7 +24,8 @@ public class HomeMenuControl : MonoBehaviour
 
     private void OptionsMenu()
     {
-        SceneManager.LoadScene(optionsScene);
+        optionsCanvas.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     private void ExitGame()
