@@ -90,7 +90,7 @@ public class MetalDetector : MonoBehaviour
 
             }
         }
-        if (Input.GetKeyDown("e"))
+        if (Input.GetMouseButtonDown(0))
         {
             if (distance < 2)
             {
