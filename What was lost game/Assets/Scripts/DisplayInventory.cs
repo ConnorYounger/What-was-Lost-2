@@ -13,6 +13,7 @@ public class DisplayInventory : MonoBehaviour
 
     private void Start()
     {
+        //ClearInvDictionary();
         CreateDisplay();
     }
 
@@ -21,7 +22,7 @@ public class DisplayInventory : MonoBehaviour
         UpdateDisplay();
     }
 
-    private void CreateDisplay()
+    public void CreateDisplay()
     {
         for (int i = 0; i < inventory.Container.Count; i++)
         {
@@ -35,8 +36,10 @@ public class DisplayInventory : MonoBehaviour
         }
     }
    
-    private void UpdateDisplay()
+    public void UpdateDisplay()
     {
+        ClearInvDictionary();
+
         for (int i = 0; i < inventory.Container.Count; i++)
         {
             if (itemsDisplayed.ContainsKey(inventory.Container[i]))
@@ -55,5 +58,21 @@ public class DisplayInventory : MonoBehaviour
                 itemsDisplayed.Add(inventory.Container[i], newSlot);
             }
         }
+    }
+
+    public void RemoveItemDisplay(GameObject i)
+    {
+        //inventory.RemoveItem(itemsDisplayed[i]);
+    }
+
+    public void ClearInvDictionary() 
+    {
+        Debug.Log("Called Clear");
+        
+        foreach (Transform child in inventoryPage.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        itemsDisplayed.Clear();
     }
 }

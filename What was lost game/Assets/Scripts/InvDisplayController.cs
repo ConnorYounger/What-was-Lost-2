@@ -7,6 +7,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class InvDisplayController : MonoBehaviour
 {
     private Canvas inventoryInterface;
+    public GameObject inventoryPage;
     private bool isDisplayed;
     private GameObject player;
 
@@ -28,6 +29,8 @@ public class InvDisplayController : MonoBehaviour
                 inventoryInterface.enabled = true;
                 isDisplayed = true;
                 
+                inventoryPage.GetComponent<DisplayInventory>().UpdateDisplay();
+
                 Time.timeScale = 0;
 
                 player.GetComponent<FirstPersonController>().enabled = false;
@@ -39,6 +42,13 @@ public class InvDisplayController : MonoBehaviour
         {
             if (Input.GetKeyDown("i") || Input.GetKeyDown("escape"))
             {
+                /*
+                inventoryPage.GetComponent<DisplayInventory>().ClearInvDictionary();
+                foreach (Transform child in inventoryPage.transform)
+                {
+                    Destroy(child.gameObject);
+                }*/
+
                 inventoryInterface.enabled = false;
                 isDisplayed = false;
 
