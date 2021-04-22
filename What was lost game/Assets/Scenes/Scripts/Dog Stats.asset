@@ -17,7 +17,7 @@ MonoBehaviour:
   triggerDistance: 3
   movementSpeed: 7
   coolDownTime: 5
-  itemReturnMessage: 
+  itemReturnMessage: Press E to retrieve the metal detector.
   startLocation: {x: -6.33, y: 4.924136, z: -99.62}
   triggerSound: {fileID: 8300000, guid: 09b88756530bcd04eabedd5515c25216, type: 3}
   footStepSound: {fileID: 8300000, guid: b5f76dabbbe73484d9d60b20c234e55d, type: 3}

@@ -17,7 +17,7 @@ MonoBehaviour:
   triggerDistance: 3
   movementSpeed: 5
   coolDownTime: 10
-  itemReturnMessage: 
+  itemReturnMessage: Press E to retrieve the stolen item.
   startLocation: {x: -0.47610188, y: 5.973, z: -97.59487}
   triggerSound: {fileID: 0}
   footStepSound: {fileID: 8300000, guid: b5f76dabbbe73484d9d60b20c234e55d, type: 3}
