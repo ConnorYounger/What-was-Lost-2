@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishLevel : MonoBehaviour
 {
@@ -10,15 +11,26 @@ public class FinishLevel : MonoBehaviour
 
     public TimeManager timeManager;
 
-    public string levelSelectScene;
-
     public GameObject endUI;
+    public GameObject player;
+    public GameObject endLevelCamera;
+
+    private string levelSelectMenu = "Home Menu";
 
     private void Start()
     {
         if (GameObject.Find("TimeManager"))
         {
             timeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
+        }
+        else if (GameObject.Find("Tutorial Time Manager"))
+        {
+            timeManager = GameObject.Find("Tutorial Time Manager").GetComponent<TimeManager>();
+        }
+
+        if (GameObject.Find("Player"))
+        {
+            player = GameObject.Find("Player");
         }
 
         if (GameObject.Find("DayOver"))
@@ -37,10 +49,21 @@ public class FinishLevel : MonoBehaviour
 
     public void EndLevel()
     {
-        endUI.SetActive(true);
+        if (endLevelCamera)
+        {
+            endLevelCamera.SetActive(true);
+        }
 
-        Time.timeScale = 0;
+        endUI.SetActive(true);
+        player.SetActive(false);
+
+        //Time.timeScale = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
-    // Button level select thing
+    public void Travel()
+    {
+        SceneManager.LoadScene(levelSelectMenu);
+    }
 }
