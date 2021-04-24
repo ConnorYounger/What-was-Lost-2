@@ -22,6 +22,8 @@ public class EnemyStats : ScriptableObject
 
     [Header("Sounds")]
     public AudioClip triggerSound;
+    public AudioClip sucessSound;
+    public AudioClip disapointedSound;
     public AudioClip footStepSound;
     public float timeBetweenFootStepSounds = 0.5f;
 }
