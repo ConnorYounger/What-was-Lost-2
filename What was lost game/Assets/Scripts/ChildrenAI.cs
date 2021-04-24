@@ -170,6 +170,7 @@ public class ChildrenAI : MonoBehaviour
     {
         if (currentState == 1 && audioSource)
         {
+            audioSource.clip = stats.triggerSound;
             audioSource.Play();
 
             Invoke("PlayTriggerSound", 3);
@@ -302,6 +303,12 @@ public class ChildrenAI : MonoBehaviour
         // Check to see if the target has the inventory script
         if (targetInventory && targetInventory.Container.Count > 0)
         {
+            if (audioSource && stats.sucessSound)
+            {
+                audioSource.clip = stats.disapointedSound;
+                audioSource.Play();
+            }
+
             int ranItem = Random.Range(0, targetInventory.Container.Count);
 
             heldItem = targetInventory.Container[ranItem];
@@ -344,6 +351,12 @@ public class ChildrenAI : MonoBehaviour
         {
             if (metalDetectorScript.GetComponent<MetalDetector>().mDetector == true)
             {
+                if (audioSource && stats.sucessSound)
+                {
+                    audioSource.clip = stats.disapointedSound;
+                    audioSource.Play();
+                }
+
                 hasItem = true;
 
                 metalDetectorScript.GetComponent<MetalDetector>().mDetector = false;
@@ -355,6 +368,10 @@ public class ChildrenAI : MonoBehaviour
             {
                 StopEngageing();
             }
+        }
+        else
+        {
+            StopEngageing();
         }
     }
 
@@ -375,6 +392,12 @@ public class ChildrenAI : MonoBehaviour
 
     void ReturnItem()
     {
+        if(audioSource && stats.disapointedSound)
+        {
+            audioSource.clip = stats.disapointedSound;
+            audioSource.Play();
+        }
+
         if (stats.enemyType == EnemyStats.EnemyType.Child)
         {
             GivePlayerItem();

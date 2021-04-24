@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c302ddab4e17c64083e25accd3259de, type: 3}
   m_Name: BeachWave1
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: 09b88756530bcd04eabedd5515c25216, type: 3}
-  playWeight: 5
+  sound: {fileID: 8300000, guid: 63f39dfb8c918f94cb4fc98f04bb94a7, type: 3}
+  playWeight: 50
   playChance: 0.25
