@@ -13,7 +13,6 @@ public class DisplayInventory : MonoBehaviour
 
     private void Start()
     {
-        //ClearInvDictionary();
         CreateDisplay();
     }
 
@@ -58,11 +57,6 @@ public class DisplayInventory : MonoBehaviour
                 itemsDisplayed.Add(inventory.Container[i], newSlot);
             }
         }
-    }
-
-    public void RemoveItemDisplay(GameObject i)
-    {
-        //inventory.RemoveItem(itemsDisplayed[i]);
     }
 
     public void ClearInvDictionary() 
