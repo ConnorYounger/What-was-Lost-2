@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Home Menu.unity
+    path: Assets/Scenes/__FINAL BUILD SCENES__/Home Menu.unity
     guid: fb8f7f88efcbf684bbf7baa0316d1917
   - enabled: 1
-    path: Assets/Scenes/Options Menu.unity
+    path: Assets/Scenes/__FINAL BUILD SCENES__/Options Menu.unity
     guid: 003e5bb94eb9e254884816e2726e1ed5
   - enabled: 1
     path: Assets/Scenes/Levels/_Concealed Cove.unity
