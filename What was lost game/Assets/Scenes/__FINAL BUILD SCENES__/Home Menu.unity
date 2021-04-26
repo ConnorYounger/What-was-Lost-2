@@ -1281,6 +1281,11 @@ PrefabInstance:
       objectReference: {fileID: 1305712636}
     - target: {fileID: 5395328531718690603, guid: 2b5c195d816e3514e90fd6ef8dba8af1,
         type: 3}
+      propertyPath: topCanvas
+      value: 
+      objectReference: {fileID: 623319389}
+    - target: {fileID: 5395328531718690603, guid: 2b5c195d816e3514e90fd6ef8dba8af1,
+        type: 3}
       propertyPath: controlPage
       value: 
       objectReference: {fileID: 1305712634}

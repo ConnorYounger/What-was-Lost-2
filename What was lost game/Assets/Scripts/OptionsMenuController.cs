@@ -52,13 +52,13 @@ public class OptionsMenuController : MonoBehaviour
 
     private void OpenDisplay()
     {
-        displayPage.SetActive(false);
-        controlPage.SetActive(true);
+        navigationPage.SetActive(false);
+        displayPage.SetActive(true);
     }
 
     private void OpenAudio()
     {
-        audioPage.SetActive(false);
-        controlPage.SetActive(true);
+        navigationPage.SetActive(false);
+        audioPage.SetActive(true);
     }
 }
