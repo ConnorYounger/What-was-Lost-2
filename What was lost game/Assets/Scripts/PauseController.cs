@@ -19,6 +19,8 @@ public class PauseController : MonoBehaviour
     {
         gamePaused = false;
 
+        optionCanvas = GameObject.Find("OptionsCanvas");
+
         resumeBtn.onClick.AddListener(ResumeGame);
         optionsBtn.onClick.AddListener(OpenOptionsMenu);
         exitBtn.onClick.AddListener(ExitToMain);
@@ -30,6 +32,7 @@ public class PauseController : MonoBehaviour
         {
             if (Input.GetKeyDown("escape"))
             {
+                Debug.Log("esacped");
                 PauseGame();
             }
         }
