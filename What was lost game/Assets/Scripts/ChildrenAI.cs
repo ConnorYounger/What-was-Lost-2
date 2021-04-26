@@ -173,7 +173,7 @@ public class ChildrenAI : MonoBehaviour
             audioSource.clip = stats.triggerSound;
             audioSource.Play();
 
-            Invoke("PlayTriggerSound", 3);
+            //Invoke("PlayTriggerSound", 3);
         }
     }
 
@@ -305,7 +305,7 @@ public class ChildrenAI : MonoBehaviour
         {
             if (audioSource && stats.sucessSound)
             {
-                audioSource.clip = stats.disapointedSound;
+                audioSource.clip = stats.sucessSound;
                 audioSource.Play();
             }
 
@@ -353,7 +353,7 @@ public class ChildrenAI : MonoBehaviour
             {
                 if (audioSource && stats.sucessSound)
                 {
-                    audioSource.clip = stats.disapointedSound;
+                    audioSource.clip = stats.sucessSound;
                     audioSource.Play();
                 }
 
