@@ -14,7 +14,8 @@ public class OptionsMenuController : MonoBehaviour
 
     private void Start()
     {
-        topCanvas.SetActive(false);
+        //topCanvas.SetActive(false);
+        topCanvas.GetComponent<Canvas>().enabled = false;
 
         navigationPage.SetActive(true);
         displayPage.SetActive(false);
@@ -32,7 +33,8 @@ public class OptionsMenuController : MonoBehaviour
 
     private void CloseOptions()
     {
-        topCanvas.SetActive(true);
+        //topCanvas.SetActive(true);
+        topCanvas.GetComponent<Canvas>().enabled = true;
         GetComponent<Canvas>().enabled = false;
         //gameObject.SetActive(false);
     }

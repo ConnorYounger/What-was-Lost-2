@@ -22,8 +22,6 @@ public class TriggerTutorial : MonoBehaviour
     {
         signText = gameObject.GetComponentInChildren<TMP_Text>();
         signText.text = signMesage;
-        //mMessage = GameObject.Find("UI_Message");
-        //tutorialText = GameObject.Find("MessageText").GetComponent<TMP_Text>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,11 +36,9 @@ public class TriggerTutorial : MonoBehaviour
     IEnumerator DisplayTutorialMessage()
     {
         // Display a Tutorial message
-        //mMessage.GetComponent<Image>().enabled = true;
         mMessage.SetActive(true);
         tutorialText.text = tutorialMessage;
         yield return new WaitForSeconds(5);
-        //mMessage.GetComponent<Image>().enabled = false;
         mMessage.SetActive(false);
         Destroy(gameObject);
     }

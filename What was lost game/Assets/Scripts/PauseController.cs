@@ -13,13 +13,16 @@ public class PauseController : MonoBehaviour
     
     private GameObject player;
 
-    private string mainMenuScene;
+    [SerializeField]
+    private string mainMenuScene = "Home Menu";
 
     private void Start()
     {
         gamePaused = false;
+        
+        player = GameObject.Find("Player");
 
-        optionCanvas = GameObject.Find("OptionsCanvas");
+        //optionCanvas = GameObject.Find("OptionsCanvas");
 
         resumeBtn.onClick.AddListener(ResumeGame);
         optionsBtn.onClick.AddListener(OpenOptionsMenu);

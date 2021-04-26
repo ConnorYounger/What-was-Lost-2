@@ -613,7 +613,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5321824601930933251}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -683,6 +683,7 @@ MonoBehaviour:
   optionsBtn: {fileID: 1253354836357825529}
   exitBtn: {fileID: 5786925749294523440}
   gamePaused: 0
+  mainMenuScene: Home Menu
 --- !u!1 &5814512233307297280
 GameObject:
   m_ObjectHideFlags: 0
