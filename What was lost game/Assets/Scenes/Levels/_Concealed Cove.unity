@@ -9293,7 +9293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 813459330}
-  - component: {fileID: 813459329}
+  - component: {fileID: 813459331}
   m_Layer: 0
   m_Name: Random Generator
   m_TagString: Untagged
@@ -9301,25 +9301,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &813459329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813459328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74b6f557b48b2fd4f99d29625bfa8e57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: 9311d544118506f42a3267b2f8a44cca, type: 2}
-  item: {fileID: 0}
-  storyItems: []
-  junkItems: []
-  valueItems: []
-  foundAlert: {fileID: 300318620}
-  itemPreview: {fileID: 345728753}
 --- !u!4 &813459330
 Transform:
   m_ObjectHideFlags: 0
@@ -9334,6 +9315,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &813459331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813459328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8137741b3030e449a3abcc04ebab04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: 9311d544118506f42a3267b2f8a44cca, type: 2}
+  item: {fileID: 0}
+  storyItem: {fileID: 11400000, guid: 89f8e69dc3135d04c8c1115d383aafd0, type: 2}
+  junkItems: []
+  valueItems: []
+  foundAlert: {fileID: 300318620}
+  itemPreview: {fileID: 345728753}
 --- !u!1001 &821438380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24028,7 +24028,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rgen
       value: 
-      objectReference: {fileID: 813459329}
+      objectReference: {fileID: 0}
     - target: {fileID: 2226335271318195496, guid: cb072d3c668aa9c489a5aeffd2b2294d,
         type: 3}
       propertyPath: foundAlert
@@ -24063,7 +24063,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rgen
       value: 
-      objectReference: {fileID: 813459329}
+      objectReference: {fileID: 0}
     - target: {fileID: 7146861207692456319, guid: cb072d3c668aa9c489a5aeffd2b2294d,
         type: 3}
       propertyPath: foundAlert
