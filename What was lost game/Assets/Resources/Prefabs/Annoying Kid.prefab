@@ -118,7 +118,7 @@ MonoBehaviour:
   heldItem:
     item: {fileID: 0}
   targetName: Player
-  harassTime: 5
+  harassTime: 1
   itemStealChance: 100
   destinationOffset: 2
   itemHoldPoint: {fileID: 5922686039552137145}
