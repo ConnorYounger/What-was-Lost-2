@@ -8,6 +8,8 @@ public class OptionsMenuController : MonoBehaviour
     public Button audioBtn, displayBtn, controlsBtn, exitBtn;
     public Button backBtn1, backBtn2, backBtn3;
     public GameObject navigationPage, displayPage, audioPage, controlPage;
+    
+    [Header("Set this to the Pause canvas in each level")]
     public GameObject topCanvas;
 
     private void Start()
