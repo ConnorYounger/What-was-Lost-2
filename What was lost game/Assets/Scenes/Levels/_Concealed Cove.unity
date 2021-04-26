@@ -9554,11 +9554,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 9311d544118506f42a3267b2f8a44cca, type: 2}
   item: {fileID: 0}
-  storyItem: {fileID: 11400000, guid: 89f8e69dc3135d04c8c1115d383aafd0, type: 2}
+  storyItem: {fileID: 0}
   junkItems: []
   valueItems: []
   foundAlert: {fileID: 300318620}
   itemPreview: {fileID: 345728753}
+  key: 0
+  nextLevel: 0
 --- !u!1001 &821438380
 PrefabInstance:
   m_ObjectHideFlags: 0
