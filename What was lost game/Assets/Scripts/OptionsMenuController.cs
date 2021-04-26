@@ -33,7 +33,8 @@ public class OptionsMenuController : MonoBehaviour
     private void CloseOptions()
     {
         topCanvas.SetActive(true);
-        gameObject.SetActive(false);
+        GetComponent<Canvas>().enabled = false;
+        //gameObject.SetActive(false);
     }
 
     private void GoBack()

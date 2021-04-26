@@ -42,13 +42,6 @@ public class InvDisplayController : MonoBehaviour
         {
             if (Input.GetKeyDown("i") || Input.GetKeyDown("escape"))
             {
-                /*
-                inventoryPage.GetComponent<DisplayInventory>().ClearInvDictionary();
-                foreach (Transform child in inventoryPage.transform)
-                {
-                    Destroy(child.gameObject);
-                }*/
-
                 inventoryInterface.enabled = false;
                 isDisplayed = false;
 
