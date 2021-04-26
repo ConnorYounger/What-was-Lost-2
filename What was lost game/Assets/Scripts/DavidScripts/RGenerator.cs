@@ -13,7 +13,8 @@ public class RGenerator : MonoBehaviour
     private int sCount, jCount, vCount;
     public Text foundAlert;
     public Image itemPreview;
-    bool key = true;
+    public bool key;
+    public int nextLevel;
     void Start()
     {
         ItemObject[] objs2 = Resources.LoadAll<ItemObject>("Inventory/TrashItems/");
@@ -33,14 +34,13 @@ public class RGenerator : MonoBehaviour
         print(valueItems.Count);
         jCount = junkItems.Count;
         vCount = valueItems.Count;
-        //Populate each list with their relevant items and assigns the list size to a middle-man variable
-
+        //Populate each list with their relevant items and assigns the list size to a middle-man variable - Jank? yes. Unity moment
     }
     public void Collect() // Runs when an object is walked over
     {
         //Randomly decide rarity of found item: Rare: 0-10 10% Uncommon 11-40 30% Common 41-100 60%
         randomRare = (Random.Range(0, 100));
-        if (randomRare < 10)
+        if (randomRare < 5)
         {
             valuableItem();
         }
@@ -84,11 +84,21 @@ public class RGenerator : MonoBehaviour
             tempColor.a = 1f;
             itemPreview.color = tempColor;
             StartCoroutine(Refresh());
+            ProgressCheck();
             key = false;
         }
         else
         {
             Collect();
+        }
+    }
+    void ProgressCheck()
+    {
+        int current;
+        current = PlayerPrefs.GetInt("LevelUnlocked", 0);
+        if (current < nextLevel)
+        {
+            PlayerPrefs.SetInt("LevelUnlocked", nextLevel);
         }
     }
     void commonItem()
