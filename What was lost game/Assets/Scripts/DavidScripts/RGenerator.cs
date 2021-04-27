@@ -72,13 +72,13 @@ public class RGenerator : MonoBehaviour
     //Add different score amounts depending on rarity of found object and Alert player to rarity of found object
     void valuableItem()
     {
-        randomRare = (Random.Range(0, sCount));
-        print(randomRare);
+        /*randomRare = (Random.Range(0, sCount));
+        print(randomRare);*/
         var item = storyItem;
         if (key)
         {
             inventory.AddItem(item);
-            foundAlert.text = "Found: " + item.name;
+            foundAlert.text = "Found: " + item.name +": New Photo Unlocked";
             itemPreview.sprite = item.itemImage;
             var tempColor = itemPreview.color;
             tempColor.a = 1f;
@@ -91,6 +91,7 @@ public class RGenerator : MonoBehaviour
         {
             Collect();
         }
+
     }
     void ProgressCheck()
     {
@@ -144,7 +145,13 @@ public class RGenerator : MonoBehaviour
         tempColor.a = 0f;
         itemPreview.color = tempColor;
     }
-
+    void Update()
+    {
+      /*  if (Input.GetKeyDown("space")) // Debug
+        {
+            valuableItem();
+        }*/
+    }
     private void OnApplicationQuit()
     {
         inventory.Container.Clear();
