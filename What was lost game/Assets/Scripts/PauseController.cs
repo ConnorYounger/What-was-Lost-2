@@ -11,7 +11,7 @@ public class PauseController : MonoBehaviour
     public Button resumeBtn, optionsBtn, exitBtn;
     public bool gamePaused;
     
-    private GameObject player;
+    public GameObject player;
 
     [SerializeField]
     private string mainMenuScene = "Home Menu";
