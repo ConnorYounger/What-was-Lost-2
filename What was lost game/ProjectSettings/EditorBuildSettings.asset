@@ -12,15 +12,36 @@ EditorBuildSettings:
     path: Assets/Scenes/__FINAL BUILD SCENES__/Options Menu.unity
     guid: 003e5bb94eb9e254884816e2726e1ed5
   - enabled: 1
+    path: Assets/Scenes/__FINAL BUILD SCENES__/LevelSelect.unity
+    guid: d881185b22ddad7468bbda69ed735862
+  - enabled: 1
+    path: Assets/Scenes/__FINAL BUILD SCENES__/Cutscene.unity
+    guid: 2f4be608658a40340a8d70fd81ebbf5f
+  - enabled: 1
+    path: Assets/Scenes/__FINAL BUILD SCENES__/Concealed Cove.unity
+    guid: 078639e9a127a474cada703b80aaf535
+  - enabled: 1
+    path: Assets/Scenes/__FINAL BUILD SCENES__/Sandy Haven.unity
+    guid: b09b6cdac07268a4d958ecbede44cc22
+  - enabled: 1
+    path: Assets/Scenes/__FINAL BUILD SCENES__/Tidewash Canal.unity
+    guid: 21977cd8ef5b8f549860ae9efc199540
+  - enabled: 1
+    path: Assets/Scenes/__FINAL BUILD SCENES__/Seafarers Rest.unity
+    guid: 4f4ffe548158f174aac549f6260980a4
+  - enabled: 1
+    path: Assets/Scenes/__FINAL BUILD SCENES__/Sunkissed Bay.unity
+    guid: 77d6ab6da56c78548b3fcaabc64d06c9
+  - enabled: 0
     path: Assets/Scenes/Levels/_Concealed Cove.unity
     guid: f09abbef7ee519e449d0310c58da7a78
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/_Sandy Haven.unity
     guid: e89282c21c8df2242ad3033f55e565d3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/_Tidewash Canal.unity
     guid: ed05c5668d86b884fa3da517f14a470c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/_Sunkissed Bay.unity
     guid: ecc84d00c5d00524c918fa5a8363b4df
   m_configObjects: {}

@@ -285,7 +285,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 259357650, guid: d247341e953c5ff42a30adff5840f3e5, type: 3}
       propertyPath: playScene
-      value: Concealed Cove
+      value: Cutscene
       objectReference: {fileID: 0}
     - target: {fileID: 259357650, guid: d247341e953c5ff42a30adff5840f3e5, type: 3}
       propertyPath: optionsCanvas
