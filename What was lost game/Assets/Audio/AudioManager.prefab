@@ -53,7 +53,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f8c17bc5a3cfc7f4f92a4ca710a82c6f, type: 2}
   - {fileID: 11400000, guid: 59d7befd40c6cfa4c81653573ca66ab0, type: 2}
   - {fileID: 11400000, guid: 38974b0a0bfcd5f469e1765d499bae39, type: 2}
-  timeBetweenAmbiantSounds: 10
+  baseTimeBetweenAmbiantSounds: 3
   additionalTimeRandomness: 3
 --- !u!82 &2744688990123022428
 AudioSource:
