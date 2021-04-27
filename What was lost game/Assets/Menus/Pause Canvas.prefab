@@ -683,7 +683,8 @@ MonoBehaviour:
   optionsBtn: {fileID: 1253354836357825529}
   exitBtn: {fileID: 5786925749294523440}
   gamePaused: 0
-  mainMenuScene: Home Menu
+  player: {fileID: 0}
+  mainMenuScene: LevelSelect
 --- !u!1 &5814512233307297280
 GameObject:
   m_ObjectHideFlags: 0

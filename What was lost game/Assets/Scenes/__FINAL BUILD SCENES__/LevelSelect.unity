@@ -153,6 +153,31 @@ PrefabInstance:
       propertyPath: level5Btn
       value: 
       objectReference: {fileID: 984475921}
+    - target: {fileID: 8759459619455896980, guid: 2295cd3276ec80d49b8063431ec65b0b,
+        type: 3}
+      propertyPath: level1Scene
+      value: Concealed Cove
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759459619455896980, guid: 2295cd3276ec80d49b8063431ec65b0b,
+        type: 3}
+      propertyPath: level2Scene
+      value: Sandy Haven
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759459619455896980, guid: 2295cd3276ec80d49b8063431ec65b0b,
+        type: 3}
+      propertyPath: level3Scene
+      value: Tidewash Canal
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759459619455896980, guid: 2295cd3276ec80d49b8063431ec65b0b,
+        type: 3}
+      propertyPath: level4Scene
+      value: Seafarers Rest
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759459619455896980, guid: 2295cd3276ec80d49b8063431ec65b0b,
+        type: 3}
+      propertyPath: level5Scene
+      value: Sunkissed Bay
+      objectReference: {fileID: 0}
     - target: {fileID: 8759459619455896981, guid: 2295cd3276ec80d49b8063431ec65b0b,
         type: 3}
       propertyPath: m_Name
