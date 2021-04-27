@@ -284,6 +284,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 259357650, guid: d247341e953c5ff42a30adff5840f3e5, type: 3}
+      propertyPath: playScene
+      value: Concealed Cove
+      objectReference: {fileID: 0}
+    - target: {fileID: 259357650, guid: d247341e953c5ff42a30adff5840f3e5, type: 3}
       propertyPath: optionsCanvas
       value: 
       objectReference: {fileID: 1305712633}
