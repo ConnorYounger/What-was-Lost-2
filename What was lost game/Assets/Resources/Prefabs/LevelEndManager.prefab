@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: 9311d544118506f42a3267b2f8a44cca, type: 2}
-  maxInventoryItems: 15
+  maxInventoryItems: 10
   timeManager: {fileID: 0}
   endUI: {fileID: 0}
   player: {fileID: 0}
