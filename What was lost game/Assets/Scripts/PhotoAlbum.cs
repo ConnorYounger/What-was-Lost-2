@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class PhotoAlbum : MonoBehaviour
 {
-    //public RectTransform parentPanel;
     public Sprite[] photos;
     public int imageNum;
     public GameObject prevPhoto, nextPhoto;
@@ -31,15 +30,35 @@ public class PhotoAlbum : MonoBehaviour
     }
 
     // Change the boolean value of a photo mask
-    // **Call on key item pickup
-    public void UnmaskPhoto(int i)
+    public void UnmaskPhoto()
     {
-        photoFound[i] = true;
+        switch (PlayerPrefs.GetInt("LevelUnlocked"))
+        {
+            case 1:
+                photoFound[1] = true;
+                break;
+            case 2:
+                photoFound[1] = true;
+                photoFound[2] = true;
+                break;
+            case 3:
+                photoFound[1] = true;
+                photoFound[2] = true;
+                photoFound[3] = true;
+                break;
+            case 4:
+                photoFound[1] = true;
+                photoFound[2] = true;
+                photoFound[3] = true;
+                photoFound[4] = true;
+                break;
+        }
     }
 
     // Change the photo display based on position in array & either display or hide a mask if the photo has been 'unlocked'
     public void UpdatePhoto()
     {
+        UnmaskPhoto();
         gameObject.GetComponent<Image>().sprite = photos[imageNum];
 
         if (photoFound[imageNum])
