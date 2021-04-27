@@ -56351,6 +56351,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 163626695934948838, guid: 2bf37592ba18bdb408aaa8ad1c164604,
+        type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 4e3ecf2cf81f0bd47ac7b03397c5cbc6,
+        type: 2}
     - target: {fileID: 4390166561458895171, guid: 2bf37592ba18bdb408aaa8ad1c164604,
         type: 3}
       propertyPath: rgen
