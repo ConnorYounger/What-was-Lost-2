@@ -57520,6 +57520,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 4e3ecf2cf81f0bd47ac7b03397c5cbc6,
         type: 2}
+    - target: {fileID: 3188007170922180080, guid: 2bf37592ba18bdb408aaa8ad1c164604,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 0.94
+      objectReference: {fileID: 0}
     - target: {fileID: 4390166561458895171, guid: 2bf37592ba18bdb408aaa8ad1c164604,
         type: 3}
       propertyPath: rgen
