@@ -15,7 +15,7 @@ public class FinishLevel : MonoBehaviour
     public GameObject player;
     public GameObject endLevelCamera;
 
-    private string levelSelectMenu = "Home Menu";
+    private string levelSelectMenu = "LevelSelect";
 
     private void Start()
     {
