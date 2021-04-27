@@ -1152,6 +1152,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Metal Detectable Object (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8007704139950247770, guid: e68fff0b51e4bd14a900568757a7139c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1255138708}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e68fff0b51e4bd14a900568757a7139c, type: 3}
 --- !u!4 &66773161 stripped
@@ -9712,6 +9717,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Metal Detectable Object (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8007704139950247770, guid: e68fff0b51e4bd14a900568757a7139c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1255138708}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e68fff0b51e4bd14a900568757a7139c, type: 3}
 --- !u!4 &774535946 stripped
@@ -12020,6 +12030,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Metal Detectable Object
       objectReference: {fileID: 0}
+    - target: {fileID: 8007704139950247770, guid: e68fff0b51e4bd14a900568757a7139c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1255138708}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e68fff0b51e4bd14a900568757a7139c, type: 3}
 --- !u!4 &927841107 stripped
@@ -15001,6 +15016,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Metal Detectable Object (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8007704139950247770, guid: e68fff0b51e4bd14a900568757a7139c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1255138708}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e68fff0b51e4bd14a900568757a7139c, type: 3}
 --- !u!4 &1141839633 stripped
@@ -16533,6 +16553,12 @@ PrefabInstance:
 --- !u!4 &1255138707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1291345737078464244, guid: 2bf37592ba18bdb408aaa8ad1c164604,
+    type: 3}
+  m_PrefabInstance: {fileID: 1255138706}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1255138708 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6147366903372286394, guid: 2bf37592ba18bdb408aaa8ad1c164604,
     type: 3}
   m_PrefabInstance: {fileID: 1255138706}
   m_PrefabAsset: {fileID: 0}
@@ -25890,6 +25916,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Metal Detectable Object (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8007704139950247770, guid: e68fff0b51e4bd14a900568757a7139c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1255138708}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e68fff0b51e4bd14a900568757a7139c, type: 3}
 --- !u!4 &1931299103 stripped
