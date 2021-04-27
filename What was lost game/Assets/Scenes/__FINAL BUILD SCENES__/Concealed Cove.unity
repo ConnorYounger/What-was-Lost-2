@@ -1337,7 +1337,7 @@ PrefabInstance:
         type: 3}
       propertyPath: tutorialText
       value: 
-      objectReference: {fileID: 78506624}
+      objectReference: {fileID: 538520307}
     - target: {fileID: 3746834012450913055, guid: 5716ac8d2dd9810468eba6ee6a7d7ed4,
         type: 3}
       propertyPath: tutorialMessage
@@ -1345,18 +1345,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5716ac8d2dd9810468eba6ee6a7d7ed4, type: 3}
---- !u!114 &78506624 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3746834011367504615, guid: 5716ac8d2dd9810468eba6ee6a7d7ed4,
-    type: 3}
-  m_PrefabInstance: {fileID: 78506623}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &79101506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2225,7 +2213,7 @@ PrefabInstance:
     - target: {fileID: 786031222, guid: 2ff575c04c7c41f429da376a0f03c2b3, type: 3}
       propertyPath: tutorialText
       value: 
-      objectReference: {fileID: 155195912}
+      objectReference: {fileID: 538520307}
     - target: {fileID: 786031222, guid: 2ff575c04c7c41f429da376a0f03c2b3, type: 3}
       propertyPath: tutorialMessage
       value: press 'i' to open the inventory
@@ -2292,18 +2280,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ff575c04c7c41f429da376a0f03c2b3, type: 3}
---- !u!114 &155195912 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1632396174, guid: 2ff575c04c7c41f429da376a0f03c2b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 155195911}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &164258175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3133429536944118060, guid: 25cb56d59f80f614b9da0e9a36c48a05,
@@ -17580,7 +17556,7 @@ PrefabInstance:
     - target: {fileID: 786031222, guid: 2ff575c04c7c41f429da376a0f03c2b3, type: 3}
       propertyPath: tutorialText
       value: 
-      objectReference: {fileID: 1449007845}
+      objectReference: {fileID: 538520307}
     - target: {fileID: 786031222, guid: 2ff575c04c7c41f429da376a0f03c2b3, type: 3}
       propertyPath: tutorialMessage
       value: Detector bar show proximity to an item
@@ -17647,18 +17623,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ff575c04c7c41f429da376a0f03c2b3, type: 3}
---- !u!114 &1449007845 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1632396174, guid: 2ff575c04c7c41f429da376a0f03c2b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1449007844}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1450837713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20475,7 +20439,7 @@ PrefabInstance:
         type: 3}
       propertyPath: tutorialText
       value: 
-      objectReference: {fileID: 1682940527}
+      objectReference: {fileID: 538520307}
     - target: {fileID: 3746834012450913055, guid: 5716ac8d2dd9810468eba6ee6a7d7ed4,
         type: 3}
       propertyPath: tutorialMessage
@@ -20483,18 +20447,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5716ac8d2dd9810468eba6ee6a7d7ed4, type: 3}
---- !u!114 &1682940527 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3746834011367504615, guid: 5716ac8d2dd9810468eba6ee6a7d7ed4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1682940526}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1682946537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 439236, guid: da8fe8f1435da7e4fb291006768ecb07,
