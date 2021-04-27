@@ -28,7 +28,7 @@ public class TriggerTutorial : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Triggered");
+            //Debug.Log("Triggered");
             mMessage.GetComponent<Image>().enabled = true;
             StartCoroutine(DisplayTutorialMessage());
         }
