@@ -171,8 +171,10 @@ public class ChildrenAI : MonoBehaviour
     {
         if (currentState == 1 && audioSource)
         {
-            audioSource.clip = stats.triggerSound;
-            audioSource.Play();
+            //audioSource.clip = stats.triggerSound;
+            //audioSource.Play();
+
+            PlaySound(stats.triggerSound);
 
             //Invoke("PlayTriggerSound", 3);
         }
@@ -306,8 +308,10 @@ public class ChildrenAI : MonoBehaviour
         {
             if (audioSource && stats.sucessSound)
             {
-                audioSource.clip = stats.sucessSound;
-                audioSource.Play();
+                //audioSource.clip = stats.sucessSound;
+                //audioSource.Play();
+
+                PlaySound(stats.sucessSound);
             }
 
             int ranItem = Random.Range(0, targetInventory.Container.Count);
@@ -322,11 +326,13 @@ public class ChildrenAI : MonoBehaviour
 
                 hasItem = true;
 
+                /*
                 if (heldItem.item.modelPrefab)
                 {
                     heldItemPrefab = Instantiate(heldItem.item.modelPrefab, itemHoldPoint.position, itemHoldPoint.rotation);
                     heldItemPrefab.transform.parent = itemHoldPoint.transform;
                 }
+                */
 
                 if (annoyingKidItemStolenText)
                 {
@@ -354,8 +360,10 @@ public class ChildrenAI : MonoBehaviour
             {
                 if (audioSource && stats.sucessSound)
                 {
-                    audioSource.clip = stats.sucessSound;
-                    audioSource.Play();
+                    //audioSource.clip = stats.sucessSound;
+                    //audioSource.Play();
+
+                    PlaySound(stats.sucessSound);
                 }
 
                 hasItem = true;
@@ -395,8 +403,10 @@ public class ChildrenAI : MonoBehaviour
     {
         if(audioSource && stats.disapointedSound)
         {
-            audioSource.clip = stats.disapointedSound;
-            audioSource.Play();
+            //audioSource.clip = stats.disapointedSound;
+            //audioSource.Play();
+
+            PlaySound(stats.disapointedSound);
         }
 
         if (stats.enemyType == EnemyStats.EnemyType.Child)
@@ -420,7 +430,7 @@ public class ChildrenAI : MonoBehaviour
 
             targetInventory.AddItem(heldItem.item);
 
-            Destroy(heldItemPrefab);
+            //Destroy(heldItemPrefab);
 
             heldItem = null;
         }
@@ -465,5 +475,16 @@ public class ChildrenAI : MonoBehaviour
                 timer = 0;
             }
         }
+    }
+
+    // Custom sound EGO
+    void PlaySound(AudioClip clip)
+    {
+        GameObject sound = new GameObject();
+        sound.transform.parent = gameObject.transform;
+        AudioSource soundA = sound.AddComponent<AudioSource>();
+        soundA.clip = clip;
+        soundA.Play();
+        Destroy(sound, clip.length);
     }
 }
