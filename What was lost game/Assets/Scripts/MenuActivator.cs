@@ -10,6 +10,7 @@ public class MenuActivator : MonoBehaviour
     {
         menuCanvas.SetActive(true);
         optionsCanvas.SetActive(true);
+        menuCanvas.GetComponent<Canvas>().enabled = true;
 
     }
 }
