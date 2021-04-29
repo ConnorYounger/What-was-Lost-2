@@ -15,7 +15,7 @@ public class OptionsMenuController : MonoBehaviour
     private void Start()
     {
         //topCanvas.SetActive(false);
-        topCanvas.GetComponent<Canvas>().enabled = false;
+        //topCanvas.GetComponent<Canvas>().enabled = false;
 
         navigationPage.SetActive(true);
         displayPage.SetActive(false);
