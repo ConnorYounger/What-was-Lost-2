@@ -17,6 +17,8 @@ public class FinishLevel : MonoBehaviour
 
     private string levelSelectMenu = "LevelSelect";
 
+    public bool endLevel;
+
     private void Start()
     {
         if (GameObject.Find("TimeManager"))
@@ -49,6 +51,8 @@ public class FinishLevel : MonoBehaviour
 
     public void EndLevel()
     {
+        endLevel = true;
+
         if (endLevelCamera)
         {
             endLevelCamera.SetActive(true);

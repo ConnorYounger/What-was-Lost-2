@@ -47,7 +47,7 @@ public class ChildrenAI : MonoBehaviour
     private AudioSource audioSource;
     private AudioManager audioManager;
 
-    private TimeManager timeManager;
+    private FinishLevel levelEndManager;
 
     private NavMeshAgent navAgent;
     private Vector3 startLocation;
@@ -107,9 +107,9 @@ public class ChildrenAI : MonoBehaviour
             audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         }
 
-        if (GameObject.Find("TimeManager"))
+        if (GameObject.Find("LevelEndManager"))
         {
-            timeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
+            levelEndManager = GameObject.Find("LevelEndManager").GetComponent<FinishLevel>();
         }
     }
 
@@ -137,6 +137,8 @@ public class ChildrenAI : MonoBehaviour
 
             canRetrieveItem = false;
         }
+
+        LevelFinishCheck();
     }
 
     private void CurrentState()
@@ -486,6 +488,21 @@ public class ChildrenAI : MonoBehaviour
                 currentState = 0;
                 timer = 0;
             }
+        }
+    }
+
+    void LevelFinishCheck()
+    {
+        if (levelEndManager)
+        {
+            if(levelEndManager.endLevel)
+            {
+                gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            Debug.LogError(gameObject.name + " cannot find the TimeManager");
         }
     }
 
