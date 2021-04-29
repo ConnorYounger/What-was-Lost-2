@@ -44,8 +44,10 @@ public class ChildrenAI : MonoBehaviour
     private GameObject playerMetalDetectorObject;
     public GameObject dogMetalDetector;
 
-
     private AudioSource audioSource;
+    private AudioManager audioManager;
+
+    private TimeManager timeManager;
 
     private NavMeshAgent navAgent;
     private Vector3 startLocation;
@@ -53,6 +55,22 @@ public class ChildrenAI : MonoBehaviour
     void Start()
     {
         SetStates();
+
+        /*
+        if (GameObject.Find("Dog Metal Detector"))
+        {
+            dogMetalDetector = GameObject.Find("Dog Metal Detector");
+            dogMetalDetector.SetActive(false);
+        }
+        */
+    }
+
+    private void SetStates()
+    {
+        states = new string[3] { "Idle", "Engage", "Cooldown" };
+
+        startLocation = transform.position;
+        timeBetweenFootStepSounds = stats.timeBetweenFootStepSounds;
 
         target = GameObject.Find(targetName);
 
@@ -84,21 +102,15 @@ public class ChildrenAI : MonoBehaviour
             getBackText = GameObject.Find("Foundalert").GetComponent<Text>();
         }
 
-        /*
-        if (GameObject.Find("Dog Metal Detector"))
+        if (GameObject.Find("AudioManager"))
         {
-            dogMetalDetector = GameObject.Find("Dog Metal Detector");
-            dogMetalDetector.SetActive(false);
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         }
-        */
-    }
 
-    private void SetStates()
-    {
-        states = new string[3] { "Idle", "Engage", "Cooldown" };
-
-        startLocation = transform.position;
-        timeBetweenFootStepSounds = stats.timeBetweenFootStepSounds;
+        if (GameObject.Find("TimeManager"))
+        {
+            timeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
+        }
     }
 
     void Update()
@@ -484,6 +496,7 @@ public class ChildrenAI : MonoBehaviour
         sound.transform.parent = gameObject.transform;
         AudioSource soundA = sound.AddComponent<AudioSource>();
         soundA.clip = clip;
+        soundA.volume = audioManager.audioSettingsPrefab.soundVolume;
         soundA.Play();
         Destroy(sound, clip.length);
     }
