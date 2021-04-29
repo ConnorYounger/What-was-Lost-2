@@ -17,9 +17,6 @@ public class EnemyStats : ScriptableObject
 
     public string itemReturnMessage;
 
-    [HideInInspector]
-    public Vector3 startLocation;
-
     [Header("Sounds")]
     public AudioClip triggerSound;
     public AudioClip sucessSound;

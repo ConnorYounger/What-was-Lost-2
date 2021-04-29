@@ -48,6 +48,7 @@ public class ChildrenAI : MonoBehaviour
     private AudioSource audioSource;
 
     private NavMeshAgent navAgent;
+    private Vector3 startLocation;
 
     void Start()
     {
@@ -96,7 +97,7 @@ public class ChildrenAI : MonoBehaviour
     {
         states = new string[3] { "Idle", "Engage", "Cooldown" };
 
-        stats.startLocation = transform.position;
+        startLocation = transform.position;
         timeBetweenFootStepSounds = stats.timeBetweenFootStepSounds;
     }
 
@@ -239,12 +240,12 @@ public class ChildrenAI : MonoBehaviour
         }
         else
         {
-            if (Vector3.Distance(transform.position, stats.startLocation) > destinationOffset)
+            if (Vector3.Distance(transform.position, startLocation) > destinationOffset)
             {
                 // Move to starting position
                 //transform.LookAt(stats.startLocation);
                 //transform.position = Vector3.MoveTowards(transform.position, stats.startLocation, stats.movementSpeed * Time.deltaTime);
-                navAgent.SetDestination(stats.startLocation);
+                navAgent.SetDestination(startLocation);
 
                 animator.SetBool("isWalking", true);
 
@@ -442,10 +443,10 @@ public class ChildrenAI : MonoBehaviour
     {
         Debug.Log("current state = CoolDown");
 
-        if (Vector3.Distance(transform.position, stats.startLocation) > destinationOffset)
+        if (Vector3.Distance(transform.position, startLocation) > destinationOffset)
         {
             // Move to starting position
-            navAgent.SetDestination(stats.startLocation);
+            navAgent.SetDestination(startLocation);
 
             animator.SetBool("isWalking", true);
         }
