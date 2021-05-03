@@ -15,13 +15,12 @@ public class PhotoAlbum : MonoBehaviour
     [Header("Caption to display under each photo")]
     public string[] memoryCaptions = new string[4];
 
-
     private int imageNum;
     private GameObject photoMask;
     private string emptyText = "...";
     private TMP_Text memoryText;
     private AudioSource photoChangeAudio;
-    public bool[] photoFound;
+    private bool[] photoFound;
 
     private void Start()
     {
@@ -35,9 +34,9 @@ public class PhotoAlbum : MonoBehaviour
         UpdatePhoto();
     }
 
-    // Change the boolean value of a photo mask
     public void UnmaskPhoto()
     {
+        // Change the boolean value of a photo mask based on key item being found
         switch (PlayerPrefs.GetInt("LevelUnlocked"))
         {
             case 1:
@@ -61,10 +60,11 @@ public class PhotoAlbum : MonoBehaviour
         }
     }
 
-    // Change the photo display based on position in array & either display or hide a mask if the photo has been 'unlocked'
     public void UpdatePhoto()
     {
         UnmaskPhoto();
+        
+        // Change the photo display based on position in array & either display or hide a mask if the photo has been 'unlocked'
         gameObject.GetComponent<Image>().sprite = photos[imageNum];
 
         if (photoFound[imageNum])
