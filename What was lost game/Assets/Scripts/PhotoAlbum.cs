@@ -6,12 +6,19 @@ using UnityEngine.UI;
 
 public class PhotoAlbum : MonoBehaviour
 {
+    [Header("Images for the memory photos")]
     public Sprite[] photos;
-    public int imageNum;
+
+    [Header("Prev/Next Buttons")]
     public GameObject prevPhoto, nextPhoto;
+
+    [Header("Caption to display under each photo")]
+    public string[] memoryCaptions = new string[4];
+
+
+    private int imageNum;
     private GameObject photoMask;
     private string emptyText = "...";
-    public string[] memoryCaptions = new string[4];
     private TMP_Text memoryText;
     private AudioSource photoChangeAudio;
     public bool[] photoFound;
@@ -24,7 +31,6 @@ public class PhotoAlbum : MonoBehaviour
         photoChangeAudio = GetComponent<AudioSource>();
 
         imageNum = 0;
-        //memoryText.text = emptyText;
 
         UpdatePhoto();
     }
@@ -115,6 +121,5 @@ public class PhotoAlbum : MonoBehaviour
         {
             nextPhoto.SetActive(true);
         }
-
     }
 }
