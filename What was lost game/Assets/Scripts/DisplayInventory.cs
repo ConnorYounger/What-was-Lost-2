@@ -23,6 +23,7 @@ public class DisplayInventory : MonoBehaviour
 
     public void CreateDisplay()
     {
+        // Instantiate UI prefabs for each item in the players inventory
         for (int i = 0; i < inventory.Container.Count; i++)
         {
             var newSlot = Instantiate(inventory.Container[i].item.invPrefab, Vector3.zero, Quaternion.identity, inventoryPage.transform);
@@ -38,7 +39,8 @@ public class DisplayInventory : MonoBehaviour
     public void UpdateDisplay()
     {
         ClearInvDictionary();
-
+        
+        // Update UI prefabs for each item in the players inventory
         for (int i = 0; i < inventory.Container.Count; i++)
         {
             if (itemsDisplayed.ContainsKey(inventory.Container[i]))
@@ -61,8 +63,7 @@ public class DisplayInventory : MonoBehaviour
 
     public void ClearInvDictionary() 
     {
-        Debug.Log("Called Clear");
-        
+        // Clear the display to remove any redundant items
         foreach (Transform child in inventoryPage.transform)
         {
             Destroy(child.gameObject);
